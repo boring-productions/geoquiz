@@ -22,6 +22,6 @@ extension ShapeStyle where Self == Gradient {
     }
     
     static var quaternary: Gradient {
-        Gradient(colors: [Color("PinkLavender"), Color("Main2")])
+        Gradient(colors: [Color("MaizeCrayola"), Color("MiddleRed")])
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 enum GameName {
-    case guessTheFlag, guessTheCapital
+    case guessTheFlag, guessTheCapital, guessTheCountry, guessThePopulation
 }

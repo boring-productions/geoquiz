@@ -16,21 +16,47 @@ struct ContentView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
                     
-                    NavigationLink(tag: GameName.guessTheFlag, selection: $gameName) {
-                        GuessTheFlagView(gameName: $gameName)
-                    } label: {
+                    NavigationLink(
+                        destination: GuessTheFlagView(gameName: $gameName),
+                        tag: GameName.guessTheFlag,
+                        selection: $gameName
+                    ) {
                         GameButton(
                             gradient: .main,
-                            level: "Level 1", symbol: "globe.americas.fill", name: "Guess the flag"
+                            level: "Level 1", symbol: "flag.fill", name: "Guess the flag"
                         )
                     }
                     
-                    NavigationLink(tag: GameName.guessTheCapital, selection: $gameName) {
-                        GuessTheCapitalView(gameName: $gameName)
-                    } label: {
+                    NavigationLink(
+                        destination: GuessTheCapitalView(gameName: $gameName),
+                        tag: GameName.guessTheCapital,
+                        selection: $gameName
+                    ) {
                         GameButton(
                             gradient: .secondary,
-                            level: "Level 2", symbol: "globe.americas.fill", name: "Guess the capital"
+                            level: "Level 2", symbol: "building.2.fill", name: "Guess the capital"
+                        )
+                    }
+                    
+                    NavigationLink(
+                        destination: Text("Guess the country"),
+                        tag: GameName.guessTheCountry,
+                        selection: $gameName
+                    ) {
+                        GameButton(
+                            gradient: .tertiary,
+                            level: "Level 3", symbol: "globe.americas.fill", name: "Guess the country"
+                        )
+                    }
+                    
+                    NavigationLink(
+                        destination: Text("Guess the population"),
+                        tag: GameName.guessThePopulation,
+                        selection: $gameName
+                    ) {
+                        GameButton(
+                            gradient: .quaternary,
+                            level: "Level 4", symbol: "person.3.fill", name: "Guess the population"
                         )
                     }
                 }
