@@ -1,5 +1,5 @@
 //
-//  BuyLivesModal.swift
+//  BuyLivesModalView.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 6/9/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BuyLivesModal: View {
+struct BuyLivesModalView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -61,8 +61,8 @@ struct BuyLivesModal: View {
     }
 }
 
-struct BuyLivesView_Previews: PreviewProvider {
+struct BuyLivesModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BuyLivesModal()
+        BuyLivesModalView()
     }
 }

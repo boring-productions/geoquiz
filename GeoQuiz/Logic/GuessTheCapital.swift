@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GuessTheCapital: ObservableObject {
+//class GuessTheCapital: ObservableObject {
     
 //    struct Country: Hashable {
 //        let capitalName: String
@@ -114,4 +114,8 @@ class GuessTheCapital: ObservableObject {
 //            self.showingWrongAnswerAlert = true
 //        }
 //    }
+//}
+
+class GuessTheCapital: ObservableObject {
+    
 }

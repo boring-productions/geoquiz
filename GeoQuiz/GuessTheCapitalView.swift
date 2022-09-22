@@ -72,7 +72,7 @@ struct GuessTheCapitalView: View {
         .navigationBarHidden(true)
         
 //        .sheet(isPresented: $game.showingBuyLivesView) {
-//            BuyLivesModal()
+//            BuyLivesModalView()
 //        }
 //
 //        .alert(game.alertTitle, isPresented: $game.showingNoLivesAlert) {

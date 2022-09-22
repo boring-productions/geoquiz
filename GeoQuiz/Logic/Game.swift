@@ -22,6 +22,8 @@ protocol Game: ObservableObject {
     var userChoices: [String: T] { get set }
     var userScore: Int { get set }
     var userLives: Int { get set }
+    var correctAnswers: [String: T] { get set }
+    var wrongAnswers: [String: T] { get set }
     
     // Alerts
     var alertTitle: String { get set }
@@ -29,6 +31,7 @@ protocol Game: ObservableObject {
     var showingNoLivesAlert: Bool { get set }
     var showingEndGameAlert: Bool { get set }
     var showingWrongAnswerAlert: Bool { get set }
+    var showingExitGameAlert: Bool { get set }
     
     // Animations
     var scoreScaleAmount: Double { get set }
@@ -36,6 +39,7 @@ protocol Game: ObservableObject {
     
     // Modal views
     var showingBuyLivesView: Bool { get set }
+    var showingGameStatsView: Bool { get set }
 }
 
 extension Game {
@@ -91,24 +95,28 @@ extension Game {
         
         if correctAnswer == choice {
             hapticSuccess()
-            userScore += 1
-
+            
             withAnimation(.easeIn(duration: 0.5)) {
                 scoreScaleAmount += 1
+                userScore += 1
             }
             
+            correctAnswers[correctAnswer.key] = correctAnswer.value
             askQuestion()
         } else {
             hapticError()
-            userLives -= 1
+            
 
             withAnimation(.easeIn(duration: 0.5)) {
                 livesScaleAmount += 1
+                userLives -= 1
             }
 
             alertTitle = "Wrong!"
             alertMessage = "You have \(userLives) lives left"
             showingWrongAnswerAlert = true
+            
+            wrongAnswers[choice.key] = choice.value
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in

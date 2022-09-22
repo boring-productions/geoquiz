@@ -18,7 +18,7 @@ struct GuessTheFlagView: View {
             
             GeometryReader { geo in
                 VStack(spacing: 20) {
-                    GameToolbar(gameName: $gameName, game: game)
+                    GameToolbar(game: game)
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
@@ -55,7 +55,11 @@ struct GuessTheFlagView: View {
         .navigationBarHidden(true)
         .modifier(GameAlertsModifier(game: game, gameName: $gameName))
         .sheet(isPresented: $game.showingBuyLivesView) {
-            BuyLivesModal()
+            BuyLivesModalView()
+        }
+        
+        .sheet(isPresented: $game.showingGameStatsView) {
+            GameStatsModalView(game: game)
         }
     }
 }

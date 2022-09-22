@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GameToolbar<T: Game>: View {
-    @Binding var gameName: GameName?
     @ObservedObject var game: T
     
     
@@ -16,7 +15,7 @@ struct GameToolbar<T: Game>: View {
         HStack(spacing: 0) {
             Group {
                 Button {
-                    gameName = nil
+                    game.showingExitGameAlert = true
                 } label: {
                     Image(systemName: "multiply")
                         .padding(10)
@@ -31,12 +30,16 @@ struct GameToolbar<T: Game>: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Group {
-                Text("\(game.userScore)")
-                    .padding()
-                    .background(
-                        Circle()
-                            .strokeBorder(lineWidth: 3)
-                    )
+                Button {
+                    game.showingGameStatsView = true
+                } label: {
+                    Text("\(game.userScore)")
+                        .padding()
+                        .background(
+                            Circle()
+                                .strokeBorder(lineWidth: 3)
+                        )
+                }
             }
             .foregroundColor(.white)
             .font(.title2)
@@ -74,10 +77,7 @@ struct GameToolbar_Previews: PreviewProvider {
             
             GeometryReader { geo in
                 VStack {
-                    GameToolbar(
-                        gameName: .constant(GameName.guessTheFlag),
-                        game: GuessTheFlag()
-                    )
+                    GameToolbar(game: GuessTheFlag())
                     
                     Spacer()
                 }

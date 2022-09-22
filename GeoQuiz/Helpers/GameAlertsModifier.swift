@@ -32,5 +32,12 @@ struct GameAlertsModifier<T: Game>: ViewModifier {
             } message: {
                 Text(game.alertMessage)
             }
+        
+            .alert("Are you sure?", isPresented: $game.showingExitGameAlert) {
+                Button("Exit", role: .destructive) { gameName = nil }
+                Button("Cancel", role: .cancel) { }
+            } message: {
+                Text("You'll loose the progress so far.")
+            }
     }
 }

@@ -21,6 +21,8 @@ class GuessTheFlag: Game, ObservableObject {
     @Published var userChoices = [String: String]()
     @Published var userScore = 0
     @Published var userLives = 3
+    @Published var correctAnswers = [String: String]()
+    @Published var wrongAnswers = [String: String]()
     
     // Alerts
     @Published var alertTitle = String()
@@ -28,6 +30,7 @@ class GuessTheFlag: Game, ObservableObject {
     @Published var showingNoLivesAlert = false
     @Published var showingEndGameAlert = false
     @Published var showingWrongAnswerAlert = false
+    @Published var showingExitGameAlert = false
     
     // Animations
     @Published var scoreScaleAmount = 1.0
@@ -35,6 +38,7 @@ class GuessTheFlag: Game, ObservableObject {
     
     // Modal views
     @Published var showingBuyLivesView = false
+    @Published var showingGameStatsView = false
     
     init() {
         let flags: CountryFlags = load("CountryFlags.json")

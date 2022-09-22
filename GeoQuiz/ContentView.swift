@@ -71,7 +71,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingBuyLivesModal) {
-                BuyLivesModal()
+                BuyLivesModalView()
             }
         }
     }
