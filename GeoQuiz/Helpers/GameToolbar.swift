@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct GameToolbar: View {
-    @Binding var userScore: Int
-    @Binding var userLives: Int
+struct GameToolbar<T: Game>: View {
     @Binding var gameName: GameName?
-    @Binding var showingBuyLivesView: Bool
+    @ObservedObject var game: T
+    
     
     var body: some View {
         HStack(spacing: 0) {
@@ -32,7 +31,7 @@ struct GameToolbar: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Group {
-                Text("\(userScore)")
+                Text("\(game.userScore)")
                     .padding()
                     .background(
                         Circle()
@@ -41,21 +40,23 @@ struct GameToolbar: View {
             }
             .foregroundColor(.white)
             .font(.title2)
+            .scaleEffect(game.scoreScaleAmount)
             .frame(maxWidth: .infinity, alignment: .center)
             
             Group {
                 Button {
-                    showingBuyLivesView = true
+                    game.showingBuyLivesView = true
                 } label: {
                     HStack {
                         Image(systemName: "heart.fill")
-                        Text("\(userLives)")
+                        Text("\(game.userLives)")
                     }
                     .padding(10)
                     .background(
                         Capsule()
                             .strokeBorder(lineWidth: 2)
                     )
+                    .scaleEffect(game.livesScaleAmount)
                 }
             }
             .foregroundColor(.white)
@@ -74,9 +75,8 @@ struct GameToolbar_Previews: PreviewProvider {
             GeometryReader { geo in
                 VStack {
                     GameToolbar(
-                        userScore: .constant(0),
-                        userLives: .constant(6),
-                        gameName: .constant(.guessTheFlag), showingBuyLivesView: .constant(false)
+                        gameName: .constant(GameName.guessTheFlag),
+                        game: GuessTheFlag()
                     )
                     
                     Spacer()

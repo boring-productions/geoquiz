@@ -16,21 +16,16 @@ struct GuessTheFlagView: View {
             LinearGradient(gradient: .main, startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            GeometryReader{ geo in
+            GeometryReader { geo in
                 VStack(spacing: 20) {
-                    GameToolbar(
-                        userScore: $game.userScore,
-                        userLives: $game.userLives,
-                        gameName: $gameName,
-                        showingBuyLivesView: $game.showingBuyLivesView
-                    )
+                    GameToolbar(gameName: $gameName, game: game)
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Question \(game.questionCounter) of \(game.countries.count)")
+                            Text("Question \(game.questionCounter) of \(game.data.count)")
                                 .font(.title3)
 
-                            Text("What is the flag of \(game.countryNameAsked)?")
+                            Text("What is the flag of \(game.correctAnswer.key)?")
                                 .font(.title)
                                 .fontWeight(.semibold)
                         }
@@ -41,11 +36,11 @@ struct GuessTheFlagView: View {
                     
                     Spacer()
                     
-                    ForEach(Array(game.userChoices.values), id: \.self) { flagSymbol in
+                    ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
                         Button {
-                            game.answered(userChoice: flagSymbol)
+                            game.answer((key: countryName, value: game.data[countryName]!))
                         } label: {
-                            FlagImage(flagSymbol: flagSymbol, cornerRadius: 20)
+                            FlagImage(flagSymbol: game.data[countryName]!, cornerRadius: 20)
                                 .shadow(radius: 10)
                                 .frame(height: geo.size.height * 0.15)
                         }
@@ -58,29 +53,9 @@ struct GuessTheFlagView: View {
             }
         }
         .navigationBarHidden(true)
-        
+        .modifier(GameAlertsModifier(game: game, gameName: $gameName))
         .sheet(isPresented: $game.showingBuyLivesView) {
             BuyLivesModal()
-        }
-
-        .alert(game.alertTitle, isPresented: $game.showingNoLivesAlert) {
-            Button("Buy lives") { game.showingBuyLivesView = true }
-            Button("Exit", role: .destructive) { gameName = nil }
-            Button("Cancel", role: .cancel) { }
-        } message: {
-            Text(game.alertMessage)
-        }
-        
-        .alert(game.alertTitle, isPresented: $game.showingWrongAnswerAlert) {
-            Button("Continue", role: .cancel) { game.askQuestion() }
-        } message: {
-            Text(game.alertMessage)
-        }
-        
-        .alert(game.alertTitle, isPresented: $game.showingEndGameAlert) {
-            Button("Exit", role: .cancel) { gameName = nil }
-        } message: {
-            Text(game.alertMessage)
         }
     }
 }
