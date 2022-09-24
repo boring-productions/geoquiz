@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var gameName: GameName? = nil
-    @State private var showingBuyLivesModal = false
+    @State private var showingBuyLivesModalView = false
+    @State private var showingSettingsModalView = false
     
     var body: some View {
         NavigationView {
@@ -64,14 +65,28 @@ struct ContentView: View {
             }
             .navigationTitle("Select a game 🎮")
             .toolbar {
-                Button {
-                    showingBuyLivesModal = true
-                } label: {
-                    Label("Buy lives", systemImage: "heart.fill")
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        showingSettingsModalView = true
+                    } label: {
+                        Label("Settings", systemImage: "gear")
+                    }
+                }
+                
+                ToolbarItemGroup {
+                    Button {
+                        showingBuyLivesModalView = true
+                    } label: {
+                        Label("Buy lives", systemImage: "heart.fill")
+                    }
                 }
             }
-            .sheet(isPresented: $showingBuyLivesModal) {
+            .sheet(isPresented: $showingBuyLivesModalView) {
                 BuyLivesModalView()
+            }
+            
+            .sheet(isPresented: $showingSettingsModalView) {
+                SettingsModalView()
             }
         }
     }

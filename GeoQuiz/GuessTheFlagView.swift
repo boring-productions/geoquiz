@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFAudio
 
 struct GuessTheFlagView: View {
     @Binding var gameName: GameName?

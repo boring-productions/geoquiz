@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVFAudio
 
 class GuessTheFlag: Game, ObservableObject {    
 
@@ -39,6 +40,9 @@ class GuessTheFlag: Game, ObservableObject {
     // Modal views
     @Published var showingBuyLivesView = false
     @Published var showingGameStatsView = false
+    
+    // Sound effects
+    @Published var player: AVAudioPlayer?
     
     init() {
         let flags: CountryFlags = load("CountryFlags.json")

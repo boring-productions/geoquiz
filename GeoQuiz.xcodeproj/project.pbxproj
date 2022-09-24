@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */; };
-		950C59F528DADA10007C8504 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C59F428DADA10007C8504 /* Animation.swift */; };
-		950C59F928DB181C007C8504 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C59F828DB181C007C8504 /* Protocols.swift */; };
-		950C59FB28DB1F73007C8504 /* ProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C59FA28DB1F73007C8504 /* ProtocolTest.swift */; };
-		950C59FD28DB1F79007C8504 /* ClassTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C59FC28DB1F79007C8504 /* ClassTest.swift */; };
 		951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */; };
 		951D197328D485E000671FAD /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D197228D485E000671FAD /* CustomColors.swift */; };
 		952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41E828DC521200198643 /* GameAlertsModifier.swift */; };
 		952E41EB28DC612400198643 /* GameStatsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EA28DC612400198643 /* GameStatsModalView.swift */; };
+		952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EC28DC658900198643 /* SettingsModalView.swift */; };
+		952E41EF28DC692200198643 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EE28DC692200198643 /* PlaySound.swift */; };
+		952E41F228DC6F6E00198643 /* correctAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 952E41F028DC6F6D00198643 /* correctAnswer.wav */; };
+		952E41F328DC6F6E00198643 /* wrongAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 952E41F128DC6F6E00198643 /* wrongAnswer.wav */; };
 		9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539829228C51EDE00B70973 /* GeoQuizApp.swift */; };
 		9539829728C51EDF00B70973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9539829628C51EDF00B70973 /* Assets.xcassets */; };
 		9539829A28C51EDF00B70973 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9539829928C51EDF00B70973 /* Preview Assets.xcassets */; };
@@ -48,14 +48,14 @@
 
 /* Begin PBXFileReference section */
 		95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
-		950C59F428DADA10007C8504 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		950C59F828DB181C007C8504 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		950C59FA28DB1F73007C8504 /* ProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTest.swift; sourceTree = "<group>"; };
-		950C59FC28DB1F79007C8504 /* ClassTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTest.swift; sourceTree = "<group>"; };
 		951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCapitalView.swift; sourceTree = "<group>"; };
 		951D197228D485E000671FAD /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		952E41E828DC521200198643 /* GameAlertsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlertsModifier.swift; sourceTree = "<group>"; };
 		952E41EA28DC612400198643 /* GameStatsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsModalView.swift; sourceTree = "<group>"; };
+		952E41EC28DC658900198643 /* SettingsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModalView.swift; sourceTree = "<group>"; };
+		952E41EE28DC692200198643 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		952E41F028DC6F6D00198643 /* correctAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAnswer.wav; sourceTree = "<group>"; };
+		952E41F128DC6F6E00198643 /* wrongAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrongAnswer.wav; sourceTree = "<group>"; };
 		9539828F28C51EDE00B70973 /* GeoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9539829228C51EDE00B70973 /* GeoQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizApp.swift; sourceTree = "<group>"; };
 		9539829628C51EDF00B70973 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 		95C430F828D0A8E500480D23 /* CustomGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradients.swift; sourceTree = "<group>"; };
 		95C4315528C64A8C00212131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95C4315828C6500000212131 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
+		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95FA409928D9876B00129B60 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
 		95FA409B28D9881100129B60 /* GuessTheFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,29 +103,17 @@
 			isa = PBXGroup;
 			children = (
 				95C430F628D092FC00480D23 /* GameSelection.swift */,
-				95C430F828D0A8E500480D23 /* CustomGradients.swift */,
-				951D197228D485E000671FAD /* CustomColors.swift */,
 				95AE8D5628C8750E0067F219 /* Load.swift */,
 				955A65A828D7815E00CEEC6D /* Haptics.swift */,
 				955A658228D733E400CEEC6D /* Game.swift */,
 				95FA409B28D9881100129B60 /* GuessTheFlag.swift */,
 				955A658428D73EC600CEEC6D /* GuessTheCapital.swift */,
+				952E41EE28DC692200198643 /* PlaySound.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		950C59F328DADA01007C8504 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				950C59F428DADA10007C8504 /* Animation.swift */,
-				950C59F828DB181C007C8504 /* Protocols.swift */,
-				950C59FA28DB1F73007C8504 /* ProtocolTest.swift */,
-				950C59FC28DB1F79007C8504 /* ClassTest.swift */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		9520ABBA28C86D0300A3D4D7 /* Data */ = {
+		9520ABBA28C86D0300A3D4D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				959D416428C88B6400BAAC14 /* CityPopulation.json */,
@@ -133,8 +122,10 @@
 				959D414C28C8834B00BAAC14 /* CountryCurrencies.json */,
 				959D414A28C8834B00BAAC14 /* CountryFlags.json */,
 				959D414B28C8834B00BAAC14 /* CountryPopulation.json */,
+				952E41F028DC6F6D00198643 /* correctAnswer.wav */,
+				952E41F128DC6F6E00198643 /* wrongAnswer.wav */,
 			);
-			path = Data;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9539828628C51EDE00B70973 = {
@@ -156,17 +147,18 @@
 		9539829128C51EDE00B70973 /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				95E6188428DDDB5C003359ED /* Info.plist */,
 				9539829228C51EDE00B70973 /* GeoQuizApp.swift */,
 				95C4315528C64A8C00212131 /* ContentView.swift */,
 				95FA409928D9876B00129B60 /* GuessTheFlagView.swift */,
 				951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */,
 				959D256F28C7251F00C55A5E /* BuyLivesModalView.swift */,
 				952E41EA28DC612400198643 /* GameStatsModalView.swift */,
+				952E41EC28DC658900198643 /* SettingsModalView.swift */,
 				959D414728C87EA600BAAC14 /* Helpers */,
 				959D414528C87E8D00BAAC14 /* Models */,
 				95030CE728D1B60F001AA3A1 /* Logic */,
-				950C59F328DADA01007C8504 /* Tests */,
-				9520ABBA28C86D0300A3D4D7 /* Data */,
+				9520ABBA28C86D0300A3D4D7 /* Resources */,
 				9539829628C51EDF00B70973 /* Assets.xcassets */,
 				9539829828C51EDF00B70973 /* Preview Content */,
 			);
@@ -202,6 +194,8 @@
 				95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */,
 				955A658028D703EB00CEEC6D /* GameToolbar.swift */,
 				952E41E828DC521200198643 /* GameAlertsModifier.swift */,
+				95C430F828D0A8E500480D23 /* CustomGradients.swift */,
+				951D197228D485E000671FAD /* CustomColors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -266,11 +260,13 @@
 			files = (
 				959D415428C8834B00BAAC14 /* CountryCapitals.json in Resources */,
 				959D415228C8834B00BAAC14 /* CountryCurrencies.json in Resources */,
+				952E41F328DC6F6E00198643 /* wrongAnswer.wav in Resources */,
 				9539829A28C51EDF00B70973 /* Preview Assets.xcassets in Resources */,
 				959D415128C8834B00BAAC14 /* CountryPopulation.json in Resources */,
 				959D415028C8834B00BAAC14 /* CountryFlags.json in Resources */,
 				9539829728C51EDF00B70973 /* Assets.xcassets in Resources */,
 				959D415528C8834B00BAAC14 /* CountryCities.json in Resources */,
+				952E41F228DC6F6E00198643 /* correctAnswer.wav in Resources */,
 				959D416528C88B6400BAAC14 /* CityPopulation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,14 +284,12 @@
 				955A658328D733E400CEEC6D /* Game.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				95C4315928C6500000212131 /* GameButton.swift in Sources */,
-				950C59F928DB181C007C8504 /* Protocols.swift in Sources */,
 				956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */,
-				950C59FB28DB1F73007C8504 /* ProtocolTest.swift in Sources */,
+				952E41EF28DC692200198643 /* PlaySound.swift in Sources */,
 				959D414928C87ED900BAAC14 /* CityPopulation.swift in Sources */,
 				955A658528D73EC600CEEC6D /* GuessTheCapital.swift in Sources */,
 				959D257028C7251F00C55A5E /* BuyLivesModalView.swift in Sources */,
 				959D415928C8854800BAAC14 /* CountryCities.swift in Sources */,
-				950C59F528DADA10007C8504 /* Animation.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
 				959D415728C8851900BAAC14 /* CountryCapitals.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
@@ -306,9 +300,9 @@
 				959D415D28C885ED00BAAC14 /* CountryFlags.swift in Sources */,
 				959D415B28C885C700BAAC14 /* CountryCurrencies.swift in Sources */,
 				95C430F728D092FC00480D23 /* GameSelection.swift in Sources */,
-				950C59FD28DB1F79007C8504 /* ClassTest.swift in Sources */,
 				951D197328D485E000671FAD /* CustomColors.swift in Sources */,
 				95C430F928D0A8E500480D23 /* CustomGradients.swift in Sources */,
+				952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */,
 				95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */,
 				952E41EB28DC612400198643 /* GameStatsModalView.swift in Sources */,
 			);
@@ -442,6 +436,7 @@
 				DEVELOPMENT_TEAM = MTX83R5H8X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeoQuiz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = GeoQuiz;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -473,6 +468,7 @@
 				DEVELOPMENT_TEAM = MTX83R5H8X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeoQuiz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = GeoQuiz;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
