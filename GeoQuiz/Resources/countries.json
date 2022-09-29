@@ -1,0 +1,1300 @@
+{
+    "countries": {
+        "Bangladesh": {
+            "flag": "bd",
+            "currency": "bdt",
+            "population": 166303494,
+            "capital": "Dhaka"
+        },
+        "Belgium": {
+            "flag": "be",
+            "currency": "eur",
+            "population": 11587882,
+            "capital": "Brussels"
+        },
+        "Burkina Faso": {
+            "flag": "bf",
+            "currency": "xof",
+            "population": 21497097,
+            "capital": "Ouagadougou"
+        },
+        "Bulgaria": {
+            "flag": "bg",
+            "currency": "bgn",
+            "population": 6899125,
+            "capital": "Sofia"
+        },
+        "Bosnia and Herzegovina": {
+            "flag": "ba",
+            "currency": "bam",
+            "population": 3263459,
+            "capital": "Sarajevo"
+        },
+        "Barbados": {
+            "flag": "bb",
+            "currency": "bbd",
+            "population": 287708,
+            "capital": "Bridgetown"
+        },
+        "Bermuda": {
+            "flag": "bm",
+            "currency": "bmd",
+            "population": 63867,
+            "capital": "Hamilton"
+        },
+        "Brunei": {
+            "flag": "bn",
+            "currency": "bnd",
+            "population": 441532,
+            "capital": "Bandar Seri Begawan"
+        },
+        "Bolivia": {
+            "flag": "bo",
+            "currency": "bob",
+            "population": 11832936,
+            "capital": "Sucre"
+        },
+        "Bahrain": {
+            "flag": "bh",
+            "currency": "bhd",
+            "population": 1748295,
+            "capital": "Manama"
+        },
+        "Burundi": {
+            "flag": "bi",
+            "currency": "bif",
+            "population": 12255429,
+            "capital": "Bujumbura"
+        },
+        "Benin": {
+            "flag": "bj",
+            "currency": "xof",
+            "population": 12451031,
+            "capital": "Porto-Novo"
+        },
+        "Bhutan": {
+            "flag": "bt",
+            "currency": "btn",
+            "population": 779900,
+            "capital": "Thimphu"
+        },
+        "Jamaica": {
+            "flag": "jm",
+            "currency": "jmd",
+            "population": 2973462,
+            "capital": "Kingston"
+        },
+        "Botswana": {
+            "flag": "bw",
+            "currency": "bwp",
+            "population": 2397240,
+            "capital": "Gaborone"
+        },
+        "Samoa": {
+            "flag": "ws",
+            "currency": "wst",
+            "population": 200144,
+            "capital": "Apia"
+        },
+        "Brazil": {
+            "flag": "br",
+            "currency": "brl",
+            "population": 213993441,
+            "capital": "Brasilia"
+        },
+        "Bahamas": {
+            "flag": "bs",
+            "currency": "bsd",
+            "population": 396914,
+            "capital": "Nassau"
+        },
+        "Belarus": {
+            "flag": "by",
+            "currency": "byr",
+            "population": 9340314,
+            "capital": "Minsk"
+        },
+        "Belize": {
+            "flag": "bz",
+            "currency": "bzd",
+            "population": 404915,
+            "capital": "Belmopan"
+        },
+        "Russia": {
+            "flag": "ru",
+            "currency": "rub",
+            "population": 143446060,
+            "capital": "Moscow"
+        },
+        "Rwanda": {
+            "flag": "rw",
+            "currency": "rwf",
+            "population": 13276517,
+            "capital": "Kigali"
+        },
+        "Serbia": {
+            "flag": "rs",
+            "currency": "rsd",
+            "population": 6844078,
+            "capital": "Belgrade"
+        },
+        "Timor-Leste": {
+            "flag": "tl",
+            "currency": "usd",
+            "population": 1343875,
+            "capital": "Dili"
+        },
+        "Turkmenistan": {
+            "flag": "tm",
+            "currency": "tmt",
+            "population": 6117933,
+            "capital": "Ashgabat"
+        },
+        "Tajikistan": {
+            "flag": "tj",
+            "currency": "tjs",
+            "population": 9749625,
+            "capital": "Dushanbe"
+        },
+        "Romania": {
+            "flag": "ro",
+            "currency": "ron",
+            "population": 19115146,
+            "capital": "Bucharest"
+        },
+        "Guinea-Bissau": {
+            "flag": "gw",
+            "currency": "xof",
+            "population": 2015490,
+            "capital": "Bissau"
+        },
+        "Guam": {
+            "flag": "gu",
+            "currency": "usd",
+            "population": 170184,
+            "capital": "Hagatna"
+        },
+        "Guatemala": {
+            "flag": "gt",
+            "currency": "gtq",
+            "population": 17109746,
+            "capital": "Guatemala City"
+        },
+        "Greece": {
+            "flag": "gr",
+            "currency": "eur",
+            "population": 10664568,
+            "capital": "Athens"
+        },
+        "Equatorial Guinea": {
+            "flag": "gq",
+            "currency": "xaf",
+            "population": 1449891,
+            "capital": "Malabo"
+        },
+        "Japan": {
+            "flag": "jp",
+            "currency": "jpy",
+            "population": 125681593,
+            "capital": "Tokyo"
+        },
+        "Guyana": {
+            "flag": "gy",
+            "currency": "gyd",
+            "population": 790329,
+            "capital": "Georgetown"
+        },
+        "Georgia": {
+            "flag": "ge",
+            "currency": "gel",
+            "population": 3708610,
+            "capital": "Tbilisi"
+        },
+        "Grenada": {
+            "flag": "gd",
+            "currency": "xcd",
+            "population": 113015,
+            "capital": "St. George's"
+        },
+        "United Kingdom": {
+            "flag": "gb",
+            "currency": "gbp",
+            "population": 67326569,
+            "capital": "London"
+        },
+        "Gabon": {
+            "flag": "ga",
+            "currency": "xaf",
+            "population": 2278829,
+            "capital": "Libreville"
+        },
+        "El Salvador": {
+            "flag": "sv",
+            "currency": "usd",
+            "population": 6518500,
+            "capital": "San Salvador"
+        },
+        "Guinea": {
+            "flag": "gn",
+            "currency": "gnf",
+            "population": 13497237,
+            "capital": "Conakry"
+        },
+        "Gambia": {
+            "flag": "gm",
+            "currency": "gmd",
+            "population": 2486937,
+            "capital": "Banjul"
+        },
+        "Greenland": {
+            "flag": "gl",
+            "currency": "dkk",
+            "population": 56653,
+            "capital": "Nuuk"
+        },
+        "Gibraltar": {
+            "flag": "gi",
+            "currency": "gip",
+            "population": 33691,
+            "capital": "Gibraltar"
+        },
+        "Ghana": {
+            "flag": "gh",
+            "currency": "ghs",
+            "population": 31732128,
+            "capital": "Accra"
+        },
+        "Oman": {
+            "flag": "om",
+            "currency": "omr",
+            "population": 5223376,
+            "capital": "Muscat"
+        },
+        "Tunisia": {
+            "flag": "tn",
+            "currency": "tnd",
+            "population": 11935764,
+            "capital": "Tunis"
+        },
+        "Jordan": {
+            "flag": "jo",
+            "currency": "jod",
+            "population": 10269022,
+            "capital": "Amman"
+        },
+        "Croatia": {
+            "flag": "hr",
+            "currency": "hrk",
+            "population": 3899000,
+            "capital": "Zagreb"
+        },
+        "Haiti": {
+            "flag": "ht",
+            "currency": "htg",
+            "population": 11541683,
+            "capital": "Port-au-Prince"
+        },
+        "Hungary": {
+            "flag": "hu",
+            "currency": "huf",
+            "population": 9709886,
+            "capital": "Budapest"
+        },
+        "Hong Kong": {
+            "flag": "hk",
+            "currency": "hkd",
+            "population": 7413100,
+            "capital": "Hong Kong"
+        },
+        "Honduras": {
+            "flag": "hn",
+            "currency": "hnl",
+            "population": 10062994,
+            "capital": "Tegucigalpa"
+        },
+        "Venezuela": {
+            "flag": "ve",
+            "currency": "vef",
+            "population": 28704947,
+            "capital": "Caracas"
+        },
+        "Puerto Rico": {
+            "flag": "pr",
+            "currency": "usd",
+            "population": 3263584,
+            "capital": "San Juan"
+        },
+        "Palestinian Territory": {
+            "flag": "ps",
+            "currency": "ils",
+            "population": 4922749,
+            "capital": "East Jerusalem"
+        },
+        "Palau": {
+            "flag": "pw",
+            "currency": "usd",
+            "population": 18174,
+            "capital": "Melekeok"
+        },
+        "Portugal": {
+            "flag": "pt",
+            "currency": "eur",
+            "population": 10299423,
+            "capital": "Lisbon"
+        },
+        "Paraguay": {
+            "flag": "py",
+            "currency": "pyg",
+            "population": 7219641,
+            "capital": "Asuncion"
+        },
+        "Iraq": {
+            "flag": "iq",
+            "currency": "iqd",
+            "population": 41179351,
+            "capital": "Baghdad"
+        },
+        "Panama": {
+            "flag": "pa",
+            "currency": "pab",
+            "population": 4381583,
+            "capital": "Panama City"
+        },
+        "French Polynesia": {
+            "flag": "pf",
+            "currency": "xpf",
+            "population": 282534,
+            "capital": "Papeete"
+        },
+        "Papua New Guinea": {
+            "flag": "pg",
+            "currency": "pgk",
+            "population": 9119005,
+            "capital": "Port Moresby"
+        },
+        "Peru": {
+            "flag": "pe",
+            "currency": "pen",
+            "population": 33359416,
+            "capital": "Lima"
+        },
+        "Pakistan": {
+            "flag": "pk",
+            "currency": "pkr",
+            "population": 225199929,
+            "capital": "Islamabad"
+        },
+        "Philippines": {
+            "flag": "ph",
+            "currency": "php",
+            "population": 111046910,
+            "capital": "Manila"
+        },
+        "Poland": {
+            "flag": "pl",
+            "currency": "pln",
+            "population": 37781024,
+            "capital": "Warsaw"
+        },
+        "Zambia": {
+            "flag": "zm",
+            "currency": "zmk",
+            "population": 18920657,
+            "capital": "Lusaka"
+        },
+        "Estonia": {
+            "flag": "ee",
+            "currency": "eur",
+            "population": 1329254,
+            "capital": "Tallinn"
+        },
+        "Egypt": {
+            "flag": "eg",
+            "currency": "egp",
+            "population": 104258327,
+            "capital": "Cairo"
+        },
+        "South Africa": {
+            "flag": "za",
+            "currency": "zar",
+            "population": 60041996,
+            "capital": "Pretoria"
+        },
+        "Ecuador": {
+            "flag": "ec",
+            "currency": "usd",
+            "population": 17888474,
+            "capital": "Quito"
+        },
+        "Italy": {
+            "flag": "it",
+            "currency": "eur",
+            "population": 59066225,
+            "capital": "Rome"
+        },
+        "Vietnam": {
+            "flag": "vn",
+            "currency": "vnd",
+            "population": 98168829,
+            "capital": "Hanoi"
+        },
+        "Solomon Islands": {
+            "flag": "sb",
+            "currency": "sbd",
+            "population": 703995,
+            "capital": "Honiara"
+        },
+        "Ethiopia": {
+            "flag": "et",
+            "currency": "etb",
+            "population": 117876226,
+            "capital": "Addis Ababa"
+        },
+        "Somalia": {
+            "flag": "so",
+            "currency": "sos",
+            "population": 16359500,
+            "capital": "Mogadishu"
+        },
+        "Zimbabwe": {
+            "flag": "zw",
+            "currency": "zwl",
+            "population": 15092171,
+            "capital": "Harare"
+        },
+        "Saudi Arabia": {
+            "flag": "sa",
+            "currency": "sar",
+            "population": 35340680,
+            "capital": "Riyadh"
+        },
+        "Spain": {
+            "flag": "es",
+            "currency": "eur",
+            "population": 47326687,
+            "capital": "Madrid"
+        },
+        "Eritrea": {
+            "flag": "er",
+            "currency": "ern",
+            "population": 3213969,
+            "capital": "Asmara"
+        },
+        "Montenegro": {
+            "flag": "me",
+            "currency": "eur",
+            "population": 620173,
+            "capital": "Podgorica"
+        },
+        "Moldova": {
+            "flag": "md",
+            "currency": "mdl",
+            "population": 2573928,
+            "capital": "Chisinau"
+        },
+        "Madagascar": {
+            "flag": "mg",
+            "currency": "mga",
+            "population": 28427333,
+            "capital": "Antananarivo"
+        },
+        "Saint Martin": {
+            "flag": "mf",
+            "currency": "eur",
+            "population": 39239,
+            "capital": "Marigot"
+        },
+        "Morocco": {
+            "flag": "ma",
+            "currency": "mad",
+            "population": 37344787,
+            "capital": "Rabat"
+        },
+        "Monaco": {
+            "flag": "mc",
+            "currency": "eur",
+            "population": 39520,
+            "capital": "Monaco"
+        },
+        "Uzbekistan": {
+            "flag": "uz",
+            "currency": "uzs",
+            "population": 34915100,
+            "capital": "Tashkent"
+        },
+        "Myanmar": {
+            "flag": "mm",
+            "currency": "mmk",
+            "population": 54806014,
+            "capital": "Nay Pyi Taw"
+        },
+        "Mali": {
+            "flag": "ml",
+            "currency": "xof",
+            "population": 20855724,
+            "capital": "Bamako"
+        },
+        "Macau": {
+            "flag": "mo",
+            "currency": "mop",
+            "population": 658391,
+            "capital": "Macao"
+        },
+        "Mongolia": {
+            "flag": "mn",
+            "currency": "mnt",
+            "population": 3329282,
+            "capital": "Ulan Bator"
+        },
+        "Marshall Islands": {
+            "flag": "mh",
+            "currency": "usd",
+            "population": 59618,
+            "capital": "Majuro"
+        },
+        "Macedonia": {
+            "flag": "mk",
+            "currency": "mkd",
+            "population": 2065092,
+            "capital": "Skopje"
+        },
+        "Mauritius": {
+            "flag": "mu",
+            "currency": "mur",
+            "population": 1266060,
+            "capital": "Port Louis"
+        },
+        "Malta": {
+            "flag": "mt",
+            "currency": "eur",
+            "population": 516869,
+            "capital": "Valletta"
+        },
+        "Malawi": {
+            "flag": "mw",
+            "currency": "mwk",
+            "population": 19647681,
+            "capital": "Lilongwe"
+        },
+        "Maldives": {
+            "flag": "mv",
+            "currency": "mvr",
+            "population": 543620,
+            "capital": "Male"
+        },
+        "Northern Mariana Islands": {
+            "flag": "mp",
+            "currency": "usd",
+            "population": 57910,
+            "capital": "Saipan"
+        },
+        "Mauritania": {
+            "flag": "mr",
+            "currency": "mro",
+            "population": 4775110,
+            "capital": "Nouakchott"
+        },
+        "Isle of Man": {
+            "flag": "im",
+            "currency": "gbp",
+            "population": 85410,
+            "capital": "Douglas, Isle of Man"
+        },
+        "Uganda": {
+            "flag": "ug",
+            "currency": "ugx",
+            "population": 47123533,
+            "capital": "Kampala"
+        },
+        "Tanzania": {
+            "flag": "tz",
+            "currency": "tzs",
+            "population": 61498438,
+            "capital": "Dodoma"
+        },
+        "Malaysia": {
+            "flag": "my",
+            "currency": "myr",
+            "population": 32776195,
+            "capital": "Kuala Lumpur"
+        },
+        "Mexico": {
+            "flag": "mx",
+            "currency": "mxn",
+            "population": 130262220,
+            "capital": "Mexico City"
+        },
+        "Israel": {
+            "flag": "il",
+            "currency": "ils",
+            "population": 9364000,
+            "capital": "Jerusalem"
+        },
+        "France": {
+            "flag": "fr",
+            "currency": "eur",
+            "population": 67499343,
+            "capital": "Paris"
+        },
+        "Finland": {
+            "flag": "fi",
+            "currency": "eur",
+            "population": 5541696,
+            "capital": "Helsinki"
+        },
+        "Fiji": {
+            "flag": "fj",
+            "currency": "fjd",
+            "population": 902899,
+            "capital": "Suva"
+        },
+        "Micronesia": {
+            "flag": "fm",
+            "currency": "usd",
+            "population": 116255,
+            "capital": "Palikir"
+        },
+        "Faroe Islands": {
+            "flag": "fo",
+            "currency": "dkk",
+            "population": 49053,
+            "capital": "Torshavn"
+        },
+        "Nicaragua": {
+            "flag": "ni",
+            "currency": "nio",
+            "population": 6702379,
+            "capital": "Managua"
+        },
+        "Netherlands": {
+            "flag": "nl",
+            "currency": "eur",
+            "population": 17533405,
+            "capital": "Amsterdam"
+        },
+        "Norway": {
+            "flag": "no",
+            "currency": "nok",
+            "population": 5408320,
+            "capital": "Oslo"
+        },
+        "Namibia": {
+            "flag": "na",
+            "currency": "nad",
+            "population": 2587344,
+            "capital": "Windhoek"
+        },
+        "Vanuatu": {
+            "flag": "vu",
+            "currency": "vuv",
+            "population": 314464,
+            "capital": "Port Vila"
+        },
+        "New Caledonia": {
+            "flag": "nc",
+            "currency": "xpf",
+            "population": 272620,
+            "capital": "Noumea"
+        },
+        "Niger": {
+            "flag": "ne",
+            "currency": "xof",
+            "population": 25130810,
+            "capital": "Niamey"
+        },
+        "Nigeria": {
+            "flag": "ng",
+            "currency": "ngn",
+            "population": 211400704,
+            "capital": "Abuja"
+        },
+        "New Zealand": {
+            "flag": "nz",
+            "currency": "nzd",
+            "population": 5122600,
+            "capital": "Wellington"
+        },
+        "Nepal": {
+            "flag": "np",
+            "currency": "npr",
+            "population": 29674920,
+            "capital": "Kathmandu"
+        },
+        "Nauru": {
+            "flag": "nr",
+            "currency": "aud",
+            "population": 10873,
+            "capital": "Yaren"
+        },
+        "Kosovo": {
+            "flag": "xk",
+            "currency": "eur",
+            "population": 1806279,
+            "capital": "Pristina"
+        },
+        "Ivory Coast": {
+            "flag": "ci",
+            "currency": "xof",
+            "population": 27053629,
+            "capital": "Yamoussoukro"
+        },
+        "Switzerland": {
+            "flag": "ch",
+            "currency": "chf",
+            "population": 8697723,
+            "capital": "Berne"
+        },
+        "Colombia": {
+            "flag": "co",
+            "currency": "cop",
+            "population": 51265841,
+            "capital": "Bogota"
+        },
+        "China": {
+            "flag": "cn",
+            "currency": "cny",
+            "population": 1412360000,
+            "capital": "Beijing"
+        },
+        "Cameroon": {
+            "flag": "cm",
+            "currency": "xaf",
+            "population": 27224262,
+            "capital": "Yaounde"
+        },
+        "Chile": {
+            "flag": "cl",
+            "currency": "clp",
+            "population": 19212362,
+            "capital": "Santiago"
+        },
+        "Canada": {
+            "flag": "ca",
+            "currency": "cad",
+            "population": 38246108,
+            "capital": "Ottawa"
+        },
+        "Congo": {
+            "flag": "cg",
+            "currency": "xaf",
+            "population": 5657017,
+            "capital": "Brazzaville"
+        },
+        "Central African Republic": {
+            "flag": "cf",
+            "currency": "xaf",
+            "population": 4919987,
+            "capital": "Bangui"
+        },
+        "Democratic Republic of the Congo": {
+            "flag": "cd",
+            "currency": "cdf",
+            "population": 92377986,
+            "capital": "Kinshasa"
+        },
+        "Czech Republic": {
+            "flag": "cz",
+            "currency": "czk",
+            "population": 10703446,
+            "capital": "Prague"
+        },
+        "Cyprus": {
+            "flag": "cy",
+            "currency": "eur",
+            "population": 1215588,
+            "capital": "Nicosia"
+        },
+        "Costa Rica": {
+            "flag": "cr",
+            "currency": "crc",
+            "population": 5139053,
+            "capital": "San Jose"
+        },
+        "Curacao": {
+            "flag": "cw",
+            "currency": "ang",
+            "population": 152369,
+            "capital": " Willemstad"
+        },
+        "Cape Verde": {
+            "flag": "cv",
+            "currency": "cve",
+            "population": 561901,
+            "capital": "Praia"
+        },
+        "Cuba": {
+            "flag": "cu",
+            "currency": "cup",
+            "population": 11317498,
+            "capital": "Havana"
+        },
+        "Swaziland": {
+            "flag": "sz",
+            "currency": "szl",
+            "population": 1172369,
+            "capital": "Mbabane"
+        },
+        "Syria": {
+            "flag": "sy",
+            "currency": "syp",
+            "population": 18275704,
+            "capital": "Damascus"
+        },
+        "Sint Maarten": {
+            "flag": "sx",
+            "currency": "ang",
+            "population": 42846,
+            "capital": "Philipsburg"
+        },
+        "Kyrgyzstan": {
+            "flag": "kg",
+            "currency": "kgs",
+            "population": 6694200,
+            "capital": "Bishkek"
+        },
+        "Kenya": {
+            "flag": "ke",
+            "currency": "kes",
+            "population": 54985702,
+            "capital": "Nairobi"
+        },
+        "South Sudan": {
+            "flag": "ss",
+            "currency": "ssp",
+            "population": 11381377,
+            "capital": "Juba"
+        },
+        "Suriname": {
+            "flag": "sr",
+            "currency": "srd",
+            "population": 591798,
+            "capital": "Paramaribo"
+        },
+        "Kiribati": {
+            "flag": "ki",
+            "currency": "aud",
+            "population": 121388,
+            "capital": "Tarawa"
+        },
+        "Cambodia": {
+            "flag": "kh",
+            "currency": "khr",
+            "population": 16946446,
+            "capital": "Phnom Penh"
+        },
+        "Saint Kitts and Nevis": {
+            "flag": "kn",
+            "currency": "xcd",
+            "population": 53546,
+            "capital": "Basseterre"
+        },
+        "Comoros": {
+            "flag": "km",
+            "currency": "kmf",
+            "population": 888456,
+            "capital": "Moroni"
+        },
+        "Sao Tome and Principe": {
+            "flag": "st",
+            "currency": "std",
+            "population": 223364,
+            "capital": "Sao Tome"
+        },
+        "Slovakia": {
+            "flag": "sk",
+            "currency": "eur",
+            "population": 5447247,
+            "capital": "Bratislava"
+        },
+        "South Korea": {
+            "flag": "kr",
+            "currency": "krw",
+            "population": 51744876,
+            "capital": "Seoul"
+        },
+        "Slovenia": {
+            "flag": "si",
+            "currency": "eur",
+            "population": 2107007,
+            "capital": "Ljubljana"
+        },
+        "North Korea": {
+            "flag": "kp",
+            "currency": "kpw",
+            "population": 25887045,
+            "capital": "Pyongyang"
+        },
+        "Kuwait": {
+            "flag": "kw",
+            "currency": "kwd",
+            "population": 4328553,
+            "capital": "Kuwait City"
+        },
+        "Senegal": {
+            "flag": "sn",
+            "currency": "xof",
+            "population": 17196308,
+            "capital": "Dakar"
+        },
+        "San Marino": {
+            "flag": "sm",
+            "currency": "eur",
+            "population": 34010,
+            "capital": "San Marino"
+        },
+        "Sierra Leone": {
+            "flag": "sl",
+            "currency": "sll",
+            "population": 8141343,
+            "capital": "Freetown"
+        },
+        "Seychelles": {
+            "flag": "sc",
+            "currency": "scr",
+            "population": 99202,
+            "capital": "Victoria"
+        },
+        "Kazakhstan": {
+            "flag": "kz",
+            "currency": "kzt",
+            "population": 19002586,
+            "capital": "Astana"
+        },
+        "Cayman Islands": {
+            "flag": "ky",
+            "currency": "kyd",
+            "population": 66498,
+            "capital": "George Town"
+        },
+        "Singapore": {
+            "flag": "sg",
+            "currency": "sgd",
+            "population": 5453566,
+            "capital": "Singapur"
+        },
+        "Sweden": {
+            "flag": "se",
+            "currency": "sek",
+            "population": 10415811,
+            "capital": "Stockholm"
+        },
+        "Sudan": {
+            "flag": "sd",
+            "currency": "sdg",
+            "population": 44909351,
+            "capital": "Khartoum"
+        },
+        "Dominican Republic": {
+            "flag": "do",
+            "currency": "dop",
+            "population": 10953714,
+            "capital": "Santo Domingo"
+        },
+        "Dominica": {
+            "flag": "dm",
+            "currency": "xcd",
+            "population": 72172,
+            "capital": "Roseau"
+        },
+        "Djibouti": {
+            "flag": "dj",
+            "currency": "djf",
+            "population": 1002197,
+            "capital": "Djibouti"
+        },
+        "Denmark": {
+            "flag": "dk",
+            "currency": "dkk",
+            "population": 5856733,
+            "capital": "Copenhagen"
+        },
+        "British Virgin Islands": {
+            "flag": "vg",
+            "currency": "usd",
+            "population": 30423,
+            "capital": "Road Town"
+        },
+        "Germany": {
+            "flag": "de",
+            "currency": "eur",
+            "population": 83129285,
+            "capital": "Berlin"
+        },
+        "Yemen": {
+            "flag": "ye",
+            "currency": "yer",
+            "population": 30490639,
+            "capital": "Sanaa"
+        },
+        "Algeria": {
+            "flag": "dz",
+            "currency": "dzd",
+            "population": 44616626,
+            "capital": "Algiers"
+        },
+        "United States": {
+            "flag": "us",
+            "currency": "usd",
+            "population": 331893745,
+            "capital": "Washington"
+        },
+        "Uruguay": {
+            "flag": "uy",
+            "currency": "uyu",
+            "population": 3485152,
+            "capital": "Montevideo"
+        },
+        "Lebanon": {
+            "flag": "lb",
+            "currency": "lbp",
+            "population": 6769151,
+            "capital": "Beirut"
+        },
+        "Saint Lucia": {
+            "flag": "lc",
+            "currency": "xcd",
+            "population": 184401,
+            "capital": "Castries"
+        },
+        "Laos": {
+            "flag": "la",
+            "currency": "lak",
+            "population": 7379358,
+            "capital": "Vientiane"
+        },
+        "Tuvalu": {
+            "flag": "tv",
+            "currency": "aud",
+            "population": 11925,
+            "capital": "Funafuti"
+        },
+        "Trinidad and Tobago": {
+            "flag": "tt",
+            "currency": "ttd",
+            "population": 1403374,
+            "capital": "Port of Spain"
+        },
+        "Turkey": {
+            "flag": "tr",
+            "currency": "try",
+            "population": 85042736,
+            "capital": "Ankara"
+        },
+        "Sri Lanka": {
+            "flag": "lk",
+            "currency": "lkr",
+            "population": 22156000,
+            "capital": "Colombo"
+        },
+        "Liechtenstein": {
+            "flag": "li",
+            "currency": "chf",
+            "population": 38254,
+            "capital": "Vaduz"
+        },
+        "Latvia": {
+            "flag": "lv",
+            "currency": "eur",
+            "population": 1883162,
+            "capital": "Riga"
+        },
+        "Tonga": {
+            "flag": "to",
+            "currency": "top",
+            "population": 106759,
+            "capital": "Nuku'alofa"
+        },
+        "Lithuania": {
+            "flag": "lt",
+            "currency": "ltl",
+            "population": 2795321,
+            "capital": "Vilnius"
+        },
+        "Luxembourg": {
+            "flag": "lu",
+            "currency": "eur",
+            "population": 639070,
+            "capital": "Luxembourg"
+        },
+        "Liberia": {
+            "flag": "lr",
+            "currency": "lrd",
+            "population": 5180208,
+            "capital": "Monrovia"
+        },
+        "Lesotho": {
+            "flag": "ls",
+            "currency": "lsl",
+            "population": 2159067,
+            "capital": "Maseru"
+        },
+        "Thailand": {
+            "flag": "th",
+            "currency": "thb",
+            "population": 69950844,
+            "capital": "Bangkok"
+        },
+        "Togo": {
+            "flag": "tg",
+            "currency": "xof",
+            "population": 8478242,
+            "capital": "Lome"
+        },
+        "Chad": {
+            "flag": "td",
+            "currency": "xaf",
+            "population": 16914985,
+            "capital": "N'Djamena"
+        },
+        "Turks and Caicos Islands": {
+            "flag": "tc",
+            "currency": "usd",
+            "population": 39226,
+            "capital": "Cockburn Town"
+        },
+        "Libya": {
+            "flag": "ly",
+            "currency": "lyd",
+            "population": 6958538,
+            "capital": "Tripolis"
+        },
+        "Saint Vincent and the Grenadines": {
+            "flag": "vc",
+            "currency": "xcd",
+            "population": 111269,
+            "capital": "Kingstown"
+        },
+        "United Arab Emirates": {
+            "flag": "ae",
+            "currency": "aed",
+            "population": 9991083,
+            "capital": "Abu Dhabi"
+        },
+        "Andorra": {
+            "flag": "ad",
+            "currency": "eur",
+            "population": 77354,
+            "capital": "Andorra la Vella"
+        },
+        "Antigua and Barbuda": {
+            "flag": "ag",
+            "currency": "xcd",
+            "population": 98728,
+            "capital": "St. John's"
+        },
+        "Afghanistan": {
+            "flag": "af",
+            "currency": "afn",
+            "population": 39835428,
+            "capital": "Kabul"
+        },
+        "U.S. Virgin Islands": {
+            "flag": "vi",
+            "currency": "usd",
+            "population": 105870,
+            "capital": "Charlotte Amalie"
+        },
+        "Iceland": {
+            "flag": "is",
+            "currency": "isk",
+            "population": 372295,
+            "capital": "Reykjavik"
+        },
+        "Iran": {
+            "flag": "ir",
+            "currency": "irr",
+            "population": 85028760,
+            "capital": "Tehran"
+        },
+        "Armenia": {
+            "flag": "am",
+            "currency": "amd",
+            "population": 2968128,
+            "capital": "Yerevan"
+        },
+        "Albania": {
+            "flag": "al",
+            "currency": "all",
+            "population": 2811666,
+            "capital": "Tirana"
+        },
+        "Angola": {
+            "flag": "ao",
+            "currency": "aoa",
+            "population": 33933611,
+            "capital": "Luanda"
+        },
+        "American Samoa": {
+            "flag": "as",
+            "currency": "usd",
+            "population": 55103,
+            "capital": "Pago Pago"
+        },
+        "Argentina": {
+            "flag": "ar",
+            "currency": "ars",
+            "population": 45808747,
+            "capital": "Buenos Aires"
+        },
+        "Australia": {
+            "flag": "au",
+            "currency": "aud",
+            "population": 25739256,
+            "capital": "Canberra"
+        },
+        "Austria": {
+            "flag": "at",
+            "currency": "eur",
+            "population": 8956279,
+            "capital": "Vienna"
+        },
+        "Aruba": {
+            "flag": "aw",
+            "currency": "awg",
+            "population": 107195,
+            "capital": "Oranjestad"
+        },
+        "India": {
+            "flag": "in",
+            "currency": "inr",
+            "population": 1393409033,
+            "capital": "New Delhi"
+        },
+        "Azerbaijan": {
+            "flag": "az",
+            "currency": "azn",
+            "population": 10145212,
+            "capital": "Baku"
+        },
+        "Ireland": {
+            "flag": "ie",
+            "currency": "eur",
+            "population": 5028230,
+            "capital": "Dublin"
+        },
+        "Indonesia": {
+            "flag": "id",
+            "currency": "idr",
+            "population": 276361788,
+            "capital": "Jakarta"
+        },
+        "Ukraine": {
+            "flag": "ua",
+            "currency": "uah",
+            "population": 43814581,
+            "capital": "Kiev"
+        },
+        "Qatar": {
+            "flag": "qa",
+            "currency": "qar",
+            "population": 2930524,
+            "capital": "Doha"
+        },
+        "Mozambique": {
+            "flag": "mz",
+            "currency": "mzn",
+            "population": 32163045,
+            "capital": "Maputo"
+        }
+    }
+}

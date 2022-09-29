@@ -9,15 +9,7 @@ import SwiftUI
 
 struct GuessTheCapitalView: View {
     @Binding var gameName: GameName?
-    @StateObject var game = GuessTheCapital()
-    
-//    var flagSymbol: String {
-//        if let countryAsked = game.countries[game.countryNameAsked] {
-//            return countryAsked.flagSymbol
-//        } else {
-//            fatalError("Couldn't find \(game.countryNameAsked) in countries")
-//        }
-//    }
+    @StateObject var game = CountryGame()
     
     var body: some View {
         ZStack {
@@ -25,75 +17,58 @@ struct GuessTheCapitalView: View {
                 .ignoresSafeArea()
             
             GeometryReader { geo in
-                    VStack(spacing: 20) {
-//                        GameToolbar(
-//                            userScore: $game.userScore,
-//                            userLives: $game.userLives,
-//                            gameName: $gameName,
-//                            showingBuyLivesView: $game.showingBuyLivesView
-//                        )
-
-                        Spacer()
-                        
-//                        FlagImage(flagSymbol: flagSymbol, cornerRadius: 20)
-//                            .shadow(radius: 10)
-//                            .frame(height: geo.size.height * 0.15)
-
-                        Spacer()
-
-                        HStack {
-//                            VStack(alignment: .leading, spacing: 10) {
-//                                Text("Question \(game.questionCounter) of \(game.countries.count)")
-//                                    .font(.title3)
-//
-//                                Text("What is the capital of \(game.countryNameAsked)?")
-//                                    .font(.title)
-//                                    .fontWeight(.semibold)
-//                            }
-//                            .foregroundColor(.white)
-
-                            Spacer()
+                VStack(spacing: 20) {
+                    GameToolbar(game: game, color: .atomicTangerine)
+                    
+                    Spacer()
+                    
+                    FlagImage(flagSymbol: game.correctAnswer.value.flag, cornerRadius: 20)
+                        .shadow(radius: 10)
+                        .frame(height: geo.size.height * 0.15)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Question \(game.questionCounter) of \(game.data.count)")
+                                .font(.title3)
+                                .foregroundColor(.white.opacity(0.7))
+                            
+                            Text("What is the capital of \(game.correctAnswer.key)?")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
                         }
-
-                        VStack {
-//                            ForEach(Array(game.userChoices.values), id: \.self) { country in
-//                                Button {
-//                                    game.answered(userChoice: country.capitalName)
-//                                } label: {
-//                                    AnswerButton(optionName: country.capitalName, color: .secondary)
-//                                        .frame(height: geo.size.height * 0.08)
-//                                }
-//                            }
+                        
+                        Spacer()
+                    }
+                    
+                    VStack {
+                        ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
+                            Button {
+                                game.answer((key: countryName, value: game.data[countryName]!))
+                            } label: {
+                                AnswerButton(
+                                    optionName: game.data[countryName]!.capital,
+                                    color: .chinaPink
+                                )
+                                .frame(height: geo.size.height * 0.08)
+                            }
                         }
                     }
-                    .padding()
+                }
+                .padding()
             }
         }
         .navigationBarHidden(true)
+        .modifier(GameAlertsModifier(game: game, gameName: $gameName))
+        .sheet(isPresented: $game.showingBuyLivesView) {
+            BuyLivesModalView()
+        }
         
-//        .sheet(isPresented: $game.showingBuyLivesView) {
-//            BuyLivesModalView()
-//        }
-//
-//        .alert(game.alertTitle, isPresented: $game.showingNoLivesAlert) {
-//            Button("Buy lives") { game.showingBuyLivesView = true }
-//            Button("Exit", role: .destructive) { gameName = nil }
-//            Button("Cancel", role: .cancel) { }
-//        } message: {
-//            Text(game.alertMessage)
-//        }
-//        
-//        .alert(game.alertTitle, isPresented: $game.showingWrongAnswerAlert) {
-//            Button("Continue", role: .cancel) { game.askQuestion() }
-//        } message: {
-//            Text(game.alertMessage)
-//        }
-//        
-//        .alert(game.alertTitle, isPresented: $game.showingEndGameAlert) {
-//            Button("Exit", role: .cancel) { gameName = nil }
-//        } message: {
-//            Text(game.alertMessage)
-//        }
+        .sheet(isPresented: $game.showingGameStatsView) {
+//            GameStatsModalView(game: game)
+        }
     }
 }
 

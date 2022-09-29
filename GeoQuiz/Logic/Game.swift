@@ -16,7 +16,7 @@ protocol Game: ObservableObject {
     
     // Game
     var data: [String: T] { get set}
-    var dataAsked: [String] { get set }
+    var dataAsked: [String: T] { get set }
     var correctAnswer: (key: String, value: T) { get set }
     
     // User
@@ -73,13 +73,13 @@ extension Game {
         
         // Get question asked (correct answer)
         let correctAnswer = data.first(where: {
-            !userChoices.keys.contains($0.key) && !dataAsked.contains($0.key)
+            !userChoices.keys.contains($0.key) && !dataAsked.keys.contains($0.key)
         })
         
         // Unwrap optional
         if let correctAnswer = correctAnswer {
             userChoices[correctAnswer.key] = correctAnswer.value
-            dataAsked.append(correctAnswer.key)
+            dataAsked[correctAnswer.key] = correctAnswer.value
             self.correctAnswer = correctAnswer
         } else {
             fatalError("Couldn't unwrap optional value")
@@ -99,7 +99,7 @@ extension Game {
         
         if correctAnswer == choice {
             hapticSuccess()
-            play("correctAnswer")
+            playSound("correctAnswer")
             
             withAnimation(.easeIn(duration: 0.5)) {
                 scoreScaleAmount += 1
@@ -110,7 +110,7 @@ extension Game {
             askQuestion()
         } else {
             hapticError()
-            play("wrongAnswer")
+            playSound("wrongAnswer")
 
             withAnimation(.easeIn(duration: 0.5)) {
                 livesScaleAmount += 1
@@ -132,7 +132,7 @@ extension Game {
         }
     }
     
-    private func play(_ filename: String) {
+    private func playSound(_ filename: String) {
         guard let soundFileURL = Bundle.main.url(forResource: filename, withExtension: "wav") else {
             fatalError("Sound file \(filename) couldn't be found")
         }

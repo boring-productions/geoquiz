@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-import AVFAudio
 
 struct GuessTheFlagView: View {
     @Binding var gameName: GameName?
-    @StateObject var game = GuessTheFlag()
+    @StateObject var game = CountryGame()
     
     var body: some View {
         ZStack {
@@ -19,19 +18,20 @@ struct GuessTheFlagView: View {
             
             GeometryReader { geo in
                 VStack(spacing: 20) {
-                    GameToolbar(game: game)
+                    GameToolbar(game: game, color: .mayaBlue)
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Question \(game.questionCounter) of \(game.data.count)")
                                 .font(.title3)
-
+                                .foregroundColor(.white.opacity(0.7))
+                            
                             Text("What is the flag of \(game.correctAnswer.key)?")
                                 .font(.title)
                                 .fontWeight(.semibold)
+                                .foregroundColor(.white)
                         }
-                        .foregroundColor(.white)
-
+                        
                         Spacer()
                     }
                     
@@ -41,7 +41,7 @@ struct GuessTheFlagView: View {
                         Button {
                             game.answer((key: countryName, value: game.data[countryName]!))
                         } label: {
-                            FlagImage(flagSymbol: game.data[countryName]!, cornerRadius: 20)
+                            FlagImage(flagSymbol: game.data[countryName]!.flag, cornerRadius: 20)
                                 .shadow(radius: 10)
                                 .frame(height: geo.size.height * 0.15)
                         }
@@ -60,7 +60,7 @@ struct GuessTheFlagView: View {
         }
         
         .sheet(isPresented: $game.showingGameStatsView) {
-            GameStatsModalView(game: game)
+//            GameStatsModalView(game: game)
         }
     }
 }

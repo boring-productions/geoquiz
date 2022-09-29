@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */; };
+		9509A8DE28E5A19A00CFCDBA /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 9509A8DD28E5A19A00CFCDBA /* countries.json */; };
+		9509A8E028E5A3C500CFCDBA /* GuessTheCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509A8DF28E5A3C500CFCDBA /* GuessTheCurrency.swift */; };
+		9509A8E228E5A3D700CFCDBA /* GuessThePopulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509A8E128E5A3D700CFCDBA /* GuessThePopulation.swift */; };
+		951AFAEA28E5655C00A4A4BD /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 951AFAE828E5655C00A4A4BD /* cities.json */; };
+		951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEC28E5657500A4A4BD /* CityModel.swift */; };
+		951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEE28E565FE00A4A4BD /* CountryModel.swift */; };
+		951AFAF128E5735400A4A4BD /* CityGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAF028E5735400A4A4BD /* CityGame.swift */; };
 		951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */; };
 		951D197328D485E000671FAD /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D197228D485E000671FAD /* CustomColors.swift */; };
 		952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41E828DC521200198643 /* GameAlertsModifier.swift */; };
@@ -21,33 +28,30 @@
 		9539829A28C51EDF00B70973 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9539829928C51EDF00B70973 /* Preview Assets.xcassets */; };
 		955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658028D703EB00CEEC6D /* GameToolbar.swift */; };
 		955A658328D733E400CEEC6D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658228D733E400CEEC6D /* Game.swift */; };
-		955A658528D73EC600CEEC6D /* GuessTheCapital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658428D73EC600CEEC6D /* GuessTheCapital.swift */; };
 		955A65A928D7815E00CEEC6D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A65A828D7815E00CEEC6D /* Haptics.swift */; };
 		956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956273E928CB2E98008DC094 /* FlagImage.swift */; };
+		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
+		9590359728E09AB000B24560 /* GameSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359628E09AB000B24560 /* GameSelector.swift */; };
 		959D257028C7251F00C55A5E /* BuyLivesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D256F28C7251F00C55A5E /* BuyLivesModalView.swift */; };
-		959D414928C87ED900BAAC14 /* CityPopulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D414828C87ED900BAAC14 /* CityPopulation.swift */; };
-		959D415028C8834B00BAAC14 /* CountryFlags.json in Resources */ = {isa = PBXBuildFile; fileRef = 959D414A28C8834B00BAAC14 /* CountryFlags.json */; };
-		959D415128C8834B00BAAC14 /* CountryPopulation.json in Resources */ = {isa = PBXBuildFile; fileRef = 959D414B28C8834B00BAAC14 /* CountryPopulation.json */; };
-		959D415228C8834B00BAAC14 /* CountryCurrencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 959D414C28C8834B00BAAC14 /* CountryCurrencies.json */; };
-		959D415428C8834B00BAAC14 /* CountryCapitals.json in Resources */ = {isa = PBXBuildFile; fileRef = 959D414E28C8834B00BAAC14 /* CountryCapitals.json */; };
-		959D415528C8834B00BAAC14 /* CountryCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 959D414F28C8834B00BAAC14 /* CountryCities.json */; };
-		959D415728C8851900BAAC14 /* CountryCapitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D415628C8851900BAAC14 /* CountryCapitals.swift */; };
-		959D415928C8854800BAAC14 /* CountryCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D415828C8854700BAAC14 /* CountryCities.swift */; };
-		959D415B28C885C700BAAC14 /* CountryCurrencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D415A28C885C700BAAC14 /* CountryCurrencies.swift */; };
-		959D415D28C885ED00BAAC14 /* CountryFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D415C28C885ED00BAAC14 /* CountryFlags.swift */; };
-		959D415F28C8861F00BAAC14 /* CountryPopulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959D415E28C8861F00BAAC14 /* CountryPopulation.swift */; };
-		959D416528C88B6400BAAC14 /* CityPopulation.json in Resources */ = {isa = PBXBuildFile; fileRef = 959D416428C88B6400BAAC14 /* CityPopulation.json */; };
 		95AE8D5728C8750E0067F219 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE8D5628C8750E0067F219 /* Load.swift */; };
-		95C430F728D092FC00480D23 /* GameSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C430F628D092FC00480D23 /* GameSelection.swift */; };
+		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
+		95AF322C28DF2BE700023ACC /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322B28DF2BE700023ACC /* CityMap.swift */; };
 		95C430F928D0A8E500480D23 /* CustomGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C430F828D0A8E500480D23 /* CustomGradients.swift */; };
 		95C4315628C64A8C00212131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315528C64A8C00212131 /* ContentView.swift */; };
 		95C4315928C6500000212131 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315828C6500000212131 /* GameButton.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
-		95FA409C28D9881100129B60 /* GuessTheFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409B28D9881100129B60 /* GuessTheFlag.swift */; };
+		95FA409C28D9881100129B60 /* CountryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409B28D9881100129B60 /* CountryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
+		9509A8DD28E5A19A00CFCDBA /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		9509A8DF28E5A3C500CFCDBA /* GuessTheCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCurrency.swift; sourceTree = "<group>"; };
+		9509A8E128E5A3D700CFCDBA /* GuessThePopulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessThePopulation.swift; sourceTree = "<group>"; };
+		951AFAE828E5655C00A4A4BD /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		951AFAEC28E5657500A4A4BD /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		951AFAEE28E565FE00A4A4BD /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		951AFAF028E5735400A4A4BD /* CityGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGame.swift; sourceTree = "<group>"; };
 		951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCapitalView.swift; sourceTree = "<group>"; };
 		951D197228D485E000671FAD /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		952E41E828DC521200198643 /* GameAlertsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlertsModifier.swift; sourceTree = "<group>"; };
@@ -62,30 +66,20 @@
 		9539829928C51EDF00B70973 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		955A658028D703EB00CEEC6D /* GameToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbar.swift; sourceTree = "<group>"; };
 		955A658228D733E400CEEC6D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		955A658428D73EC600CEEC6D /* GuessTheCapital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCapital.swift; sourceTree = "<group>"; };
 		955A65A828D7815E00CEEC6D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		956273E928CB2E98008DC094 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
+		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
+		9590359628E09AB000B24560 /* GameSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelector.swift; sourceTree = "<group>"; };
 		959D256F28C7251F00C55A5E /* BuyLivesModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLivesModalView.swift; sourceTree = "<group>"; };
-		959D414828C87ED900BAAC14 /* CityPopulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPopulation.swift; sourceTree = "<group>"; };
-		959D414A28C8834B00BAAC14 /* CountryFlags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryFlags.json; sourceTree = "<group>"; };
-		959D414B28C8834B00BAAC14 /* CountryPopulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryPopulation.json; sourceTree = "<group>"; };
-		959D414C28C8834B00BAAC14 /* CountryCurrencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCurrencies.json; sourceTree = "<group>"; };
-		959D414E28C8834B00BAAC14 /* CountryCapitals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCapitals.json; sourceTree = "<group>"; };
-		959D414F28C8834B00BAAC14 /* CountryCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCities.json; sourceTree = "<group>"; };
-		959D415628C8851900BAAC14 /* CountryCapitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCapitals.swift; sourceTree = "<group>"; };
-		959D415828C8854700BAAC14 /* CountryCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCities.swift; sourceTree = "<group>"; };
-		959D415A28C885C700BAAC14 /* CountryCurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrencies.swift; sourceTree = "<group>"; };
-		959D415C28C885ED00BAAC14 /* CountryFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlags.swift; sourceTree = "<group>"; };
-		959D415E28C8861F00BAAC14 /* CountryPopulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPopulation.swift; sourceTree = "<group>"; };
-		959D416428C88B6400BAAC14 /* CityPopulation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityPopulation.json; sourceTree = "<group>"; };
 		95AE8D5628C8750E0067F219 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
-		95C430F628D092FC00480D23 /* GameSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelection.swift; sourceTree = "<group>"; };
+		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
+		95AF322B28DF2BE700023ACC /* CityMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
 		95C430F828D0A8E500480D23 /* CustomGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradients.swift; sourceTree = "<group>"; };
 		95C4315528C64A8C00212131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95C4315828C6500000212131 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95FA409928D9876B00129B60 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
-		95FA409B28D9881100129B60 /* GuessTheFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlag.swift; sourceTree = "<group>"; };
+		95FA409B28D9881100129B60 /* CountryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +96,13 @@
 		95030CE728D1B60F001AA3A1 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				95C430F628D092FC00480D23 /* GameSelection.swift */,
+				9590359628E09AB000B24560 /* GameSelector.swift */,
 				95AE8D5628C8750E0067F219 /* Load.swift */,
 				955A65A828D7815E00CEEC6D /* Haptics.swift */,
-				955A658228D733E400CEEC6D /* Game.swift */,
-				95FA409B28D9881100129B60 /* GuessTheFlag.swift */,
-				955A658428D73EC600CEEC6D /* GuessTheCapital.swift */,
 				952E41EE28DC692200198643 /* PlaySound.swift */,
+				955A658228D733E400CEEC6D /* Game.swift */,
+				95FA409B28D9881100129B60 /* CountryGame.swift */,
+				951AFAF028E5735400A4A4BD /* CityGame.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -116,12 +110,8 @@
 		9520ABBA28C86D0300A3D4D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				959D416428C88B6400BAAC14 /* CityPopulation.json */,
-				959D414E28C8834B00BAAC14 /* CountryCapitals.json */,
-				959D414F28C8834B00BAAC14 /* CountryCities.json */,
-				959D414C28C8834B00BAAC14 /* CountryCurrencies.json */,
-				959D414A28C8834B00BAAC14 /* CountryFlags.json */,
-				959D414B28C8834B00BAAC14 /* CountryPopulation.json */,
+				951AFAE828E5655C00A4A4BD /* cities.json */,
+				9509A8DD28E5A19A00CFCDBA /* countries.json */,
 				952E41F028DC6F6D00198643 /* correctAnswer.wav */,
 				952E41F128DC6F6E00198643 /* wrongAnswer.wav */,
 			);
@@ -148,18 +138,22 @@
 			isa = PBXGroup;
 			children = (
 				95E6188428DDDB5C003359ED /* Info.plist */,
+				9539829628C51EDF00B70973 /* Assets.xcassets */,
 				9539829228C51EDE00B70973 /* GeoQuizApp.swift */,
 				95C4315528C64A8C00212131 /* ContentView.swift */,
 				95FA409928D9876B00129B60 /* GuessTheFlagView.swift */,
 				951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */,
+				9509A8DF28E5A3C500CFCDBA /* GuessTheCurrency.swift */,
+				9509A8E128E5A3D700CFCDBA /* GuessThePopulation.swift */,
+				95AF322928DF293900023ACC /* GuessTheCountryView.swift */,
+				9590359428E098FF00B24560 /* ProfileModalView.swift */,
+				952E41EC28DC658900198643 /* SettingsModalView.swift */,
 				959D256F28C7251F00C55A5E /* BuyLivesModalView.swift */,
 				952E41EA28DC612400198643 /* GameStatsModalView.swift */,
-				952E41EC28DC658900198643 /* SettingsModalView.swift */,
 				959D414728C87EA600BAAC14 /* Helpers */,
 				959D414528C87E8D00BAAC14 /* Models */,
 				95030CE728D1B60F001AA3A1 /* Logic */,
 				9520ABBA28C86D0300A3D4D7 /* Resources */,
-				9539829628C51EDF00B70973 /* Assets.xcassets */,
 				9539829828C51EDF00B70973 /* Preview Content */,
 			);
 			path = GeoQuiz;
@@ -176,12 +170,8 @@
 		959D414528C87E8D00BAAC14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				959D415C28C885ED00BAAC14 /* CountryFlags.swift */,
-				959D415628C8851900BAAC14 /* CountryCapitals.swift */,
-				959D414828C87ED900BAAC14 /* CityPopulation.swift */,
-				959D415828C8854700BAAC14 /* CountryCities.swift */,
-				959D415A28C885C700BAAC14 /* CountryCurrencies.swift */,
-				959D415E28C8861F00BAAC14 /* CountryPopulation.swift */,
+				951AFAEC28E5657500A4A4BD /* CityModel.swift */,
+				951AFAEE28E565FE00A4A4BD /* CountryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +186,7 @@
 				952E41E828DC521200198643 /* GameAlertsModifier.swift */,
 				95C430F828D0A8E500480D23 /* CustomGradients.swift */,
 				951D197228D485E000671FAD /* CustomColors.swift */,
+				95AF322B28DF2BE700023ACC /* CityMap.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -258,16 +249,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959D415428C8834B00BAAC14 /* CountryCapitals.json in Resources */,
-				959D415228C8834B00BAAC14 /* CountryCurrencies.json in Resources */,
+				9509A8DE28E5A19A00CFCDBA /* countries.json in Resources */,
 				952E41F328DC6F6E00198643 /* wrongAnswer.wav in Resources */,
+				951AFAEA28E5655C00A4A4BD /* cities.json in Resources */,
 				9539829A28C51EDF00B70973 /* Preview Assets.xcassets in Resources */,
-				959D415128C8834B00BAAC14 /* CountryPopulation.json in Resources */,
-				959D415028C8834B00BAAC14 /* CountryFlags.json in Resources */,
 				9539829728C51EDF00B70973 /* Assets.xcassets in Resources */,
-				959D415528C8834B00BAAC14 /* CountryCities.json in Resources */,
 				952E41F228DC6F6E00198643 /* correctAnswer.wav in Resources */,
-				959D416528C88B6400BAAC14 /* CityPopulation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,31 +267,32 @@
 			files = (
 				955A65A928D7815E00CEEC6D /* Haptics.swift in Sources */,
 				952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */,
-				959D415F28C8861F00BAAC14 /* CountryPopulation.swift in Sources */,
+				9509A8E228E5A3D700CFCDBA /* GuessThePopulation.swift in Sources */,
 				955A658328D733E400CEEC6D /* Game.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				95C4315928C6500000212131 /* GameButton.swift in Sources */,
+				95AF322C28DF2BE700023ACC /* CityMap.swift in Sources */,
 				956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */,
 				952E41EF28DC692200198643 /* PlaySound.swift in Sources */,
-				959D414928C87ED900BAAC14 /* CityPopulation.swift in Sources */,
-				955A658528D73EC600CEEC6D /* GuessTheCapital.swift in Sources */,
+				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
+				9590359728E09AB000B24560 /* GameSelector.swift in Sources */,
 				959D257028C7251F00C55A5E /* BuyLivesModalView.swift in Sources */,
-				959D415928C8854800BAAC14 /* CountryCities.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
-				959D415728C8851900BAAC14 /* CountryCapitals.swift in Sources */,
+				9509A8E028E5A3C500CFCDBA /* GuessTheCurrency.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
+				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
+				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
 				95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */,
-				95FA409C28D9881100129B60 /* GuessTheFlag.swift in Sources */,
+				95FA409C28D9881100129B60 /* CountryGame.swift in Sources */,
 				955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */,
 				95AE8D5728C8750E0067F219 /* Load.swift in Sources */,
-				959D415D28C885ED00BAAC14 /* CountryFlags.swift in Sources */,
-				959D415B28C885C700BAAC14 /* CountryCurrencies.swift in Sources */,
-				95C430F728D092FC00480D23 /* GameSelection.swift in Sources */,
+				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
 				951D197328D485E000671FAD /* CustomColors.swift in Sources */,
 				95C430F928D0A8E500480D23 /* CustomGradients.swift in Sources */,
 				952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */,
 				95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */,
 				952E41EB28DC612400198643 /* GameStatsModalView.swift in Sources */,
+				951AFAF128E5735400A4A4BD /* CityGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

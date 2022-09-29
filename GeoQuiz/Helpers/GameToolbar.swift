@@ -10,6 +10,7 @@ import SwiftUI
 struct GameToolbar<T: Game>: View {
     @ObservedObject var game: T
     
+    var color: Color
     
     var body: some View {
         HStack(spacing: 0) {
@@ -18,14 +19,15 @@ struct GameToolbar<T: Game>: View {
                     game.showingExitGameAlert = true
                 } label: {
                     Image(systemName: "multiply")
+                        .font(.headline)
+                        .foregroundColor(color)
                         .padding(10)
                         .background(
                             Circle()
-                                .strokeBorder(lineWidth: 2)
+                                .foregroundColor(.white)
                         )
                 }
             }
-            .foregroundColor(.white)
             .font(.headline)
             .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -34,14 +36,15 @@ struct GameToolbar<T: Game>: View {
                     game.showingGameStatsView = true
                 } label: {
                     Text("\(game.userScore)")
+                        .font(.title.bold())
+                        .foregroundColor(color)
                         .padding()
                         .background(
                             Circle()
-                                .strokeBorder(lineWidth: 3)
+                                .foregroundColor(.white)
                         )
                 }
             }
-            .foregroundColor(.white)
             .font(.title2)
             .scaleEffect(game.scoreScaleAmount)
             .frame(maxWidth: .infinity, alignment: .center)
@@ -54,15 +57,16 @@ struct GameToolbar<T: Game>: View {
                         Image(systemName: "heart.fill")
                         Text("\(game.userLives)")
                     }
+                    .font(.headline)
+                    .foregroundColor(color)
                     .padding(10)
                     .background(
                         Capsule()
-                            .strokeBorder(lineWidth: 2)
+                            .foregroundColor(.white)
                     )
                     .scaleEffect(game.livesScaleAmount)
                 }
             }
-            .foregroundColor(.white)
             .font(.headline)
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
@@ -77,7 +81,7 @@ struct GameToolbar_Previews: PreviewProvider {
             
             GeometryReader { geo in
                 VStack {
-                    GameToolbar(game: GuessTheFlag())
+                    GameToolbar(game: CountryGame(), color: .mayaBlue)
                     
                     Spacer()
                 }

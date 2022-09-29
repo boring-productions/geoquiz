@@ -38,9 +38,9 @@ struct ContentView: View {
                             level: "Level 2", symbol: "building.2.fill", name: "Guess the capital"
                         )
                     }
-                    
+
                     NavigationLink(
-                        destination: Text("Guess the country"),
+                        destination: GuessTheCountryView(gameName: $gameName),
                         tag: GameName.guessTheCountry,
                         selection: $gameName
                     ) {
@@ -49,17 +49,17 @@ struct ContentView: View {
                             level: "Level 3", symbol: "globe.americas.fill", name: "Guess the country"
                         )
                     }
-                    
-                    NavigationLink(
-                        destination: Text("Guess the population"),
-                        tag: GameName.guessThePopulation,
-                        selection: $gameName
-                    ) {
-                        GameButton(
-                            gradient: .quaternary,
-                            level: "Level 4", symbol: "person.3.fill", name: "Guess the population"
-                        )
-                    }
+//
+//                    NavigationLink(
+//                        destination: Text("Guess the population"),
+//                        tag: GameName.guessThePopulation,
+//                        selection: $gameName
+//                    ) {
+//                        GameButton(
+//                            gradient: .quaternary,
+//                            level: "Level 4", symbol: "person.3.fill", name: "Guess the population"
+//                        )
+//                    }
                 }
                 .padding()
             }
@@ -89,6 +89,7 @@ struct ContentView: View {
                 SettingsModalView()
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
