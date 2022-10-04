@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GuessTheFlagView: View {
-    @Binding var gameName: GameName?
     @StateObject var game = CountryGame()
     
     var body: some View {
@@ -54,19 +53,12 @@ struct GuessTheFlagView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(GameAlertsModifier(game: game, gameName: $gameName))
-        .sheet(isPresented: $game.showingBuyLivesView) {
-            BuyLivesModalView()
-        }
-        
-        .sheet(isPresented: $game.showingGameStatsView) {
-//            GameStatsModalView(game: game)
-        }
+        .modifier(GameAlertsModifier(game: game))
     }
 }
 
 struct GuessTheFlagView_Previews: PreviewProvider {
     static var previews: some View {
-        GuessTheFlagView(gameName: .constant(GameName.guessTheFlag))
+        GuessTheFlagView()
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameAlertsModifier<T: Game>: ViewModifier {
     @ObservedObject var game: T
-    @Binding var gameName: GameName?
+    @Environment(\.dismiss) var dismiss
     
     func body(content: Content) -> some View {
         content
@@ -19,25 +19,25 @@ struct GameAlertsModifier<T: Game>: ViewModifier {
                 Text(game.alertMessage)
             }
         
-            .alert(game.alertTitle, isPresented: $game.showingNoLivesAlert) {
-                Button("Buy lives") { game.showingBuyLivesView = true }
-                Button("Exit", role: .destructive) { gameName = nil }
-                Button("Cancel", role: .cancel) { }
+            .alert(game.alertTitle, isPresented: $game.showingGameOverAlert) {
+                Button("Try again") { game.reset() }
+                Button("Exit", role: .cancel) { dismiss()}
             } message: {
                 Text(game.alertMessage)
             }
             
             .alert(game.alertTitle, isPresented: $game.showingEndGameAlert) {
-                Button("Exit", role: .cancel) { gameName = nil }
+                Button("Play again") { game.reset() }
+                Button("Exit", role: .cancel) { dismiss() }
             } message: {
                 Text(game.alertMessage)
             }
         
             .alert("Are you sure?", isPresented: $game.showingExitGameAlert) {
-                Button("Exit", role: .destructive) { gameName = nil }
+                Button("Exit", role: .destructive) { dismiss() }
                 Button("Cancel", role: .cancel) { }
             } message: {
-                Text("You'll loose the progress so far.")
+                Text("Progress won't be saved.")
             }
     }
 }

@@ -6,10 +6,8 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct GuessTheCountryView: View {
-    @Binding var gameName: GameName?
     @StateObject var game = CityGame()
     
     var body: some View {
@@ -22,15 +20,8 @@ struct GuessTheCountryView: View {
                     GameToolbar(game: game, color: .pinkLavender)
                     
                     Spacer()
-                    
-                    CityMap(region: MKCoordinateRegion(
-                        center: CLLocationCoordinate2D(
-                            latitude: game.correctAnswer.value.lat,
-                            longitude: game.correctAnswer.value.lon
-                        ),
-                        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-                    )
-                    .frame(height: geo.size.height * 0.3)
+    
+                    CityMap(game: game)
                     
                     Spacer()
                     
@@ -68,19 +59,12 @@ struct GuessTheCountryView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(GameAlertsModifier(game: game, gameName: $gameName))
-        .sheet(isPresented: $game.showingBuyLivesView) {
-            BuyLivesModalView()
-        }
-        
-        .sheet(isPresented: $game.showingGameStatsView) {
-//            GameStatsModalView(game: game)
-        }
+        .modifier(GameAlertsModifier(game: game))
     }
 }
 
 struct GuessTheCountryView_Previews: PreviewProvider {
     static var previews: some View {
-        GuessTheCountryView(gameName: .constant(GameName.guessTheCountry))
+        GuessTheCountryView()
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GuessTheCapitalView: View {
-    @Binding var gameName: GameName?
     @StateObject var game = CountryGame()
     
     var body: some View {
@@ -61,21 +60,14 @@ struct GuessTheCapitalView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(GameAlertsModifier(game: game, gameName: $gameName))
-        .sheet(isPresented: $game.showingBuyLivesView) {
-            BuyLivesModalView()
-        }
-        
-        .sheet(isPresented: $game.showingGameStatsView) {
-//            GameStatsModalView(game: game)
-        }
+        .modifier(GameAlertsModifier(game: game))
     }
 }
 
 struct GuessCapitalView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            GuessTheCapitalView(gameName: .constant(GameName.guessTheCapital))
+            GuessTheCapitalView()
         }
     }
 }

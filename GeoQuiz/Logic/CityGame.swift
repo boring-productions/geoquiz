@@ -7,6 +7,8 @@
 
 import Foundation
 import AVFAudio
+import SwiftUI
+import MapKit
 
 class CityGame: Game, ObservableObject {
     
@@ -16,8 +18,12 @@ class CityGame: Game, ObservableObject {
     var data: [String: T]
     var dataAsked = [String: T]()
     
-    // Data
-    @Published var correctAnswer = (key: String(), value: T(country: String(), lat: Double(), lon: Double()))
+    @Published var mapImage: UIImage? = nil
+    @Published var correctAnswer = (key: String(), value: T(country: String(), lat: Double(), lon: Double())) {
+        willSet {
+            getMapImage(lat: newValue.value.lat, lon: newValue.value.lon)
+        }
+    }
     
     // User
     @Published var userChoices = [String: T]()
@@ -29,7 +35,7 @@ class CityGame: Game, ObservableObject {
     // Alerts
     @Published var alertTitle = String()
     @Published var alertMessage = String()
-    @Published var showingNoLivesAlert = false
+    @Published var showingGameOverAlert = false
     @Published var showingEndGameAlert = false
     @Published var showingWrongAnswerAlert = false
     @Published var showingExitGameAlert = false
@@ -37,10 +43,6 @@ class CityGame: Game, ObservableObject {
     // Animations
     @Published var scoreScaleAmount = 1.0
     @Published var livesScaleAmount = 1.0
-    
-    // Modal views
-    @Published var showingBuyLivesView = false
-    @Published var showingGameStatsView = false
     
     // Sound effects
     @Published var player: AVAudioPlayer?
@@ -51,3 +53,35 @@ class CityGame: Game, ObservableObject {
         askQuestion()
     }
 }
+
+extension CityGame {
+    func getMapImage(lat: Double, lon: Double) {
+        let region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: lat,
+                longitude: lon
+            ),
+            span: MKCoordinateSpan(
+                latitudeDelta: 1.0,
+                longitudeDelta: 1.0
+            )
+        )
+
+        // Map options
+        let mapOptions = MKMapSnapshotter.Options()
+        mapOptions.region = region
+        mapOptions.size = CGSize(width: 600, height: 600)
+        mapOptions.showsBuildings = true
+
+        // Create the snapshotter and run it
+        let snapshotter = MKMapSnapshotter(options: mapOptions)
+        snapshotter.start { (snapshot, error) in
+            if let snapshot = snapshot {
+                self.mapImage = snapshot.image
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
+

@@ -32,7 +32,7 @@ class CountryGame: Game, ObservableObject {
     // Alerts
     @Published var alertTitle = String()
     @Published var alertMessage = String()
-    @Published var showingNoLivesAlert = false
+    @Published var showingGameOverAlert = false
     @Published var showingEndGameAlert = false
     @Published var showingWrongAnswerAlert = false
     @Published var showingExitGameAlert = false
@@ -40,10 +40,6 @@ class CountryGame: Game, ObservableObject {
     // Animations
     @Published var scoreScaleAmount = 1.0
     @Published var livesScaleAmount = 1.0
-    
-    // Modal views
-    @Published var showingBuyLivesView = false
-    @Published var showingGameStatsView = false
     
     // Sound effects
     @Published var player: AVAudioPlayer?

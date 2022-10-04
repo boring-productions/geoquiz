@@ -24,7 +24,7 @@ struct GameToolbar<T: Game>: View {
                         .padding(10)
                         .background(
                             Circle()
-                                .foregroundColor(.white)
+                                .foregroundStyle(.regularMaterial)
                         )
                 }
             }
@@ -32,40 +32,32 @@ struct GameToolbar<T: Game>: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Group {
-                Button {
-                    game.showingGameStatsView = true
-                } label: {
-                    Text("\(game.userScore)")
-                        .font(.title.bold())
-                        .foregroundColor(color)
-                        .padding()
-                        .background(
-                            Circle()
-                                .foregroundColor(.white)
-                        )
-                }
+                Text("\(game.userScore)")
+                    .font(.title.bold())
+                    .foregroundColor(color)
+                    .padding()
+                    .background(
+                        Circle()
+                            .foregroundStyle(.regularMaterial)
+                    )
             }
             .font(.title2)
             .scaleEffect(game.scoreScaleAmount)
             .frame(maxWidth: .infinity, alignment: .center)
             
             Group {
-                Button {
-                    game.showingBuyLivesView = true
-                } label: {
-                    HStack {
-                        Image(systemName: "heart.fill")
-                        Text("\(game.userLives)")
-                    }
-                    .font(.headline)
-                    .foregroundColor(color)
-                    .padding(10)
-                    .background(
-                        Capsule()
-                            .foregroundColor(.white)
-                    )
-                    .scaleEffect(game.livesScaleAmount)
+                HStack {
+                    Image(systemName: "heart.fill")
+                    Text("\(game.userLives)")
                 }
+                .font(.headline)
+                .foregroundColor(color)
+                .padding(10)
+                .background(
+                    Capsule()
+                        .foregroundStyle(.regularMaterial)
+                )
+                .scaleEffect(game.livesScaleAmount)
             }
             .font(.headline)
             .frame(maxWidth: .infinity, alignment: .trailing)

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var gameName: GameName? = nil
-    @State private var showingBuyLivesModalView = false
+    @State private var showingBuyPremiumModalView = false
     @State private var showingSettingsModalView = false
     
     var body: some View {
@@ -17,33 +16,21 @@ struct ContentView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
                     
-                    NavigationLink(
-                        destination: GuessTheFlagView(gameName: $gameName),
-                        tag: GameName.guessTheFlag,
-                        selection: $gameName
-                    ) {
+                    NavigationLink(destination: GuessTheFlagView()) {
                         GameButton(
                             gradient: .main,
                             level: "Level 1", symbol: "flag.fill", name: "Guess the flag"
                         )
                     }
                     
-                    NavigationLink(
-                        destination: GuessTheCapitalView(gameName: $gameName),
-                        tag: GameName.guessTheCapital,
-                        selection: $gameName
-                    ) {
+                    NavigationLink(destination: GuessTheCapitalView()) {
                         GameButton(
                             gradient: .secondary,
                             level: "Level 2", symbol: "building.2.fill", name: "Guess the capital"
                         )
                     }
 
-                    NavigationLink(
-                        destination: GuessTheCountryView(gameName: $gameName),
-                        tag: GameName.guessTheCountry,
-                        selection: $gameName
-                    ) {
+                    NavigationLink(destination: GuessTheCountryView()) {
                         GameButton(
                             gradient: .tertiary,
                             level: "Level 3", symbol: "globe.americas.fill", name: "Guess the country"
@@ -75,14 +62,14 @@ struct ContentView: View {
                 
                 ToolbarItemGroup {
                     Button {
-                        showingBuyLivesModalView = true
+                        showingBuyPremiumModalView = true
                     } label: {
-                        Label("Buy lives", systemImage: "heart.fill")
+                        Label("Buy premium", systemImage: "star")
                     }
                 }
             }
-            .sheet(isPresented: $showingBuyLivesModalView) {
-                BuyLivesModalView()
+            .sheet(isPresented: $showingBuyPremiumModalView) {
+                Text("Buy premium")
             }
             
             .sheet(isPresented: $showingSettingsModalView) {

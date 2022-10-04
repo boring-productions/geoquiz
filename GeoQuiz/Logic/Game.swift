@@ -29,7 +29,7 @@ protocol Game: ObservableObject {
     // Alerts
     var alertTitle: String { get set }
     var alertMessage: String { get set }
-    var showingNoLivesAlert: Bool { get set }
+    var showingGameOverAlert: Bool { get set }
     var showingEndGameAlert: Bool { get set }
     var showingWrongAnswerAlert: Bool { get set }
     var showingExitGameAlert: Bool { get set }
@@ -37,10 +37,6 @@ protocol Game: ObservableObject {
     // Animations
     var scoreScaleAmount: Double { get set }
     var livesScaleAmount: Double { get set }
-    
-    // Modal views
-    var showingBuyLivesView: Bool { get set }
-    var showingGameStatsView: Bool { get set }
     
     // Sound effects
     var player: AVAudioPlayer? { get set }
@@ -53,8 +49,8 @@ extension Game {
     
     func askQuestion() {
         guard questionCounter < data.count else {
-            alertTitle = "Amazing!"
-            alertMessage = "You've completed the game."
+            alertTitle = "⭐️ Congratulations ⭐️"
+            alertMessage = "You completed the game."
             showingEndGameAlert = true
             
             return
@@ -89,14 +85,6 @@ extension Game {
     }
     
     func answer(_ choice: (key: String, value: T)) {
-        guard userLives > 0 else {
-            alertTitle = "Not enough lives!"
-            alertMessage = "Please buy more lives to keep playing"
-            showingNoLivesAlert = true
-
-            return
-        }
-        
         if correctAnswer == choice {
             hapticSuccess()
             playSound("correctAnswer")
@@ -116,12 +104,18 @@ extension Game {
                 livesScaleAmount += 1
                 userLives -= 1
             }
-
-            alertTitle = "Wrong!"
-            alertMessage = "You have \(userLives) lives left"
-            showingWrongAnswerAlert = true
             
             wrongAnswers[choice.key] = choice.value
+            
+            if userLives == 0 {
+                alertTitle = "🤕 Game over 🤕"
+                alertMessage = "Get up and try again."
+                showingGameOverAlert = true
+            } else {
+                alertTitle = "🔴 Wrong 🔴"
+                alertMessage = "You have \(userLives) lives left."
+                showingWrongAnswerAlert = true
+            }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
@@ -130,6 +124,15 @@ extension Game {
                 livesScaleAmount = 1
             }
         }
+    }
+    
+    func reset() {
+        dataAsked = [String: T]()
+        userScore = 0
+        userLives = 3
+        correctAnswers = [String: T]()
+        wrongAnswers = [String: T]()
+        askQuestion()
     }
     
     private func playSound(_ filename: String) {

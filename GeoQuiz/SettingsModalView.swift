@@ -10,16 +10,31 @@ import SwiftUI
 struct SettingsModalView: View {
     @Environment(\.dismiss) var dismiss
     
-    // CHANGE THIS IN PRODUCTION
-    @State private var testHapticsIsOn = true
-    @State private var testGameEffectIsOn = true
-    // CHANGE THIS IN PRODUCTION
-    
     var body: some View {
         NavigationView {
             Form {
-                Toggle("Haptics is on", isOn: $testHapticsIsOn)
-                Toggle("Game effect is on", isOn: $testGameEffectIsOn)
+                Section {
+                    // Difficulty
+                } header: {
+                    Text("Game")
+                } footer: {
+                    Text("The harder the difficulty the less lives you get.")
+                }
+                
+                Section {
+                    // Toggle to disable haptics
+                    // Toggle to disable sound effects
+                } header: {
+                    Text("Effects")
+                }
+                
+                Section {
+                    // About
+                    // Report bugs
+                    // Twitter
+                } header: {
+                    Text("Get in touch")
+                }
             }
             .navigationTitle("Settings")
             .toolbar {
