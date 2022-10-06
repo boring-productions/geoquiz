@@ -45,7 +45,9 @@ struct GuessTheCapitalView: View {
                     VStack {
                         ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
                             Button {
-                                game.answer((key: countryName, value: game.data[countryName]!))
+                                game.answer((key: countryName, value: game.data[countryName]!)) {
+                                    game.selector()
+                                }
                             } label: {
                                 AnswerButton(
                                     optionName: game.data[countryName]!.capital,

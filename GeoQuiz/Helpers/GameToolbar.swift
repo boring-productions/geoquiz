@@ -24,7 +24,7 @@ struct GameToolbar<T: Game>: View {
                         .padding(10)
                         .background(
                             Circle()
-                                .foregroundStyle(.regularMaterial)
+                                .foregroundStyle(.ultraThickMaterial)
                         )
                 }
             }
@@ -37,8 +37,14 @@ struct GameToolbar<T: Game>: View {
                     .foregroundColor(color)
                     .padding()
                     .background(
-                        Circle()
-                            .foregroundStyle(.regularMaterial)
+                        Group {
+                            if game.userScore < 1000 {
+                                Circle()
+                            } else {
+                                Capsule()
+                            }
+                        }
+                        .foregroundStyle(.ultraThickMaterial)
                     )
             }
             .font(.title2)
@@ -55,7 +61,7 @@ struct GameToolbar<T: Game>: View {
                 .padding(10)
                 .background(
                     Capsule()
-                        .foregroundStyle(.regularMaterial)
+                        .foregroundStyle(.ultraThickMaterial)
                 )
                 .scaleEffect(game.livesScaleAmount)
             }

@@ -24,7 +24,7 @@ struct FlagImage: View {
 
 struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
-        FlagImage(flagSymbol: "es", cornerRadius: 20)
+        FlagImage(flagSymbol: "np", cornerRadius: 20)
             .frame(height: 130)
     }
 }

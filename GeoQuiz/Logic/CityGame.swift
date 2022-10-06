@@ -8,7 +8,6 @@
 import Foundation
 import AVFAudio
 import SwiftUI
-import MapKit
 
 class CityGame: Game, ObservableObject {
     
@@ -18,12 +17,11 @@ class CityGame: Game, ObservableObject {
     var data: [String: T]
     var dataAsked = [String: T]()
     
-    @Published var mapImage: UIImage? = nil
-    @Published var correctAnswer = (key: String(), value: T(country: String(), lat: Double(), lon: Double())) {
-        willSet {
-            getMapImage(lat: newValue.value.lat, lon: newValue.value.lon)
-        }
-    }
+    // Data
+    @Published var correctAnswer = (
+        key: String(),
+        value: T(country: String(), lat: Double(), lon: Double())
+    )
     
     // User
     @Published var userChoices = [String: T]()
@@ -50,38 +48,48 @@ class CityGame: Game, ObservableObject {
     init() {
         let data: CityModel = load("cities.json")
         self.data = data.cities
-        askQuestion()
+        askQuestion {
+            selector()
+        }
     }
 }
 
 extension CityGame {
-    func getMapImage(lat: Double, lon: Double) {
-        let region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(
-                latitude: lat,
-                longitude: lon
-            ),
-            span: MKCoordinateSpan(
-                latitudeDelta: 1.0,
-                longitudeDelta: 1.0
-            )
-        )
-
-        // Map options
-        let mapOptions = MKMapSnapshotter.Options()
-        mapOptions.region = region
-        mapOptions.size = CGSize(width: 600, height: 600)
-        mapOptions.showsBuildings = true
-
-        // Create the snapshotter and run it
-        let snapshotter = MKMapSnapshotter(options: mapOptions)
-        snapshotter.start { (snapshot, error) in
-            if let snapshot = snapshot {
-                self.mapImage = snapshot.image
-            } else if let error = error {
-                print(error.localizedDescription)
+    func selector() {
+        
+        // Get random choices
+        var userChoices = [String: T]()
+        
+        while userChoices.count < 2 {
+            if let choice = data.randomElement() {
+                let userChoicesCountry = userChoices.map { $0.value.country }
+                
+                if !userChoicesCountry.contains(choice.value.country) {
+                    userChoices[choice.key] = choice.value
+                }
+            } else {
+                fatalError("Couldn't get a random value from data")
             }
         }
+        
+        // Get question asked (correct answer)
+        let userChoicesCountry = userChoices.map { $0.value.country }
+        let correctAnswer = data.first(where: {
+            !userChoices.keys.contains($0.key) &&           // Avoid duplicated cities
+            !dataAsked.keys.contains($0.key) &&             // Avoid cities already asked
+            !userChoicesCountry.contains($0.value.country)  // Avoid duplicated country names in userChoices
+        })
+        
+        // Unwrap optional
+        if let correctAnswer = correctAnswer {
+            userChoices[correctAnswer.key] = correctAnswer.value
+            dataAsked[correctAnswer.key] = correctAnswer.value
+            self.correctAnswer = correctAnswer
+        } else {
+            fatalError("Couldn't unwrap optional value")
+        }
+        
+        self.userChoices = userChoices
     }
 }
 

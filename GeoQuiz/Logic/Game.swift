@@ -40,6 +40,8 @@ protocol Game: ObservableObject {
     
     // Sound effects
     var player: AVAudioPlayer? { get set }
+    
+    func selector()
 }
 
 extension Game {
@@ -47,7 +49,7 @@ extension Game {
        dataAsked.count
     }
     
-    func askQuestion() {
+    func askQuestion(selector: () -> Void) {
         guard questionCounter < data.count else {
             alertTitle = "⭐️ Congratulations ⭐️"
             alertMessage = "You completed the game."
@@ -56,35 +58,10 @@ extension Game {
             return
         }
         
-        // Get random choices
-        var userChoices = [String: T]()
-        
-        while userChoices.count < 2 {
-            if let choice = data.randomElement() {
-                userChoices[choice.key] = choice.value
-            } else {
-                fatalError("Couldn't get a random value from data")
-            }
-        }
-        
-        // Get question asked (correct answer)
-        let correctAnswer = data.first(where: {
-            !userChoices.keys.contains($0.key) && !dataAsked.keys.contains($0.key)
-        })
-        
-        // Unwrap optional
-        if let correctAnswer = correctAnswer {
-            userChoices[correctAnswer.key] = correctAnswer.value
-            dataAsked[correctAnswer.key] = correctAnswer.value
-            self.correctAnswer = correctAnswer
-        } else {
-            fatalError("Couldn't unwrap optional value")
-        }
-        
-        self.userChoices = userChoices
+        selector()
     }
     
-    func answer(_ choice: (key: String, value: T)) {
+    func answer(_ choice: (key: String, value: T), selector: () -> Void) {
         if correctAnswer == choice {
             hapticSuccess()
             playSound("correctAnswer")
@@ -95,7 +72,9 @@ extension Game {
             }
             
             correctAnswers[correctAnswer.key] = correctAnswer.value
-            askQuestion()
+            askQuestion {
+                selector()
+            }
         } else {
             hapticError()
             playSound("wrongAnswer")
@@ -126,13 +105,15 @@ extension Game {
         }
     }
     
-    func reset() {
+    func reset(selector: () -> Void) {
         dataAsked = [String: T]()
         userScore = 0
         userLives = 3
         correctAnswers = [String: T]()
         wrongAnswers = [String: T]()
-        askQuestion()
+        askQuestion {
+            selector()
+        }
     }
     
     private func playSound(_ filename: String) {

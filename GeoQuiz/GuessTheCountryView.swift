@@ -21,7 +21,7 @@ struct GuessTheCountryView: View {
                     
                     Spacer()
     
-                    CityMap(game: game)
+                    CityMap(game: game, geo: geo)
                     
                     Spacer()
                     
@@ -43,7 +43,9 @@ struct GuessTheCountryView: View {
                     VStack {
                         ForEach(Array(game.userChoices.keys), id: \.self) { cityName in
                             Button {
-                                game.answer((key: cityName, value: game.data[cityName]!))
+                                game.answer((key: cityName, value: game.data[cityName]!)) {
+                                    game.selector()
+                                }
                             } label: {
                                 AnswerButton(
                                     optionName: game.data[cityName]!.country,

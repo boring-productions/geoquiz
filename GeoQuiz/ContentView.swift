@@ -36,7 +36,7 @@ struct ContentView: View {
                             level: "Level 3", symbol: "globe.americas.fill", name: "Guess the country"
                         )
                     }
-//
+
 //                    NavigationLink(
 //                        destination: Text("Guess the population"),
 //                        tag: GameName.guessThePopulation,

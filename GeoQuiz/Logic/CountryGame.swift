@@ -47,6 +47,41 @@ class CountryGame: Game, ObservableObject {
     init() {
         let data: CountryModel = load("countries.json")
         self.data = data.countries
-        askQuestion()
+        askQuestion {
+            selector()
+        }
+    }
+}
+
+extension CountryGame {
+    func selector() {
+        
+        // Get random choices
+        var userChoices = [String: T]()
+        
+        while userChoices.count < 2 {
+            if let choice = data.randomElement() {
+                userChoices[choice.key] = choice.value
+            } else {
+                fatalError("Couldn't get a random value from data")
+            }
+        }
+        
+        // Get question asked (correct answer)
+        let correctAnswer = data.first(where: {
+            !userChoices.keys.contains($0.key) &&  // Avoid duplicated countries
+            !dataAsked.keys.contains($0.key)       // Avoid countries already asked
+        })
+        
+        // Unwrap optional
+        if let correctAnswer = correctAnswer {
+            userChoices[correctAnswer.key] = correctAnswer.value
+            dataAsked[correctAnswer.key] = correctAnswer.value
+            self.correctAnswer = correctAnswer
+        } else {
+            fatalError("Couldn't unwrap optional value")
+        }
+        
+        self.userChoices = userChoices
     }
 }

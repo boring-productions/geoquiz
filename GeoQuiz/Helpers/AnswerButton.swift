@@ -13,7 +13,7 @@ struct AnswerButton: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
-            .foregroundStyle(.regularMaterial)
+            .foregroundStyle(.ultraThickMaterial)
             .overlay(
                 Text(optionName)
                     .font(.title2.bold())

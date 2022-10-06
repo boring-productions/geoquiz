@@ -38,7 +38,9 @@ struct GuessTheFlagView: View {
                     
                     ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
                         Button {
-                            game.answer((key: countryName, value: game.data[countryName]!))
+                            game.answer((key: countryName, value: game.data[countryName]!)) {
+                                game.selector()
+                            }
                         } label: {
                             FlagImage(flagSymbol: game.data[countryName]!.flag, cornerRadius: 20)
                                 .shadow(radius: 10)
