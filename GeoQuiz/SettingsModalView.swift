@@ -9,29 +9,50 @@ import SwiftUI
 
 struct SettingsModalView: View {
     @Environment(\.dismiss) var dismiss
+    @StateObject var user = User()
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    // Difficulty
+                    Picker("Number of lives", selection: $user.settings.numberOfLives) {
+                        ForEach(1..<11) { numberOfLives in
+                            Text("\(numberOfLives)")
+                                .tag(numberOfLives)
+                        }
+                    }
                 } header: {
                     Text("Game")
-                } footer: {
-                    Text("The harder the difficulty the less lives you get.")
                 }
                 
                 Section {
-                    // Toggle to disable haptics
-                    // Toggle to disable sound effects
+                    Toggle("Haptics", isOn: $user.settings.haptics)
+                    Toggle("Sound effects", isOn: $user.settings.sound)
                 } header: {
                     Text("Effects")
                 }
                 
                 Section {
-                    // About
-                    // Report bugs
-                    // Twitter
+                    LinkComponent(
+                        color: .mayaBlue,
+                        iconName: "info.circle.fill",
+                        text: "About",
+                        url: URL(string: "https://dennistech.io")!
+                    )
+                    
+                    LinkComponent(
+                        color: .atomicTangerine,
+                        iconName: "ant.circle.fill",
+                        text: "Report bugs",
+                        url: URL(string: "mailto:dmartin@dennistech.io")!
+                    )
+                    
+                    LinkComponent(
+                        color: .blueBell,
+                        iconName: "message.circle.fill",
+                        text: "Twitter",
+                        url: URL(string: "https://twitter.com/dennistech_")!
+                    )
                 } header: {
                     Text("Get in touch")
                 }

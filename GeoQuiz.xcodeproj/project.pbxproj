@@ -19,7 +19,6 @@
 		951D197328D485E000671FAD /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D197228D485E000671FAD /* CustomColors.swift */; };
 		952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41E828DC521200198643 /* GameAlertsModifier.swift */; };
 		952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EC28DC658900198643 /* SettingsModalView.swift */; };
-		952E41EF28DC692200198643 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EE28DC692200198643 /* PlaySound.swift */; };
 		952E41F228DC6F6E00198643 /* correctAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 952E41F028DC6F6D00198643 /* correctAnswer.wav */; };
 		952E41F328DC6F6E00198643 /* wrongAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 952E41F128DC6F6E00198643 /* wrongAnswer.wav */; };
 		9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539829228C51EDE00B70973 /* GeoQuizApp.swift */; };
@@ -30,6 +29,9 @@
 		955A65A928D7815E00CEEC6D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A65A828D7815E00CEEC6D /* Haptics.swift */; };
 		956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956273E928CB2E98008DC094 /* FlagImage.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
+		95919DB628F076BF00F21F8F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB528F076BF00F21F8F /* User.swift */; };
+		95919DB828F079D100F21F8F /* UserSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB728F079D100F21F8F /* UserSettingsModel.swift */; };
+		95919DBC28F08D0600F21F8F /* LinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* LinkComponent.swift */; };
 		95AE8D5728C8750E0067F219 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE8D5628C8750E0067F219 /* Load.swift */; };
 		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
 		95BC392D28EC42570049AB49 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC392C28EC42570049AB49 /* CityMap.swift */; };
@@ -53,7 +55,6 @@
 		951D197228D485E000671FAD /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		952E41E828DC521200198643 /* GameAlertsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlertsModifier.swift; sourceTree = "<group>"; };
 		952E41EC28DC658900198643 /* SettingsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModalView.swift; sourceTree = "<group>"; };
-		952E41EE28DC692200198643 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 		952E41F028DC6F6D00198643 /* correctAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAnswer.wav; sourceTree = "<group>"; };
 		952E41F128DC6F6E00198643 /* wrongAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrongAnswer.wav; sourceTree = "<group>"; };
 		9539828F28C51EDE00B70973 /* GeoQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +66,9 @@
 		955A65A828D7815E00CEEC6D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		956273E928CB2E98008DC094 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
+		95919DB528F076BF00F21F8F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95919DB728F079D100F21F8F /* UserSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModel.swift; sourceTree = "<group>"; };
+		95919DBB28F08D0600F21F8F /* LinkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkComponent.swift; sourceTree = "<group>"; };
 		95AE8D5628C8750E0067F219 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
 		95BC392C28EC42570049AB49 /* CityMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
@@ -92,10 +96,10 @@
 			children = (
 				95AE8D5628C8750E0067F219 /* Load.swift */,
 				955A65A828D7815E00CEEC6D /* Haptics.swift */,
-				952E41EE28DC692200198643 /* PlaySound.swift */,
 				955A658228D733E400CEEC6D /* Game.swift */,
 				95FA409B28D9881100129B60 /* CountryGame.swift */,
 				951AFAF028E5735400A4A4BD /* CityGame.swift */,
+				95919DB528F076BF00F21F8F /* User.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 			children = (
 				951AFAEC28E5657500A4A4BD /* CityModel.swift */,
 				951AFAEE28E565FE00A4A4BD /* CountryModel.swift */,
+				95919DB728F079D100F21F8F /* UserSettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				95C430F828D0A8E500480D23 /* CustomGradients.swift */,
 				951D197228D485E000671FAD /* CustomColors.swift */,
 				95BC392C28EC42570049AB49 /* CityMap.swift */,
+				95919DBB28F08D0600F21F8F /* LinkComponent.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -259,17 +265,19 @@
 				955A65A928D7815E00CEEC6D /* Haptics.swift in Sources */,
 				95BC392D28EC42570049AB49 /* CityMap.swift in Sources */,
 				952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */,
+				95919DB828F079D100F21F8F /* UserSettingsModel.swift in Sources */,
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
 				955A658328D733E400CEEC6D /* Game.swift in Sources */,
+				95919DB628F076BF00F21F8F /* User.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				95C4315928C6500000212131 /* GameButton.swift in Sources */,
 				956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */,
-				952E41EF28DC692200198643 /* PlaySound.swift in Sources */,
 				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
 				9509A8E028E5A3C500CFCDBA /* GuessTheCurrencyView.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
 				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
+				95919DBC28F08D0600F21F8F /* LinkComponent.swift in Sources */,
 				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
 				95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */,
 				95FA409C28D9881100129B60 /* CountryGame.swift in Sources */,

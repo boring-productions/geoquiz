@@ -47,6 +47,13 @@ class CountryGame: Game, ObservableObject {
     init() {
         let data: CountryModel = load("countries.json")
         self.data = data.countries
+        
+        if let userSettings = UserDefaults.standard.data(forKey: "UserSettings") {
+            if let decodedUserSettings = try? JSONDecoder().decode(UserSettingsModel.self, from: userSettings) {
+                userLives = decodedUserSettings.numberOfLives
+            }
+        }
+        
         askQuestion {
             selector()
         }

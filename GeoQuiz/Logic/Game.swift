@@ -62,8 +62,10 @@ extension Game {
     }
     
     func answer(_ choice: (key: String, value: T), selector: () -> Void) {
+        var haptics = Haptics()
+        
         if correctAnswer == choice {
-            hapticSuccess()
+            haptics.success()
             playSound("correctAnswer")
             
             withAnimation(.easeIn(duration: 0.5)) {
@@ -76,7 +78,7 @@ extension Game {
                 selector()
             }
         } else {
-            hapticError()
+            haptics.error()
             playSound("wrongAnswer")
 
             withAnimation(.easeIn(duration: 0.5)) {
@@ -117,22 +119,26 @@ extension Game {
     }
     
     private func playSound(_ filename: String) {
-        guard let soundFileURL = Bundle.main.url(forResource: filename, withExtension: "wav") else {
-            fatalError("Sound file \(filename) couldn't be found")
-        }
+        let user = User()
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            fatalError("Couldn't activate session")
-        }
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: soundFileURL)
-            player?.play()
-        } catch {
-            fatalError("Couldn't play sound effect")
+        if user.settings.sound {
+            guard let soundFileURL = Bundle.main.url(forResource: filename, withExtension: "wav") else {
+                fatalError("Sound file \(filename) couldn't be found")
+            }
+            
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                fatalError("Couldn't activate session")
+            }
+            
+            do {
+                player = try AVAudioPlayer(contentsOf: soundFileURL)
+                player?.play()
+            } catch {
+                fatalError("Couldn't play sound effect")
+            }
         }
     }
 }
