@@ -1,5 +1,5 @@
 //
-//  CustomGradients.swift
+//  GradientExtension.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 13/9/22.

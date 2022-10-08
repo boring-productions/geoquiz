@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct CityModel: Codable {
-    let cities: [String: CityData]
+struct CityData: Codable {
+    let cities: [String: City]
     
-    struct CityData: Codable, Equatable {
+    struct City: Codable, Equatable {
         let country: String
         let lat: Double
         let lon: Double
         
-        static func ==(lhs: CityData, rhs: CityData) -> Bool {
+        static func ==(lhs: City, rhs: City) -> Bool {
             lhs.country == rhs.country
         }
     }

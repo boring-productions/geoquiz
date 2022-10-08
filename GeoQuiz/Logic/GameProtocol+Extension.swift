@@ -1,5 +1,5 @@
 //
-//  GameProtocol.swift
+//  GameProtocol+Extension.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 18/9/22.
@@ -62,7 +62,7 @@ extension Game {
     }
     
     func answer(_ choice: (key: String, value: T), selector: () -> Void) {
-        var haptics = Haptics()
+        let haptics = Haptics()
         
         if correctAnswer == choice {
             haptics.success()

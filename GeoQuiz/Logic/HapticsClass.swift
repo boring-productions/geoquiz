@@ -1,5 +1,5 @@
 //
-//  Haptics.swift
+//  HapticsClass.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 18/9/22.

@@ -10,19 +10,30 @@ import SwiftUI
 struct SettingsModalView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var user = User()
+
+    var lives: [Int] {
+        var lives = [Int]()
+        for i in stride(from: 5, to: 55, by: 5) {
+            lives.append(i)
+        }
+        
+        return lives
+    }
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Number of lives", selection: $user.settings.numberOfLives) {
-                        ForEach(1..<11) { numberOfLives in
+                    Picker("❤️ Lives", selection: $user.settings.numberOfLives) {
+                        ForEach(lives, id: \.self) { numberOfLives in
                             Text("\(numberOfLives)")
                                 .tag(numberOfLives)
                         }
                     }
                 } header: {
                     Text("Game")
+                } footer: {
+                    Text("Number of lives at the beginning of each game.")
                 }
                 
                 Section {

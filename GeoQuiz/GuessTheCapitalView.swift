@@ -16,18 +16,19 @@ struct GuessTheCapitalView: View {
                 .ignoresSafeArea()
             
             GeometryReader { geo in
-                VStack(spacing: 20) {
+                VStack {
                     GameToolbar(game: game, color: .atomicTangerine)
                     
                     Spacer()
                     
                     FlagImage(flagSymbol: game.correctAnswer.value.flag, cornerRadius: 20)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
                         .shadow(radius: 10)
                         .frame(height: geo.size.height * 0.15)
                     
                     Spacer()
                     
-                    HStack {
+                    VStack(alignment: .leading) {
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Question \(game.questionCounter) of \(game.data.count)")
                                 .font(.title3)
@@ -39,24 +40,23 @@ struct GuessTheCapitalView: View {
                                 .foregroundColor(.white)
                         }
                         
-                        Spacer()
-                    }
-                    
-                    VStack {
-                        ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
-                            Button {
-                                game.answer((key: countryName, value: game.data[countryName]!)) {
-                                    game.selector()
+                        VStack(spacing: 15) {
+                            ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
+                                Button {
+                                    game.answer((key: countryName, value: game.data[countryName]!)) {
+                                        game.selector()
+                                    }
+                                } label: {
+                                    AnswerButton(
+                                        optionName: game.data[countryName]!.capital,
+                                        color: .chinaPink
+                                    )
+                                    .frame(height: geo.size.height * 0.08)
                                 }
-                            } label: {
-                                AnswerButton(
-                                    optionName: game.data[countryName]!.capital,
-                                    color: .chinaPink
-                                )
-                                .frame(height: geo.size.height * 0.08)
                             }
                         }
                     }
+                    .frame(maxWidth: 500)
                 }
                 .padding()
             }
@@ -66,10 +66,14 @@ struct GuessTheCapitalView: View {
     }
 }
 
-struct GuessCapitalView_Previews: PreviewProvider {
+struct GuessTheCapitalView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            GuessTheCapitalView()
-        }
+        GuessTheCapitalView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
+            .previewDisplayName("iPhone 14 Pro Max")
+        
+        GuessTheCapitalView()
+            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
+            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
     }
 }

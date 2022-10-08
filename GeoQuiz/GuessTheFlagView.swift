@@ -16,37 +16,44 @@ struct GuessTheFlagView: View {
                 .ignoresSafeArea()
             
             GeometryReader { geo in
-                VStack(spacing: 20) {
+                VStack {
                     GameToolbar(game: game, color: .mayaBlue)
+                        .padding(.bottom)
                     
-                    HStack {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Question \(game.questionCounter) of \(game.data.count)")
-                                .font(.title3)
-                                .foregroundColor(.white.opacity(0.7))
-                            
-                            Text("What is the flag of \(game.correctAnswer.key)?")
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                        }
+                    VStack(spacing: 10) {
+                        Text("Question \(game.questionCounter) of \(game.data.count)")
+                            .font(.title3)
+                            .foregroundColor(.white.opacity(0.7))
                         
-                        Spacer()
+                        Text("What is the flag of")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        
+                        Text("\(game.correctAnswer.key)?")
+                            .font(.largeTitle.bold())
+                            .foregroundColor(.white)
+                        
                     }
                     
                     Spacer()
-                    
-                    ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
-                        Button {
-                            game.answer((key: countryName, value: game.data[countryName]!)) {
-                                game.selector()
+                    VStack(spacing: 30) {
+                        ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
+                            Button {
+                                game.answer((key: countryName, value: game.data[countryName]!)) {
+                                    game.selector()
+                                }
+                            } label: {
+                                FlagImage(flagSymbol: game.data[countryName]!.flag, cornerRadius: 20)
+                                    .clipShape(Circle())
+                                    .overlay {
+                                        Circle()
+                                            .strokeBorder(.white, lineWidth: 4)
+                                    }
+                                    .shadow(radius: 10)
+                                    .frame(height: geo.size.height * 0.15)
                             }
-                        } label: {
-                            FlagImage(flagSymbol: game.data[countryName]!.flag, cornerRadius: 20)
-                                .shadow(radius: 10)
-                                .frame(height: geo.size.height * 0.15)
                         }
-                        .padding(.top)
                     }
                     
                     Spacer()
@@ -62,5 +69,11 @@ struct GuessTheFlagView: View {
 struct GuessTheFlagView_Previews: PreviewProvider {
     static var previews: some View {
         GuessTheFlagView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
+            .previewDisplayName("iPhone 14 Pro Max")
+        
+        GuessTheFlagView()
+            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
+            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
     }
 }

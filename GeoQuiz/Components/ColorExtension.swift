@@ -1,5 +1,5 @@
 //
-//  CustomColors.swift
+//  ColorExtension.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 16/9/22.

@@ -1,5 +1,5 @@
 //
-//  CountryGame.swift
+//  CountryGameClass.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 20/9/22.
@@ -11,7 +11,7 @@ import AVFAudio
 class CountryGame: Game, ObservableObject {
     
     // Define type of generics
-    typealias T = CountryModel.CountryData
+    typealias T = CountryData.Country
     
     var data: [String: T]
     var dataAsked = [String: T]()
@@ -45,11 +45,14 @@ class CountryGame: Game, ObservableObject {
     @Published var player: AVAudioPlayer?
     
     init() {
-        let data: CountryModel = load("countries.json")
+        let data: CountryData = load("countries.json")
         self.data = data.countries
         
+        let user = User()
+        userLives = user.settings.numberOfLives
+        
         if let userSettings = UserDefaults.standard.data(forKey: "UserSettings") {
-            if let decodedUserSettings = try? JSONDecoder().decode(UserSettingsModel.self, from: userSettings) {
+            if let decodedUserSettings = try? JSONDecoder().decode(UserSettings.self, from: userSettings) {
                 userLives = decodedUserSettings.numberOfLives
             }
         }

@@ -1,5 +1,5 @@
 //
-//  CityMap.swift
+//  CityMapHelper.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 4/10/22.
@@ -12,15 +12,17 @@ struct CityMap: View {
     @ObservedObject var game: CityGame
     @State private var mapImage: UIImage? = nil
     
-    let geo: GeometryProxy
-    
     var body: some View {
         VStack {
             if let mapImage = mapImage {
                 Image(uiImage: mapImage)
                     .resizable()
                     .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .clipShape(Circle())
+                    .overlay {
+                        Circle()
+                            .strokeBorder(.white, lineWidth: 4)
+                    }
                     .shadow(radius: 10)
             } else {
                 ProgressView()
@@ -45,7 +47,7 @@ struct CityMap: View {
         // Map options
         let mapOptions = MKMapSnapshotter.Options()
         mapOptions.region = region
-        mapOptions.size = CGSize(width: geo.size.width * 0.8, height: geo.size.width * 0.8)
+        mapOptions.size = CGSize(width: 500, height: 500)
         mapOptions.pointOfInterestFilter = .excludingAll
 
         // Create the snapshotter and run it
@@ -60,8 +62,8 @@ struct CityMap: View {
     }
 }
 
-//struct CityMap_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CityMap(game: CityGame())
-//    }
-//}
+struct CityMap_Previews: PreviewProvider {
+    static var previews: some View {
+        CityMap(game: CityGame())
+    }
+}

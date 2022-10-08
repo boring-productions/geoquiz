@@ -1,5 +1,5 @@
 //
-//  LinkComponent.swift
+//  LinkHelper.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 7/10/22.

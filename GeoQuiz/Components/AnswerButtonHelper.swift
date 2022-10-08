@@ -1,5 +1,5 @@
 //
-//  AnswerButton.swift
+//  AnswerButtonHelper.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 14/9/22.
@@ -13,7 +13,7 @@ struct AnswerButton: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
-            .foregroundStyle(.ultraThickMaterial)
+            .foregroundColor(.white)
             .overlay(
                 Text(optionName)
                     .font(.title2.bold())

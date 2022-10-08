@@ -1,5 +1,5 @@
 //
-//  FlagImage.swift
+//  FlagImageHelper.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 9/9/22.
@@ -18,13 +18,12 @@ struct FlagImage: View {
             .renderingMode(.original)
             .resizable()
             .scaledToFit()
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
 }
 
 struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
-        FlagImage(flagSymbol: "np", cornerRadius: 20)
+        FlagImage(flagSymbol: "es", cornerRadius: 20)
             .frame(height: 130)
     }
 }

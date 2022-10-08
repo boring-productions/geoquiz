@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct CountryModel: Codable {
-    let countries: [String: CountryData]
+struct CountryData: Codable {
+    let countries: [String: Country]
     
-    struct CountryData: Codable, Equatable, Hashable {
+    struct Country: Codable, Equatable, Hashable {
         let flag: String
         let currency: String
         let population: Int
         let capital: String
         
-        static func ==(lhs: CountryData, rhs: CountryData) -> Bool {
+        static func ==(lhs: Country, rhs: Country) -> Bool {
             lhs.flag == rhs.flag &&
             lhs.currency == rhs.currency &&
             lhs.population == rhs.population &&

@@ -14,7 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 20) {
+                VStack(alignment: .leading, spacing: 20) {
+                    
+                    Text("Select a game 🎮")
+                        .font(.largeTitle.bold())
+                        .padding(.bottom)
                     
                     NavigationLink(destination: GuessTheFlagView()) {
                         GameButton(
@@ -36,21 +40,18 @@ struct ContentView: View {
                             level: "Level 3", symbol: "globe.americas.fill", name: "Guess the country"
                         )
                     }
-
-//                    NavigationLink(
-//                        destination: Text("Guess the population"),
-//                        tag: GameName.guessThePopulation,
-//                        selection: $gameName
-//                    ) {
-//                        GameButton(
-//                            gradient: .quaternary,
-//                            level: "Level 4", symbol: "person.3.fill", name: "Guess the population"
-//                        )
-//                    }
+                    
+                    NavigationLink(destination: GuessThePopulationView()) {
+                        GameButton(
+                            gradient: .quaternary,
+                            level: "Level 4", symbol: "person.fill", name: "Guess the population"
+                        )
+                    }
                 }
                 .padding()
             }
-            .navigationTitle("Select a game 🎮")
+            .navigationTitle("GeoQuiz")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {

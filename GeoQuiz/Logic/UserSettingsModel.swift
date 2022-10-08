@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct UserSettingsModel: Codable {
+struct UserSettings: Codable {
     var haptics: Bool = true
     var sound: Bool = true
-    var numberOfLives: Int = 3
+    var numberOfLives: Int = 25
 }

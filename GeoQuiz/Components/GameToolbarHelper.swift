@@ -1,5 +1,5 @@
 //
-//  GameToolbar.swift
+//  GameToolbarHelper.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 18/9/22.
@@ -24,7 +24,7 @@ struct GameToolbar<T: Game>: View {
                         .padding(10)
                         .background(
                             Circle()
-                                .foregroundStyle(.ultraThickMaterial)
+                                .foregroundColor(.white)
                         )
                 }
             }
@@ -44,7 +44,7 @@ struct GameToolbar<T: Game>: View {
                                 Capsule()
                             }
                         }
-                        .foregroundStyle(.ultraThickMaterial)
+                            .foregroundColor(.white)
                     )
             }
             .font(.title2)
@@ -61,7 +61,7 @@ struct GameToolbar<T: Game>: View {
                 .padding(10)
                 .background(
                     Capsule()
-                        .foregroundStyle(.ultraThickMaterial)
+                        .foregroundColor(.white)
                 )
                 .scaleEffect(game.livesScaleAmount)
             }

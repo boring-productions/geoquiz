@@ -1,5 +1,5 @@
 //
-//  GameButton.swift
+//  GameButtonHelper.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 5/9/22.
@@ -49,13 +49,14 @@ struct GameButton: View {
             .foregroundColor(.white)
             .padding()
         }
+        .frame(maxWidth: 700)
     }
 }
 
-struct PlayButton_Previews: PreviewProvider {
+struct GameButton_Previews: PreviewProvider {
     static var previews: some View {
         GameButton(
-            gradient: Gradient(colors: [Color("MainDark"), Color("Main")]),
+            gradient: .main,
             level: "Level 1",
             symbol: "checkmark",
             name: "Guess the flag"
