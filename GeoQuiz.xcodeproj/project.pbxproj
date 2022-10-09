@@ -10,6 +10,9 @@
 		95030CEA28D1BA4D001AA3A1 /* AnswerButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030CE928D1BA4D001AA3A1 /* AnswerButtonHelper.swift */; };
 		9509A8DE28E5A19A00CFCDBA /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 9509A8DD28E5A19A00CFCDBA /* countries.json */; };
 		9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */; };
+		950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */; };
+		950C535628F3172C00179C78 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 950C535528F3172C00179C78 /* RevenueCat */; };
+		950C535928F3178B00179C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950C535828F3178B00179C78 /* StoreKit.framework */; };
 		951AFAEA28E5655C00A4A4BD /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 951AFAE828E5655C00A4A4BD /* cities.json */; };
 		951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEC28E5657500A4A4BD /* CityModel.swift */; };
 		951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEE28E565FE00A4A4BD /* CountryModel.swift */; };
@@ -46,6 +49,8 @@
 		95030CE928D1BA4D001AA3A1 /* AnswerButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonHelper.swift; sourceTree = "<group>"; };
 		9509A8DD28E5A19A00CFCDBA /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessThePopulationView.swift; sourceTree = "<group>"; };
+		950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPremiumModalView.swift; sourceTree = "<group>"; };
+		950C535828F3178B00179C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		951AFAE828E5655C00A4A4BD /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		951AFAEC28E5657500A4A4BD /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		951AFAEE28E565FE00A4A4BD /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
@@ -85,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950C535628F3172C00179C78 /* RevenueCat in Frameworks */,
+				950C535928F3178B00179C78 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +114,14 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
+		950C535728F3178B00179C78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				950C535828F3178B00179C78 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9520ABBA28C86D0300A3D4D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +138,7 @@
 			children = (
 				9539829128C51EDE00B70973 /* GeoQuiz */,
 				9539829028C51EDE00B70973 /* Products */,
+				950C535728F3178B00179C78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,8 +161,9 @@
 				951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */,
 				95AF322928DF293900023ACC /* GuessTheCountryView.swift */,
 				9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */,
-				9590359428E098FF00B24560 /* ProfileModalView.swift */,
+				950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */,
 				952E41EC28DC658900198643 /* SettingsModalView.swift */,
+				9590359428E098FF00B24560 /* ProfileModalView.swift */,
 				959D414728C87EA600BAAC14 /* Components */,
 				95030CE728D1B60F001AA3A1 /* Logic */,
 				9520ABBA28C86D0300A3D4D7 /* Resources */,
@@ -196,6 +213,9 @@
 			dependencies = (
 			);
 			name = GeoQuiz;
+			packageProductDependencies = (
+				950C535528F3172C00179C78 /* RevenueCat */,
+			);
 			productName = GeoQuiz;
 			productReference = 9539828F28C51EDE00B70973 /* GeoQuiz.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +244,9 @@
 				Base,
 			);
 			mainGroup = 9539828628C51EDE00B70973;
+			packageReferences = (
+				950C535428F3172C00179C78 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = 9539829028C51EDE00B70973 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,6 +288,7 @@
 				95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */,
 				956273EA28CB2E98008DC094 /* FlagImageHelper.swift in Sources */,
 				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
+				950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
 				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
@@ -487,6 +511,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		950C535428F3172C00179C78 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		950C535528F3172C00179C78 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 950C535428F3172C00179C78 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9539828728C51EDE00B70973 /* Project object */;
 }

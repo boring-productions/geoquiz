@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     @State private var showingBuyPremiumModalView = false
     @State private var showingSettingsModalView = false
+    @State private var showingProfileModalView = false
     
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 20) {
-                    
+                VStack(alignment: .leading, spacing: 30) {
                     Text("Select a game 🎮")
                         .font(.largeTitle.bold())
                         .padding(.bottom)
@@ -33,7 +33,7 @@ struct ContentView: View {
                             level: "Level 2", symbol: "building.2.fill", name: "Guess the capital"
                         )
                     }
-
+                    
                     NavigationLink(destination: GuessTheCountryView()) {
                         GameButton(
                             gradient: .tertiary,
@@ -67,14 +67,24 @@ struct ContentView: View {
                     } label: {
                         Label("Buy premium", systemImage: "star")
                     }
+                    
+                    Button {
+                        showingProfileModalView = true
+                    } label: {
+                        Label("Profile", systemImage: "person")
+                    }
                 }
             }
             .sheet(isPresented: $showingBuyPremiumModalView) {
-                Text("Buy premium")
+                BuyPremiumModalView()
             }
             
             .sheet(isPresented: $showingSettingsModalView) {
                 SettingsModalView()
+            }
+            
+            .sheet(isPresented: $showingProfileModalView) {
+                ProfileModalView()
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

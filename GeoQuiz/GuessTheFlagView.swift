@@ -20,7 +20,7 @@ struct GuessTheFlagView: View {
                     GameToolbar(game: game, color: .mayaBlue)
                         .padding(.bottom)
                     
-                    VStack(spacing: 10) {
+                    VStack(alignment: .center, spacing: 10) {
                         Text("Question \(game.questionCounter) of \(game.data.count)")
                             .font(.title3)
                             .foregroundColor(.white.opacity(0.7))
