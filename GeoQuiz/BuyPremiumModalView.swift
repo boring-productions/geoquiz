@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BuyPremiumModalView: View {
     @Environment(\.dismiss) var dismiss
+    @StateObject var storeKitRC = StoreKitRC()
     
     var body: some View {
         NavigationView {
@@ -54,15 +55,20 @@ struct BuyPremiumModalView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.secondary)
                         
-                        Button {
-                            // Buy
-                        } label: {
-                            Text("Buy for $2.99")
-                                .font(.headline)
-                                .padding()
+                        if let productPrice = storeKitRC.productPrice {
+                            Button {
+                                // Buy
+                            } label: {
+                                Text("Buy for \(productPrice)")
+                                    .font(.headline)
+                                    .padding()
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .padding(.top)
+                        } else {
+                            ProgressView()
+                                .padding(.top)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .padding(.top)
                     }
                     .padding()
                     
@@ -72,6 +78,7 @@ struct BuyPremiumModalView: View {
                     }
                     .font(.callout)
                     .foregroundColor(.secondary)
+                    .padding()
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -83,6 +90,11 @@ struct BuyPremiumModalView: View {
                         Label("Exit", systemImage: "multiply")
                     }
                 }
+            }
+            .alert("Something went wrong 🤕", isPresented: $storeKitRC.showingErrorAlert) {
+                Button("OK", role: .cancel) { dismiss() }
+            } message: {
+                Text(storeKitRC.errorMessage)
             }
         }
     }

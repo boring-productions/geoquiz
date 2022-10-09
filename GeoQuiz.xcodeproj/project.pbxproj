@@ -13,6 +13,7 @@
 		950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */; };
 		950C535628F3172C00179C78 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 950C535528F3172C00179C78 /* RevenueCat */; };
 		950C535928F3178B00179C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950C535828F3178B00179C78 /* StoreKit.framework */; };
+		95197EFD28F339AE00FE67E9 /* StoreKitRCClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95197EFC28F339AE00FE67E9 /* StoreKitRCClass.swift */; };
 		951AFAEA28E5655C00A4A4BD /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 951AFAE828E5655C00A4A4BD /* cities.json */; };
 		951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEC28E5657500A4A4BD /* CityModel.swift */; };
 		951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEE28E565FE00A4A4BD /* CountryModel.swift */; };
@@ -51,6 +52,7 @@
 		9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessThePopulationView.swift; sourceTree = "<group>"; };
 		950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPremiumModalView.swift; sourceTree = "<group>"; };
 		950C535828F3178B00179C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		95197EFC28F339AE00FE67E9 /* StoreKitRCClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitRCClass.swift; sourceTree = "<group>"; };
 		951AFAE828E5655C00A4A4BD /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		951AFAEC28E5657500A4A4BD /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		951AFAEE28E565FE00A4A4BD /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				95FA409B28D9881100129B60 /* CountryGameClass.swift */,
 				951AFAF028E5735400A4A4BD /* CityGameClass.swift */,
 				95919DB528F076BF00F21F8F /* UserClass.swift */,
+				95197EFC28F339AE00FE67E9 /* StoreKitRCClass.swift */,
 				95AE8D5628C8750E0067F219 /* LoadFunc.swift */,
 			);
 			path = Logic;
@@ -280,6 +283,7 @@
 				955A65A928D7815E00CEEC6D /* HapticsClass.swift in Sources */,
 				95BC392D28EC42570049AB49 /* CityMapHelper.swift in Sources */,
 				952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */,
+				95197EFD28F339AE00FE67E9 /* StoreKitRCClass.swift in Sources */,
 				95919DB828F079D100F21F8F /* UserSettingsModel.swift in Sources */,
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
 				955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */,

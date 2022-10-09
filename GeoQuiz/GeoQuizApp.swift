@@ -18,16 +18,6 @@ struct GeoQuizApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear(perform: testRevenueCat)
-        }
-    }
-    
-    private func testRevenueCat() {
-        Purchases.shared.getOfferings { (offerings, error) in
-            if let packages = offerings?.current?.availablePackages {
-                // Display packages for sale
-                print(packages)
-            }
         }
     }
 }
