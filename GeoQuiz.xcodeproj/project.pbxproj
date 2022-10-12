@@ -42,6 +42,8 @@
 		95C430F928D0A8E500480D23 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C430F828D0A8E500480D23 /* GradientExtension.swift */; };
 		95C4315628C64A8C00212131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315528C64A8C00212131 /* ContentView.swift */; };
 		95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315828C6500000212131 /* GameButtonHelper.swift */; };
+		95CA294028F5769700CE0B7A /* GameModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA293F28F5769700CE0B7A /* GameModeEnum.swift */; };
+		95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
 		95FA409C28D9881100129B60 /* CountryGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409B28D9881100129B60 /* CountryGameClass.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		95C430F828D0A8E500480D23 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		95C4315528C64A8C00212131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95C4315828C6500000212131 /* GameButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonHelper.swift; sourceTree = "<group>"; };
+		95CA293F28F5769700CE0B7A /* GameModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeEnum.swift; sourceTree = "<group>"; };
+		95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlertHelper.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95FA409928D9876B00129B60 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
 		95FA409B28D9881100129B60 /* CountryGameClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGameClass.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				95919DB528F076BF00F21F8F /* UserClass.swift */,
 				95197EFC28F339AE00FE67E9 /* StoreKitRCClass.swift */,
 				95AE8D5628C8750E0067F219 /* LoadFunc.swift */,
+				95CA293F28F5769700CE0B7A /* GameModeEnum.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				955A658028D703EB00CEEC6D /* GameToolbarHelper.swift */,
 				95BC392C28EC42570049AB49 /* CityMapHelper.swift */,
 				95919DBB28F08D0600F21F8F /* LinkHelper.swift */,
+				95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */,
 				952E41E828DC521200198643 /* GameAlertsModifier.swift */,
 				95C430F828D0A8E500480D23 /* GradientExtension.swift */,
 				951D197228D485E000671FAD /* ColorExtension.swift */,
@@ -300,7 +306,9 @@
 				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
 				95030CEA28D1BA4D001AA3A1 /* AnswerButtonHelper.swift in Sources */,
 				95FA409C28D9881100129B60 /* CountryGameClass.swift in Sources */,
+				95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */,
 				955A658128D703EB00CEEC6D /* GameToolbarHelper.swift in Sources */,
+				95CA294028F5769700CE0B7A /* GameModeEnum.swift in Sources */,
 				95AE8D5728C8750E0067F219 /* LoadFunc.swift in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
 				955950BB28F15FF2001BDEE8 /* FormatterExtension.swift in Sources */,
@@ -452,6 +460,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.dennistech.GeoQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +493,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.dennistech.GeoQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";

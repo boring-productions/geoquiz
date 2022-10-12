@@ -9,79 +9,89 @@ import SwiftUI
 
 struct BuyPremiumModalView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var storeKitRC = StoreKitRC()
+    @ObservedObject var storeKitRC: StoreKitRC
     
     var body: some View {
         NavigationView {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .center, spacing: 20) {
-                    VStack(spacing: 20) {
-                        Text("Unlock Premium 🤩")
-                            .font(.largeTitle.bold())
-                        
-                        Text("Unlock three more game modes to become a geography master and support the future development of GeoQuiz.")
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                            .frame(maxWidth: 400)
-                    }
-                    .padding()
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            Group {
-                                Image("GuessTheCapital")
-                                    .resizable()
-                                
-                                Image("GuessTheCountry")
-                                    .resizable()
-                                
-                                Image("GuessThePopulation")
-                                    .resizable()
-                            }
-                            .scaledToFit()
-                            .cornerRadius(25)
-                            .frame(height: 500)
+            ZStack {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .center, spacing: 20) {
+                        VStack(spacing: 20) {
+                            Text("Unlock all games 🤩")
+                                .font(.largeTitle.bold())
+                            
+                            Text("Unlock three more game modes to become a geography master and support the future development of GeoQuiz.")
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: 400)
                         }
                         .padding()
-                    }
-                    
-                    VStack(spacing: 10) {
-                        Text("A one-time payment.")
-                            .font(.title)
-                            .fontWeight(.semibold)
                         
-                        Text("No subscriptions.")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.secondary)
-                        
-                        if let productPrice = storeKitRC.productPrice {
-                            Button {
-                                // Buy
-                            } label: {
-                                Text("Buy for \(productPrice)")
-                                    .font(.headline)
-                                    .padding()
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20) {
+                                Group {
+                                    Image("GuessTheCapital")
+                                        .resizable()
+                                    
+                                    Image("GuessTheCountry")
+                                        .resizable()
+                                    
+                                    Image("GuessThePopulation")
+                                        .resizable()
+                                }
+                                .scaledToFit()
+                                .cornerRadius(25)
+                                .frame(height: 500)
                             }
-                            .buttonStyle(.borderedProminent)
-                            .padding(.top)
-                        } else {
-                            ProgressView()
-                                .padding(.top)
+                            .padding()
                         }
+                        
+                        VStack(spacing: 10) {
+                            Text("A one-time payment.")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                            
+                            Text("No subscriptions.")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.secondary)
+                            
+                            VStack {
+                                if let package = storeKitRC.offerings?.current?.lifetime {
+                                    Button {
+                                        storeKitRC.buy(package)
+                                    } label: {
+                                        Text("Buy for \(package.storeProduct.localizedPriceString)")
+                                            .font(.headline)
+                                            .padding()
+                                    }
+                                    .buttonStyle(.borderedProminent)
+                                    .padding(.top)
+                                } else {
+                                    ProgressView()
+                                }
+                            }
+                            
+                            Button("Restore purchases", action: storeKitRC.restorePurchase)
+                        }
+                        .padding()
+                        
+                        VStack {
+                            Text("GeoQuiz is an indie game")
+                            Text("I appreciate your support ❤️")
+                        }
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                        .padding()
                     }
-                    .padding()
-                    
-                    VStack {
-                        Text("GeoQuiz is an indie game")
-                        Text("I appreciate your support ❤️")
-                    }
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                    .padding()
+                }
+                
+                if storeKitRC.showingActivityAlert {
+                    ActivityAlert()
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear(perform: storeKitRC.fetchOfferings)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -91,17 +101,26 @@ struct BuyPremiumModalView: View {
                     }
                 }
             }
-            .alert("Something went wrong 🤕", isPresented: $storeKitRC.showingErrorAlert) {
-                Button("OK", role: .cancel) { dismiss() }
-            } message: {
-                Text(storeKitRC.errorMessage)
-            }
+        }
+        .disabled(storeKitRC.showingActivityAlert)
+        .interactiveDismissDisabled(storeKitRC.showingActivityAlert)
+        
+        .alert(storeKitRC.errorAlertTitle, isPresented: $storeKitRC.showingErrorAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(storeKitRC.errorAlertMessage)
+        }
+        
+        .alert("GeoQuiz Premium is active!", isPresented: $storeKitRC.showingSuccessAlert) {
+            Button("OK", role: .cancel) { dismiss() }
+        } message: {
+            Text("Thanks for supporting indie apps ❤️")
         }
     }
 }
 
 struct BuyPremiumModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BuyPremiumModalView()
+        BuyPremiumModalView(storeKitRC: StoreKitRC())
     }
 }

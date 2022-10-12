@@ -7,27 +7,89 @@
 
 import Foundation
 import RevenueCat
+import SwiftUI
 
 class StoreKitRC: ObservableObject {
-    @Published var productPrice: String?
+    @Published var errorAlertTitle = ""
+    @Published var errorAlertMessage = ""
+    
     @Published var showingErrorAlert = false
-    @Published var errorMessage = ""
-
+    @Published var showingSuccessAlert = false
+    @Published var showingActivityAlert = false
+    
+    @Published var offerings: Offerings? = nil
+    @Published var customerInfo: CustomerInfo? {
+        didSet {
+            isActive = customerInfo?.entitlements["Premium"]?.isActive == true
+        }
+    }
+    
+    @Published var isActive = false
+    
     init() {
+        Purchases.shared.getCustomerInfo { (customerInfo, error) in
+            self.customerInfo = customerInfo
+        }
+    }
+    
+    func buy(_ package: Package) {
+        showingActivityAlert = true
         
-        // Get product metadata
-        Purchases.shared.getOfferings { (offerings, error) in
-            if let package = offerings?.current?.lifetime?.storeProduct {
-                self.productPrice = package.localizedPriceString
+        Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
+            if customerInfo?.entitlements["Premium"]?.isActive == true {
+                self.showingSuccessAlert = true
+            }
+            
+            if let error = error as? RevenueCat.ErrorCode {
+                switch error {
+                case .purchaseCancelledError:
+                    self.errorAlertTitle = "Purchase cancelled"
+                    self.errorAlertMessage = ""
+                    self.showingErrorAlert = true
+                default:
+                    self.errorAlertTitle = "The purchase failed"
+                    self.errorAlertMessage = "If the problem persists, contact me at dmartin@dennistech.io"
+                    self.showingErrorAlert = true
+                }
+            }
+            
+            self.customerInfo = customerInfo
+            self.showingActivityAlert = false
+        }
+    }
+    
+    func restorePurchase() {
+        showingActivityAlert = true
+        
+        Purchases.shared.restorePurchases { customerInfo, error in
+            if customerInfo?.entitlements["Premium"]?.isActive == true {
+                self.showingSuccessAlert = true
             } else {
-                self.errorMessage = "There was an error fetching the product. Please, contact the developer at dmartin@dennistech.io."
+                self.errorAlertTitle = "Opps!"
+                self.errorAlertMessage = "You don't have GeoQuiz Premium unlocked."
                 self.showingErrorAlert = true
             }
             
-            if let error = error {
-                self.errorMessage = error.localizedDescription
+            if let _ = error {
+                self.errorAlertTitle = "The purchase couldn't be restored"
+                self.errorAlertMessage = "If the problem persists, contact me at dmartin@dennistech.io"
                 self.showingErrorAlert = true
             }
+            
+            self.customerInfo = customerInfo
+            self.showingActivityAlert = false
+        }
+    }
+    
+    func fetchOfferings() {
+        Purchases.shared.getOfferings { (offerings, error) in
+            if let _ = error {
+                self.errorAlertTitle = "The product couldn't be fetched"
+                self.errorAlertMessage = "If the problem persists, contact me at dmartin@dennistech.io"
+                self.showingErrorAlert = true
+            }
+            
+            self.offerings = offerings
         }
     }
 }
