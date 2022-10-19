@@ -32,7 +32,6 @@ class CountryGame: Game, ObservableObject {
     // Alerts
     @Published var alertTitle = String()
     @Published var alertMessage = String()
-    @Published var showingGameOverAlert = false
     @Published var showingEndGameAlert = false
     @Published var showingWrongAnswerAlert = false
     @Published var showingExitGameAlert = false

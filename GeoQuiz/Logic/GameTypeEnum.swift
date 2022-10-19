@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum GameType {
+@objc
+public enum GameType: Int16 {
     case guessTheFlag, guessTheCapital, guessTheCountry, guessThePopulation
 }

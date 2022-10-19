@@ -13,6 +13,11 @@ struct ProfileModalView: View {
     @ObservedObject var storeKitRC: StoreKitRC
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var moc
+    
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date),
+    ]) var playedGames: FetchedResults<PlayedGame>
     
     @State private var showingEditModalView = false
     
@@ -63,8 +68,11 @@ struct ProfileModalView: View {
                 }
                 
                 Section {
-                    ForEach(1..<10) { _ in
-                        Text("Hello")
+                    ForEach(playedGames) { playedGame in
+                        HStack {
+                            Text("\(playedGame.id)")
+                            Text("\(playedGame.date)")
+                        }
                     }
                 } header: {
                     Text("Recent games")

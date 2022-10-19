@@ -10,6 +10,7 @@ import RevenueCat
 
 @main
 struct GeoQuizApp: App {
+    @StateObject private var dataController = DataController()
     
     init() {
         Purchases.configure(withAPIKey: "appl_BymTxroeoaWiXAraaFjcPlHlqbf")
@@ -18,6 +19,7 @@ struct GeoQuizApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

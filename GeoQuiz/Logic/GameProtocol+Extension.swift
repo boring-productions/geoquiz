@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import AVFAudio
+import CoreData
 
 protocol Game: ObservableObject {
     
@@ -29,7 +30,6 @@ protocol Game: ObservableObject {
     // Alerts
     var alertTitle: String { get set }
     var alertMessage: String { get set }
-    var showingGameOverAlert: Bool { get set }
     var showingEndGameAlert: Bool { get set }
     var showingWrongAnswerAlert: Bool { get set }
     var showingExitGameAlert: Bool { get set }
@@ -91,7 +91,7 @@ extension Game {
             if userLives == 0 {
                 alertTitle = "🤕 Game over 🤕"
                 alertMessage = "Get up and try again."
-                showingGameOverAlert = true
+                showingEndGameAlert = true
             } else {
                 alertTitle = "🔴 Wrong 🔴"
                 alertMessage = "You have \(userLives) lives left."
@@ -107,14 +107,20 @@ extension Game {
         }
     }
     
-    func reset(selector: () -> Void) {
-        dataAsked = [String: T]()
-        userScore = 0
-        userLives = 3
-        correctAnswers = [String: T]()
-        wrongAnswers = [String: T]()
-        askQuestion {
-            selector()
+    func save(_ gameType: GameType, with moc: NSManagedObjectContext) {
+        let playedGame = PlayedGame(context: moc)
+
+        playedGame.id = UUID()
+        playedGame.type = gameType
+        playedGame.date = Date()
+        playedGame.score = Int32(userScore)
+        playedGame.correctAnswers = Array(correctAnswers.keys)
+        playedGame.wrongAnswers = Array(wrongAnswers.keys)
+        
+        do {
+            try moc.save()
+        } catch {
+            print("Couldn't save object to CoreData: \(error)")
         }
     }
     

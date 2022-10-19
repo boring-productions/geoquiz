@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct GameAlertsModifier<T: Game>: ViewModifier {
     @ObservedObject var game: T
+    
+    var gameType: GameType
+    var moc: NSManagedObjectContext
+    
     @Environment(\.dismiss) var dismiss
     
     func body(content: Content) -> some View {
@@ -22,25 +27,12 @@ struct GameAlertsModifier<T: Game>: ViewModifier {
             } message: {
                 Text(game.alertMessage)
             }
-        
-            .alert(game.alertTitle, isPresented: $game.showingGameOverAlert) {
-                Button("Try again") {
-                    game.reset {
-                        game.selector()
-                    }
-                }
-                Button("Exit", role: .cancel) { dismiss()}
-            } message: {
-                Text(game.alertMessage)
-            }
             
             .alert(game.alertTitle, isPresented: $game.showingEndGameAlert) {
-                Button("Play again") {
-                    game.reset() {
-                        game.selector()
-                    }
+                Button("Exit", role: .cancel) {
+                    game.save(gameType, with: moc)
+                    dismiss()
                 }
-                Button("Exit", role: .cancel) { dismiss() }
             } message: {
                 Text(game.alertMessage)
             }

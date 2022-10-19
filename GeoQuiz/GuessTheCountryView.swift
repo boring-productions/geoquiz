@@ -10,6 +10,8 @@ import SwiftUI
 struct GuessTheCountryView: View {
     @StateObject var game = CityGame()
     
+    @Environment(\.managedObjectContext) var moc
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: .tertiary, startPoint: .top, endPoint: .bottom)
@@ -60,7 +62,7 @@ struct GuessTheCountryView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(GameAlertsModifier(game: game))
+        .modifier(GameAlertsModifier(game: game, gameType: .guessTheCountry, moc: moc))
     }
 }
 
