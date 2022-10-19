@@ -34,7 +34,6 @@
 		956273EA28CB2E98008DC094 /* FlagImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956273E928CB2E98008DC094 /* FlagImageHelper.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
 		95919DB628F076BF00F21F8F /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB528F076BF00F21F8F /* UserClass.swift */; };
-		95919DB828F079D100F21F8F /* UserSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB728F079D100F21F8F /* UserSettingsModel.swift */; };
 		95919DBC28F08D0600F21F8F /* LinkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* LinkHelper.swift */; };
 		95AE8D5728C8750E0067F219 /* LoadFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE8D5628C8750E0067F219 /* LoadFunc.swift */; };
 		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
@@ -42,8 +41,12 @@
 		95C430F928D0A8E500480D23 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C430F828D0A8E500480D23 /* GradientExtension.swift */; };
 		95C4315628C64A8C00212131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315528C64A8C00212131 /* ContentView.swift */; };
 		95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315828C6500000212131 /* GameButtonHelper.swift */; };
-		95CA294028F5769700CE0B7A /* GameModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA293F28F5769700CE0B7A /* GameModeEnum.swift */; };
+		95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456B28FE87E4000CD570 /* UserDataModel.swift */; };
+		95C6456E28FE8C04000CD570 /* UserImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456D28FE8C04000CD570 /* UserImageHelper.swift */; };
+		95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */; };
+		95C6457428FFC8E0000CD570 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457328FFC8E0000CD570 /* DataController.swift */; };
 		95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */; };
+		95CC404928F98503001F74E1 /* GameTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC404828F98503001F74E1 /* GameTypeEnum.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
 		95FA409C28D9881100129B60 /* CountryGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409B28D9881100129B60 /* CountryGameClass.swift */; };
 /* End PBXBuildFile section */
@@ -76,7 +79,6 @@
 		956273E928CB2E98008DC094 /* FlagImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageHelper.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		95919DB528F076BF00F21F8F /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
-		95919DB728F079D100F21F8F /* UserSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModel.swift; sourceTree = "<group>"; };
 		95919DBB28F08D0600F21F8F /* LinkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHelper.swift; sourceTree = "<group>"; };
 		95AE8D5628C8750E0067F219 /* LoadFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFunc.swift; sourceTree = "<group>"; };
 		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
@@ -84,8 +86,12 @@
 		95C430F828D0A8E500480D23 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		95C4315528C64A8C00212131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95C4315828C6500000212131 /* GameButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonHelper.swift; sourceTree = "<group>"; };
-		95CA293F28F5769700CE0B7A /* GameModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeEnum.swift; sourceTree = "<group>"; };
+		95C6456B28FE87E4000CD570 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		95C6456D28FE8C04000CD570 /* UserImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageHelper.swift; sourceTree = "<group>"; };
+		95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditModalView.swift; sourceTree = "<group>"; };
+		95C6457328FFC8E0000CD570 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlertHelper.swift; sourceTree = "<group>"; };
+		95CC404828F98503001F74E1 /* GameTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeEnum.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95FA409928D9876B00129B60 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
 		95FA409B28D9881100129B60 /* CountryGameClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGameClass.swift; sourceTree = "<group>"; };
@@ -109,15 +115,16 @@
 			children = (
 				951AFAEC28E5657500A4A4BD /* CityModel.swift */,
 				951AFAEE28E565FE00A4A4BD /* CountryModel.swift */,
-				95919DB728F079D100F21F8F /* UserSettingsModel.swift */,
+				95C6456B28FE87E4000CD570 /* UserDataModel.swift */,
 				955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */,
 				955A65A828D7815E00CEEC6D /* HapticsClass.swift */,
 				95FA409B28D9881100129B60 /* CountryGameClass.swift */,
 				951AFAF028E5735400A4A4BD /* CityGameClass.swift */,
 				95919DB528F076BF00F21F8F /* UserClass.swift */,
 				95197EFC28F339AE00FE67E9 /* StoreKitRCClass.swift */,
+				95CC404828F98503001F74E1 /* GameTypeEnum.swift */,
 				95AE8D5628C8750E0067F219 /* LoadFunc.swift */,
-				95CA293F28F5769700CE0B7A /* GameModeEnum.swift */,
+				95C6457328FFC8E0000CD570 /* DataController.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -198,10 +205,12 @@
 				95BC392C28EC42570049AB49 /* CityMapHelper.swift */,
 				95919DBB28F08D0600F21F8F /* LinkHelper.swift */,
 				95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */,
+				95C6456D28FE8C04000CD570 /* UserImageHelper.swift */,
 				952E41E828DC521200198643 /* GameAlertsModifier.swift */,
 				95C430F828D0A8E500480D23 /* GradientExtension.swift */,
 				951D197228D485E000671FAD /* ColorExtension.swift */,
 				955950BA28F15FF2001BDEE8 /* FormatterExtension.swift */,
+				95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -290,10 +299,12 @@
 				95BC392D28EC42570049AB49 /* CityMapHelper.swift in Sources */,
 				952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */,
 				95197EFD28F339AE00FE67E9 /* StoreKitRCClass.swift in Sources */,
-				95919DB828F079D100F21F8F /* UserSettingsModel.swift in Sources */,
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
 				955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */,
+				95CC404928F98503001F74E1 /* GameTypeEnum.swift in Sources */,
+				95C6457428FFC8E0000CD570 /* DataController.swift in Sources */,
 				95919DB628F076BF00F21F8F /* UserClass.swift in Sources */,
+				95C6456E28FE8C04000CD570 /* UserImageHelper.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */,
 				956273EA28CB2E98008DC094 /* FlagImageHelper.swift in Sources */,
@@ -308,11 +319,12 @@
 				95FA409C28D9881100129B60 /* CountryGameClass.swift in Sources */,
 				95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */,
 				955A658128D703EB00CEEC6D /* GameToolbarHelper.swift in Sources */,
-				95CA294028F5769700CE0B7A /* GameModeEnum.swift in Sources */,
 				95AE8D5728C8750E0067F219 /* LoadFunc.swift in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
 				955950BB28F15FF2001BDEE8 /* FormatterExtension.swift in Sources */,
+				95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */,
 				951D197328D485E000671FAD /* ColorExtension.swift in Sources */,
+				95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */,
 				95C430F928D0A8E500480D23 /* GradientExtension.swift in Sources */,
 				952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */,
 				95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */,
@@ -456,6 +468,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +502,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

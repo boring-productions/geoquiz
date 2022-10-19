@@ -49,11 +49,11 @@ class CityGame: Game, ObservableObject {
         self.data = data.cities
         
         let user = User()
-        userLives = user.settings.numberOfLives
+        userLives = user.data.numberOfLives
         
-        if let userSettings = UserDefaults.standard.data(forKey: "UserSettings") {
-            if let decodedUserSettings = try? JSONDecoder().decode(UserSettings.self, from: userSettings) {
-                userLives = decodedUserSettings.numberOfLives
+        if let userData = UserDefaults.standard.data(forKey: "UserData") {
+            if let decodedUserData = try? JSONDecoder().decode(UserData.self, from: userData) {
+                userLives = decodedUserData.numberOfLives
             }
         }
         

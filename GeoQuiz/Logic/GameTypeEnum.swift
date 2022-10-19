@@ -1,12 +1,12 @@
 //
-//  GameModeEnum.swift
+//  GameTypeEnum.swift
 //  GeoQuiz
 //
-//  Created by Dennis Concepción Martín on 11/10/22.
+//  Created by Dennis Concepción Martín on 14/10/22.
 //
 
 import Foundation
 
-enum GameMode {
+enum GameType {
     case guessTheFlag, guessTheCapital, guessTheCountry, guessThePopulation
 }

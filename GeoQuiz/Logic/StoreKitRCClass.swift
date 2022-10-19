@@ -7,7 +7,6 @@
 
 import Foundation
 import RevenueCat
-import SwiftUI
 
 class StoreKitRC: ObservableObject {
     @Published var errorAlertTitle = ""

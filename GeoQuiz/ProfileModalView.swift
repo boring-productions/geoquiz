@@ -6,15 +6,97 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileModalView: View {
+    @ObservedObject var user: User
+    @ObservedObject var storeKitRC: StoreKitRC
+    
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var showingEditModalView = false
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Form {
+                Section {
+                    HStack(spacing: 20) {
+                        UserImage(uiImage: user.data.uiImage)
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(user.data.username)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                            
+                            if storeKitRC.isActive {
+                                Text("Premium user ⭐️")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                }
+                
+                Section {
+                    VStack(alignment: .leading) {
+                        Text("Game 1")
+                        Capsule()
+                            .frame(height: 6)
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Game 1")
+                        Capsule()
+                            .frame(height: 6)
+                    }
+                    VStack(alignment: .leading) {
+                        Text("Game 1")
+                        Capsule()
+                            .frame(height: 6)
+                    }
+                    VStack(alignment: .leading) {
+                        Text("Game 1")
+                        Capsule()
+                            .frame(height: 6)
+                    }
+                } header: {
+                    Text("Progress")
+                }
+                
+                Section {
+                    ForEach(1..<10) { _ in
+                        Text("Hello")
+                    }
+                } header: {
+                    Text("Recent games")
+                }
+            }
+            .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Label("Exit", systemImage: "multiply")
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Edit") {
+                        showingEditModalView = true
+                    }
+                }
+            }
+            
+            .sheet(isPresented: $showingEditModalView) {
+                ProfileEditModalView(user: user)
+            }
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileModalView()
+        ProfileModalView(user: User(), storeKitRC: StoreKitRC())
     }
 }

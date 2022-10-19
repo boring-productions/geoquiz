@@ -121,7 +121,7 @@ extension Game {
     private func playSound(_ filename: String) {
         let user = User()
         
-        if user.settings.sound {
+        if user.data.sound {
             guard let soundFileURL = Bundle.main.url(forResource: filename, withExtension: "wav") else {
                 fatalError("Sound file \(filename) couldn't be found")
             }

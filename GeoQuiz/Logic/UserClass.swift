@@ -8,19 +8,18 @@
 import Foundation
 
 class User: ObservableObject {
-    @Published var settings = UserSettings() {
+    @Published var data = UserData() {
         didSet {
-            if let userSettingsEncoded = try? JSONEncoder().encode(settings) {
-                UserDefaults.standard.set(userSettingsEncoded, forKey: "UserSettings")
+            if let userDataEncoded = try? JSONEncoder().encode(data) {
+                UserDefaults.standard.set(userDataEncoded, forKey: "UserData")
             }
         }
     }
-    
-    
+
     init() {
-        if let userSettings = UserDefaults.standard.data(forKey: "UserSettings") {
-            if let decodedUserSettings = try? JSONDecoder().decode(UserSettings.self, from: userSettings) {
-                settings = decodedUserSettings
+        if let userData = UserDefaults.standard.data(forKey: "UserData") {
+            if let decodedUserData = try? JSONDecoder().decode(UserData.self, from: userData) {
+                data = decodedUserData
             }
         }
     }
