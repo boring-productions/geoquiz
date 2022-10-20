@@ -28,11 +28,6 @@ struct UserProfile: View {
             
             Spacer()
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(.white)
-        )
     }
 }
 

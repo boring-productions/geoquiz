@@ -22,43 +22,53 @@ struct ProfileModalView: View {
     @State private var showingEditModalView = false
     
     var body: some View {
-            NavigationView {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 15) {
-                        UserProfile(user: user, storeKitRC: storeKitRC)
-                        
-                        UserProgress(playedGames: playedGames)
-                        
-                        ForEach(playedGames) { playedGame in
-                            RecentGame(game: playedGame)
-                        }
-                        .onDelete(perform: deleteGame)
-                    }
-                    .padding()
+        NavigationView {
+            List {
+                Section {
+                    UserProfile(user: user, storeKitRC: storeKitRC)
                 }
-                .background(.customBackground)
-                .navigationTitle("Profile")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Label("Exit", systemImage: "multiply")
-                        }
+                
+                Section {
+                    UserProgress(playedGames: playedGames, gameType: .guessTheFlag)
+                    UserProgress(playedGames: playedGames, gameType: .guessTheCapital)
+                    UserProgress(playedGames: playedGames, gameType: .guessTheCountry)
+                    UserProgress(playedGames: playedGames, gameType: .guessThePopulation)
+                } header: {
+                    Text("Progress")
+                }
+                
+                Section {
+                    ForEach(playedGames) { playedGame in
+                        RecentGame(game: playedGame)
                     }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Edit") {
-                            showingEditModalView = true
-                        }
+                    .onDelete(perform: deleteGame)
+                } header: {
+                    Text("Recent games")
+                }
+            }
+            .background(.customBackground)
+            .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Label("Exit", systemImage: "multiply")
                     }
                 }
                 
-                .sheet(isPresented: $showingEditModalView) {
-                    ProfileEditModalView(user: user)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Edit") {
+                        showingEditModalView = true
+                    }
                 }
             }
+            
+            .sheet(isPresented: $showingEditModalView) {
+                ProfileEditModalView(user: user)
+            }
+        }
         
     }
     

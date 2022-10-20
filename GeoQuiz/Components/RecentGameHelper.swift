@@ -42,13 +42,9 @@ struct RecentGame: View {
             Spacer()
             
             Text("\(game.score, format: .number) ⭐️")
+                .font(.headline)
             
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(.white)
-        )
     }
     
     init(game: PlayedGame) {
