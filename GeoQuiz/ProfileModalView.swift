@@ -16,95 +16,65 @@ struct ProfileModalView: View {
     @Environment(\.managedObjectContext) var moc
     
     @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.date),
+        SortDescriptor(\.date, order: .reverse),
     ]) var playedGames: FetchedResults<PlayedGame>
     
     @State private var showingEditModalView = false
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    HStack(spacing: 20) {
-                        UserImage(uiImage: user.data.uiImage)
+            NavigationView {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 15) {
+                        UserProfile(user: user, storeKitRC: storeKitRC)
                         
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(user.data.username)
-                                .font(.title)
-                                .fontWeight(.semibold)
-                            
-                            if storeKitRC.isActive {
-                                Text("Premium user ⭐️")
-                                    .foregroundColor(.secondary)
-                            }
+                        UserProgress(playedGames: playedGames)
+                        
+                        ForEach(playedGames) { playedGame in
+                            RecentGame(game: playedGame)
                         }
+                        .onDelete(perform: deleteGame)
                     }
+                    .padding()
                 }
-                
-                Section {
-                    VStack(alignment: .leading) {
-                        Text("Game 1")
-                        Capsule()
-                            .frame(height: 6)
+                .background(.customBackground)
+                .navigationTitle("Profile")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Label("Exit", systemImage: "multiply")
+                        }
                     }
                     
-                    VStack(alignment: .leading) {
-                        Text("Game 1")
-                        Capsule()
-                            .frame(height: 6)
-                    }
-                    VStack(alignment: .leading) {
-                        Text("Game 1")
-                        Capsule()
-                            .frame(height: 6)
-                    }
-                    VStack(alignment: .leading) {
-                        Text("Game 1")
-                        Capsule()
-                            .frame(height: 6)
-                    }
-                } header: {
-                    Text("Progress")
-                }
-                
-                Section {
-                    ForEach(playedGames) { playedGame in
-                        HStack {
-                            Text("\(playedGame.id)")
-                            Text("\(playedGame.date)")
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Edit") {
+                            showingEditModalView = true
                         }
                     }
-                } header: {
-                    Text("Recent games")
-                }
-            }
-            .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Label("Exit", systemImage: "multiply")
-                    }
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Edit") {
-                        showingEditModalView = true
-                    }
+                .sheet(isPresented: $showingEditModalView) {
+                    ProfileEditModalView(user: user)
                 }
             }
-            
-            .sheet(isPresented: $showingEditModalView) {
-                ProfileEditModalView(user: user)
-            }
+        
+    }
+    
+    private func deleteGame(at offsets: IndexSet) {
+        for offset in offsets {
+            let game = playedGames[offset]
+            moc.delete(game)
         }
+        
+        try? moc.save()
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileModalView(user: User(), storeKitRC: StoreKitRC())
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

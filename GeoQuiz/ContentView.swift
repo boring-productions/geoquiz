@@ -35,10 +35,10 @@ struct ContentView: View {
                         path.append(.guessTheFlag)
                     } label: {
                         GameButton(
-                            gradient: .main,
-                            level: "Level 1",
-                            symbol: "flag.fill",
-                            name: "Guess the flag"
+                            gradient: GuessTheFlagInfo.gradient,
+                            level: GuessTheFlagInfo.level,
+                            symbol: GuessTheFlagInfo.symbol,
+                            name: GuessTheFlagInfo.name
                         )
                     }
                     
@@ -50,10 +50,10 @@ struct ContentView: View {
                         }
                     } label: {
                         GameButton(
-                            gradient: .secondary,
-                            level: "Level 2",
-                            symbol: storeKitRC.isActive ? "building.2.fill": "lock.fill",
-                            name: "Guess the capital"
+                            gradient: GuessTheCapitalInfo.gradient,
+                            level: GuessTheCapitalInfo.level,
+                            symbol: storeKitRC.isActive ? GuessTheCapitalInfo.symbol: "lock.fill",
+                            name: GuessTheCapitalInfo.name
                         )
                     }
                     
@@ -65,10 +65,10 @@ struct ContentView: View {
                         }
                     } label: {
                         GameButton(
-                            gradient: .tertiary,
-                            level: "Level 3",
-                            symbol: storeKitRC.isActive ? "globe.americas.fill": "lock.fill",
-                            name: "Guess the country"
+                            gradient: GuessTheCountryInfo.gradient,
+                            level: GuessTheCountryInfo.level,
+                            symbol: storeKitRC.isActive ? GuessTheCountryInfo.symbol: "lock.fill",
+                            name: GuessTheCountryInfo.name
                         )
                     }
                     
@@ -80,10 +80,10 @@ struct ContentView: View {
                         }
                     } label: {
                         GameButton(
-                            gradient: .quaternary,
-                            level: "Level 4",
-                            symbol: storeKitRC.isActive ? "person.fill": "lock.fill",
-                            name: "Guess the population"
+                            gradient: GuessThePopulationInfo.gradient,
+                            level: GuessThePopulationInfo.level,
+                            symbol: storeKitRC.isActive ? GuessThePopulationInfo.symbol: "lock.fill",
+                            name: GuessThePopulationInfo.name
                         )
                     }
 
@@ -150,5 +150,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

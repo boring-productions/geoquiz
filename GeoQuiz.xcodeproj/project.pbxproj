@@ -44,12 +44,17 @@
 		95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456B28FE87E4000CD570 /* UserDataModel.swift */; };
 		95C6456E28FE8C04000CD570 /* UserImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456D28FE8C04000CD570 /* UserImageHelper.swift */; };
 		95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */; };
-		95C6457428FFC8E0000CD570 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457328FFC8E0000CD570 /* DataController.swift */; };
+		95C6457428FFC8E0000CD570 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457328FFC8E0000CD570 /* PersistenceController.swift */; };
 		95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457528FFC934000CD570 /* GeoQuiz.xcdatamodeld */; };
 		95C6459A28FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */; };
 		95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */; };
+		95C6459D290003E1000CD570 /* RecentGameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459C290003E1000CD570 /* RecentGameHelper.swift */; };
+		95C645BE29011EF9000CD570 /* UserProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645BD29011EF9000CD570 /* UserProgressComponent.swift */; };
+		95C645C029011F8E000CD570 /* GameStatsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645BF29011F8E000CD570 /* GameStatsClass.swift */; };
+		95C645C229014442000CD570 /* GameInfoProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645C129014442000CD570 /* GameInfoProtocol+Extension.swift */; };
+		95C645C42901552B000CD570 /* UserProfileComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645C32901552B000CD570 /* UserProfileComponent.swift */; };
+		95C645C629015A06000CD570 /* ProgressBarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645C529015A06000CD570 /* ProgressBarHelper.swift */; };
 		95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */; };
-		95CC404928F98503001F74E1 /* GameTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC404828F98503001F74E1 /* GameTypeEnum.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
 		95FA409C28D9881100129B60 /* CountryGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409B28D9881100129B60 /* CountryGameClass.swift */; };
 /* End PBXBuildFile section */
@@ -92,12 +97,17 @@
 		95C6456B28FE87E4000CD570 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		95C6456D28FE8C04000CD570 /* UserImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageHelper.swift; sourceTree = "<group>"; };
 		95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditModalView.swift; sourceTree = "<group>"; };
-		95C6457328FFC8E0000CD570 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		95C6457328FFC8E0000CD570 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		95C6457628FFC934000CD570 /* GeoQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GeoQuiz.xcdatamodel; sourceTree = "<group>"; };
 		95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95C6459C290003E1000CD570 /* RecentGameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGameHelper.swift; sourceTree = "<group>"; };
+		95C645BD29011EF9000CD570 /* UserProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressComponent.swift; sourceTree = "<group>"; };
+		95C645BF29011F8E000CD570 /* GameStatsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsClass.swift; sourceTree = "<group>"; };
+		95C645C129014442000CD570 /* GameInfoProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameInfoProtocol+Extension.swift"; sourceTree = "<group>"; };
+		95C645C32901552B000CD570 /* UserProfileComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileComponent.swift; sourceTree = "<group>"; };
+		95C645C529015A06000CD570 /* ProgressBarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarHelper.swift; sourceTree = "<group>"; };
 		95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlertHelper.swift; sourceTree = "<group>"; };
-		95CC404828F98503001F74E1 /* GameTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeEnum.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95FA409928D9876B00129B60 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
 		95FA409B28D9881100129B60 /* CountryGameClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGameClass.swift; sourceTree = "<group>"; };
@@ -122,15 +132,16 @@
 				951AFAEC28E5657500A4A4BD /* CityModel.swift */,
 				951AFAEE28E565FE00A4A4BD /* CountryModel.swift */,
 				95C6456B28FE87E4000CD570 /* UserDataModel.swift */,
+				95C645C129014442000CD570 /* GameInfoProtocol+Extension.swift */,
 				955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */,
 				955A65A828D7815E00CEEC6D /* HapticsClass.swift */,
 				95FA409B28D9881100129B60 /* CountryGameClass.swift */,
 				951AFAF028E5735400A4A4BD /* CityGameClass.swift */,
 				95919DB528F076BF00F21F8F /* UserClass.swift */,
 				95197EFC28F339AE00FE67E9 /* StoreKitRCClass.swift */,
-				95CC404828F98503001F74E1 /* GameTypeEnum.swift */,
+				95C645BF29011F8E000CD570 /* GameStatsClass.swift */,
 				95AE8D5628C8750E0067F219 /* LoadFunc.swift */,
-				95C6457328FFC8E0000CD570 /* DataController.swift */,
+				95C6457328FFC8E0000CD570 /* PersistenceController.swift */,
 				95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */,
 				95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */,
 			);
@@ -188,6 +199,7 @@
 				950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */,
 				952E41EC28DC658900198643 /* SettingsModalView.swift */,
 				9590359428E098FF00B24560 /* ProfileModalView.swift */,
+				95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */,
 				959D414728C87EA600BAAC14 /* Components */,
 				95030CE728D1B60F001AA3A1 /* Logic */,
 				9520ABBA28C86D0300A3D4D7 /* Resources */,
@@ -215,11 +227,14 @@
 				95919DBB28F08D0600F21F8F /* LinkHelper.swift */,
 				95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */,
 				95C6456D28FE8C04000CD570 /* UserImageHelper.swift */,
+				95C6459C290003E1000CD570 /* RecentGameHelper.swift */,
+				95C645C529015A06000CD570 /* ProgressBarHelper.swift */,
+				95C645BD29011EF9000CD570 /* UserProgressComponent.swift */,
+				95C645C32901552B000CD570 /* UserProfileComponent.swift */,
 				952E41E828DC521200198643 /* GameAlertsModifier.swift */,
 				95C430F828D0A8E500480D23 /* GradientExtension.swift */,
 				951D197228D485E000671FAD /* ColorExtension.swift */,
 				955950BA28F15FF2001BDEE8 /* FormatterExtension.swift */,
-				95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -311,29 +326,34 @@
 				95197EFD28F339AE00FE67E9 /* StoreKitRCClass.swift in Sources */,
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
 				955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */,
-				95CC404928F98503001F74E1 /* GameTypeEnum.swift in Sources */,
-				95C6457428FFC8E0000CD570 /* DataController.swift in Sources */,
+				95C6457428FFC8E0000CD570 /* PersistenceController.swift in Sources */,
 				95919DB628F076BF00F21F8F /* UserClass.swift in Sources */,
+				95C6459D290003E1000CD570 /* RecentGameHelper.swift in Sources */,
 				95C6456E28FE8C04000CD570 /* UserImageHelper.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
+				95C645C229014442000CD570 /* GameInfoProtocol+Extension.swift in Sources */,
 				95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */,
 				956273EA28CB2E98008DC094 /* FlagImageHelper.swift in Sources */,
 				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
 				950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
+				95C645C029011F8E000CD570 /* GameStatsClass.swift in Sources */,
 				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
 				95919DBC28F08D0600F21F8F /* LinkHelper.swift in Sources */,
+				95C645BE29011EF9000CD570 /* UserProgressComponent.swift in Sources */,
 				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
 				95030CEA28D1BA4D001AA3A1 /* AnswerButtonHelper.swift in Sources */,
 				95FA409C28D9881100129B60 /* CountryGameClass.swift in Sources */,
 				95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */,
 				955A658128D703EB00CEEC6D /* GameToolbarHelper.swift in Sources */,
 				95AE8D5728C8750E0067F219 /* LoadFunc.swift in Sources */,
+				95C645C42901552B000CD570 /* UserProfileComponent.swift in Sources */,
 				95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
 				955950BB28F15FF2001BDEE8 /* FormatterExtension.swift in Sources */,
 				95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */,
+				95C645C629015A06000CD570 /* ProgressBarHelper.swift in Sources */,
 				95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */,
 				951D197328D485E000671FAD /* ColorExtension.swift in Sources */,
 				95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */,
