@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AnswerButton: View {
-    let optionName: String
+    let name: String
     let color: Color
     
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
             .foregroundColor(.white)
             .overlay(
-                Text(optionName)
+                Text(name)
                     .font(.title2.bold())
                     .foregroundColor(color)
             )
@@ -30,7 +30,7 @@ struct AnswerButton_Previews: PreviewProvider {
             
             VStack {
                 Spacer()
-                AnswerButton(optionName: "Madrid", color: .royalLightBlue)
+                AnswerButton(name: "Madrid", color: .royalLightBlue)
                     .frame(height: 70)
             }
             .padding()

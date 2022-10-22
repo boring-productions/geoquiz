@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GuessTheFlagView: View {
-    @StateObject var game = CountryGame()
+    @StateObject var game = CountryGameController()
     
     @Environment(\.managedObjectContext) var moc
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CityData: Codable {
+struct CityModel: Codable {
     let cities: [String: City]
     
     struct City: Codable, Equatable {

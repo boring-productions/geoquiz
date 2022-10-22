@@ -9,29 +9,32 @@ import SwiftUI
 
 struct RecentGame: View {
     let game: PlayedGame
-    let name: String
-    let gradient: Gradient
-    let symbol: String
+    let gameInfo: GameInfo
+    
+    init(game: PlayedGame) {
+        self.game = game
+        self.gameInfo = GameInfoController.getInfo(for: game.type)
+    }
     
     var body: some View {
         HStack(alignment: .center, spacing: 15) {
             RoundedRectangle(cornerRadius: 5)
                 .fill(
                     LinearGradient(
-                        gradient: gradient,
+                        gradient: gameInfo.gradient,
                         startPoint: .top, endPoint: .bottom
                     )
                 )
                 .frame(width: 35, height: 35)
                 .overlay(
-                    Image(systemName: symbol)
+                    Image(systemName: gameInfo.symbol)
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding(5)
                 )
             
             VStack(alignment: .leading) {
-                Text(name)
+                Text(gameInfo.name)
                     .font(.headline)
                 
                 Text("\(game.date, format: .dateTime)")
@@ -45,28 +48,8 @@ struct RecentGame: View {
                 .font(.headline)
             
         }
-    }
-    
-    init(game: PlayedGame) {
-        self.game = game
-        
-        switch game.type {
-        case .guessTheFlag:
-            self.name = GuessTheFlagInfo.name
-            self.gradient = GuessTheFlagInfo.gradient
-            self.symbol = GuessTheFlagInfo.symbol
-        case .guessTheCapital:
-            self.name = GuessTheCapitalInfo.name
-            self.gradient = GuessTheCapitalInfo.gradient
-            self.symbol = GuessTheCapitalInfo.symbol
-        case .guessTheCountry:
-            self.name = GuessTheCountryInfo.name
-            self.gradient = GuessTheCountryInfo.gradient
-            self.symbol = GuessTheCountryInfo.symbol
-        case .guessThePopulation:
-            self.name = GuessThePopulationInfo.name
-            self.gradient = GuessThePopulationInfo.gradient
-            self.symbol = GuessThePopulationInfo.symbol
-        }
+        .padding()
+        .background(Color(.secondarySystemGroupedBackground))
+        .cornerRadius(20)
     }
 }

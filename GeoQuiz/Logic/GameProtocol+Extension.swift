@@ -62,7 +62,7 @@ extension Game {
     }
     
     func answer(_ choice: (key: String, value: T), selector: () -> Void) {
-        let haptics = Haptics()
+        let haptics = HapticsController()
         
         if correctAnswer == choice {
             haptics.success()
@@ -125,7 +125,7 @@ extension Game {
     }
     
     private func playSound(_ filename: String) {
-        let user = User()
+        let user = UserController()
         
         if user.data.sound {
             guard let soundFileURL = Bundle.main.url(forResource: filename, withExtension: "wav") else {

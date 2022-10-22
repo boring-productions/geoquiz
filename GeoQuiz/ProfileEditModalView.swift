@@ -9,10 +9,17 @@ import SwiftUI
 import PhotosUI
 
 struct ProfileEditModalView: View {
-    @ObservedObject var user: User
+    @ObservedObject var userController: UserController
+    
+    @State var newUsername: String
+    @State private var selectedImageItem: PhotosPickerItem? = nil
+    
     @Environment(\.dismiss) var dismiss
     
-    @State private var selectedItem: PhotosPickerItem? = nil
+    init(user: UserController) {
+        self.userController = user
+        self._newUsername = State(initialValue: user.data.username)
+    }
     
     var body: some View {
         NavigationStack {
@@ -20,43 +27,58 @@ struct ProfileEditModalView: View {
                 Section {
                     HStack {
                         Spacer()
-                        ZStack {
-                            UserImage(uiImage: user.data.uiImage)
-                                .onChange(of: selectedItem) { newItem in
-                                    Task {
-                                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                            user.data.imageData = data
-                                        }
+                        PhotosPicker(
+                            selection: $selectedImageItem,
+                            matching: .images,
+                            photoLibrary: .shared()) {
+                                UserImage(userController: userController)
+                                    .frame(height: 150)
+                                    .overlay(
+                                        Image(systemName: "camera.fill")
+                                            .foregroundColor(.white)
+                                            .font(.title)
+                                            .shadow(radius: 5)
+                                    )
+                            }
+                            .onChange(of: selectedImageItem) { newItem in
+                                Task {
+                                    if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                        userController.data.imageData = data
                                     }
                                 }
-                            
-                            PhotosPicker(
-                                selection: $selectedItem,
-                                matching: .images,
-                                photoLibrary: .shared()) {
-                                    EmptyView()
-                                }
-                        }
+                            }
                         
                         Spacer()
                     }
-                } header: {
-                    Text("Profile image")
+                    .listRowBackground(Color.clear)
                 }
                 
                 Section {
-                    TextField("Enter a username", text: $user.data.username)
+                    TextField("Enter a username", text: $newUsername)
                 } header: {
                     Text("Username")
                 }
+                
             }
             .navigationTitle("Edit profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
                         dismiss()
+                    } label: {
+                        Label("Exit", systemImage: "multiply")
                     }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        userController.data.username = newUsername
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                    }
+                    .disabled(newUsername.isEmpty)
                 }
             }
         }
@@ -65,6 +87,6 @@ struct ProfileEditModalView: View {
 
 struct ProfileEditModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileEditModalView(user: User())
+        ProfileEditModalView(user: UserController())
     }
 }

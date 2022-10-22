@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct GameButton: View {
-    let gradient: Gradient
-    let level: String
-    let symbol: String
-    let name: String
+    let gameInfo: GameInfo
+    let isActive: Bool
+    
+    init(gameType: GameType, isActive: Bool) {
+        self.gameInfo = GameInfoController.getInfo(for: gameType)
+        self.isActive = isActive
+    }
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .fill(
                 LinearGradient(
-                    gradient: gradient,
+                    gradient: gameInfo.gradient,
                     startPoint: .trailing, endPoint: .leading
                 )
             )
@@ -27,7 +30,7 @@ struct GameButton: View {
                 ZStack(alignment: .trailing) {
                     VStack(alignment: .leading) {
                         HStack {
-                            Image(systemName: symbol)
+                            Image(systemName: isActive ? gameInfo.symbol : "lock.fill")
                                 .font(.headline)
                                 .padding(5)
                                 .background(
@@ -40,10 +43,10 @@ struct GameButton: View {
                         .padding(.bottom)
                         
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(level)
+                            Text(gameInfo.level)
                                 .font(.callout)
                             
-                            Text(name)
+                            Text(gameInfo.name)
                                 .font(.title.bold())
                         }
                     }
@@ -56,11 +59,6 @@ struct GameButton: View {
 
 struct GameButton_Previews: PreviewProvider {
     static var previews: some View {
-        GameButton(
-            gradient: .main,
-            level: "Level 1",
-            symbol: "flag.fill",
-            name: "Guess the flag"
-        )
+        GameButton(gameType: .guessTheFlag, isActive: false)
     }
 }

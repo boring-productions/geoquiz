@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LinkComponent: View {
     var color: Color
-    var iconName: String
+    var symbol: String
     var text: String
     var url: URL
     
@@ -18,7 +18,7 @@ struct LinkComponent: View {
     var body: some View {
         Link(destination: url) {
             HStack(alignment: .center, spacing: 20) {
-                Image(systemName: iconName)
+                Image(systemName: symbol)
                     .imageScale(.large)
                     .foregroundColor(color)
                 
@@ -33,7 +33,7 @@ struct LinkComponent_Previews: PreviewProvider {
     static var previews: some View {
         LinkComponent(
             color: .mayaBlue,
-            iconName: "info.circle.fill",
+            symbol: "info.circle.fill",
             text: "About",
             url: URL(string: "https://dennistech.io")!
         )

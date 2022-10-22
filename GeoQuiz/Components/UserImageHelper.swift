@@ -2,18 +2,17 @@
 //  UserImageHelper.swift
 //  GeoQuiz
 //
-//  Created by Dennis Concepción Martín on 18/10/22.
+//  Created by Dennis Concepción Martín on 22/10/22.
 //
 
 import SwiftUI
 
 struct UserImage: View {
-    var uiImage: UIImage?
+    @ObservedObject var userController: UserController
     
     var body: some View {
-        if let uiImage = uiImage {
+        if let uiImage = userController.data.uiImage {
             Circle()
-                .frame(height: 100)
                 .overlay(
                     Image(uiImage: uiImage)
                         .resizable()
@@ -22,7 +21,6 @@ struct UserImage: View {
                 )
         } else {
             Circle()
-                .frame(height: 100)
                 .foregroundColor(.secondary.opacity(0.3))
                 .overlay(
                     Image(systemName: "person")
@@ -34,6 +32,6 @@ struct UserImage: View {
 
 struct UserImage_Previews: PreviewProvider {
     static var previews: some View {
-        UserImage()
+        UserImage(userController: UserController())
     }
 }

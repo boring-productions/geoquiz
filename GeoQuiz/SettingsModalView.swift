@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsModalView: View {
-    @ObservedObject var user: User
+    @ObservedObject var user: UserController
+    
     @Environment(\.dismiss) var dismiss
 
     var lives: [Int] {
@@ -21,7 +22,7 @@ struct SettingsModalView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section {
                     Picker("❤️ Lives", selection: $user.data.numberOfLives) {
@@ -46,21 +47,21 @@ struct SettingsModalView: View {
                 Section {
                     LinkComponent(
                         color: .mayaBlue,
-                        iconName: "info.circle.fill",
+                        symbol: "info.circle.fill",
                         text: "About",
                         url: URL(string: "https://dennistech.io")!
                     )
                     
                     LinkComponent(
                         color: .atomicTangerine,
-                        iconName: "ant.circle.fill",
+                        symbol: "ant.circle.fill",
                         text: "Report bugs",
                         url: URL(string: "mailto:dmartin@dennistech.io")!
                     )
                     
                     LinkComponent(
                         color: .blueBell,
-                        iconName: "message.circle.fill",
+                        symbol: "message.circle.fill",
                         text: "Twitter",
                         url: URL(string: "https://twitter.com/dennistech_")!
                     )
@@ -69,6 +70,7 @@ struct SettingsModalView: View {
                 }
             }
             .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -84,6 +86,6 @@ struct SettingsModalView: View {
 
 struct SettingsModalView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsModalView(user: User())
+        SettingsModalView(user: UserController())
     }
 }

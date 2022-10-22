@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GuessThePopulationView: View {
-    @StateObject var game = CountryGame()
+    @StateObject var game = CountryGameController()
     
     @Environment(\.managedObjectContext) var moc
     
@@ -51,7 +51,7 @@ struct GuessThePopulationView: View {
                                 } label: {
                                     let population = game.data[countryName]!.population
                                     AnswerButton(
-                                        optionName: population.formattedWithSeparator,
+                                        name: population.formattedWithSeparator,
                                         color: .middleRed
                                     )
                                     .frame(height: geo.size.height * 0.08)

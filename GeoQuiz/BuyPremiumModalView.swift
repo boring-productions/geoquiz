@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct BuyPremiumModalView: View {
+    @ObservedObject var storeKitController: StoreKitController
+    
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var storeKitRC: StoreKitRC
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .center, spacing: 20) {
@@ -57,9 +58,9 @@ struct BuyPremiumModalView: View {
                                 .foregroundColor(.secondary)
                             
                             VStack {
-                                if let package = storeKitRC.offerings?.current?.lifetime {
+                                if let package = storeKitController.offerings?.current?.lifetime {
                                     Button {
-                                        storeKitRC.buy(package)
+                                        storeKitController.buy(package)
                                     } label: {
                                         Text("Buy for \(package.storeProduct.localizedPriceString)")
                                             .font(.headline)
@@ -72,7 +73,7 @@ struct BuyPremiumModalView: View {
                                 }
                             }
                             
-                            Button("Restore purchases", action: storeKitRC.restorePurchase)
+                            Button("Restore purchases", action: storeKitController.restorePurchase)
                         }
                         .padding()
                         
@@ -86,12 +87,12 @@ struct BuyPremiumModalView: View {
                     }
                 }
                 
-                if storeKitRC.showingActivityAlert {
+                if storeKitController.showingActivityAlert {
                     ActivityAlert()
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear(perform: storeKitRC.fetchOfferings)
+            .onAppear(perform: storeKitController.fetchOfferings)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -102,16 +103,16 @@ struct BuyPremiumModalView: View {
                 }
             }
         }
-        .disabled(storeKitRC.showingActivityAlert)
-        .interactiveDismissDisabled(storeKitRC.showingActivityAlert)
+        .disabled(storeKitController.showingActivityAlert)
+        .interactiveDismissDisabled(storeKitController.showingActivityAlert)
         
-        .alert(storeKitRC.errorAlertTitle, isPresented: $storeKitRC.showingErrorAlert) {
+        .alert(storeKitController.errorAlertTitle, isPresented: $storeKitController.showingErrorAlert) {
             Button("OK", role: .cancel) { }
         } message: {
-            Text(storeKitRC.errorAlertMessage)
+            Text(storeKitController.errorAlertMessage)
         }
         
-        .alert("GeoQuiz Premium is active!", isPresented: $storeKitRC.showingSuccessAlert) {
+        .alert("GeoQuiz Premium is active!", isPresented: $storeKitController.showingSuccessAlert) {
             Button("OK", role: .cancel) { dismiss() }
         } message: {
             Text("Thanks for supporting indie apps ❤️")
@@ -121,6 +122,6 @@ struct BuyPremiumModalView: View {
 
 struct BuyPremiumModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BuyPremiumModalView(storeKitRC: StoreKitRC())
+        BuyPremiumModalView(storeKitController: StoreKitController())
     }
 }

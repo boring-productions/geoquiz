@@ -79,7 +79,7 @@ struct GameToolbar_Previews: PreviewProvider {
             
             GeometryReader { geo in
                 VStack {
-                    GameToolbar(game: CountryGame(), color: .mayaBlue)
+                    GameToolbar(game: CountryGameController(), color: .mayaBlue)
                     
                     Spacer()
                 }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct UserData: Codable {
+struct UserDataModel: Codable {
     
     // Settings
     var haptics: Bool = true
@@ -16,7 +16,7 @@ struct UserData: Codable {
     var numberOfLives: Int = 25
     
     // Profile
-    var username: String = "Anonymous"
+    var username: String = "Unnamed"
     var imageData: Data?
     
     var uiImage: UIImage? {

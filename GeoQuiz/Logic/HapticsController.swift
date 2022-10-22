@@ -1,5 +1,5 @@
 //
-//  HapticsClass.swift
+//  HapticsController.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 18/9/22.
@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class Haptics {
-    private var user = User()
+class HapticsController {
+    private var user = UserController()
     
     func success() {
         if user.data.haptics {

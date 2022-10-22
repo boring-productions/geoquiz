@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CountryData: Codable {
+struct CountryModel: Codable {
     let countries: [String: Country]
     
     struct Country: Codable, Equatable, Hashable {

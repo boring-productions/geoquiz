@@ -6,49 +6,41 @@
 //
 
 import SwiftUI
-import PhotosUI
 
 struct ProfileModalView: View {
-    @ObservedObject var user: User
-    @ObservedObject var storeKitRC: StoreKitRC
+    @ObservedObject var userController: UserController
+    @ObservedObject var storeKitController: StoreKitController
     
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var moc
+    @State var showingEditModalView = false
     
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date, order: .reverse),
     ]) var playedGames: FetchedResults<PlayedGame>
     
-    @State private var showingEditModalView = false
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
-        NavigationView {
-            List {
-                Section {
-                    UserProfile(user: user, storeKitRC: storeKitRC)
-                }
-                
-                Section {
-                    UserProgress(playedGames: playedGames, gameType: .guessTheFlag)
-                    UserProgress(playedGames: playedGames, gameType: .guessTheCapital)
-                    UserProgress(playedGames: playedGames, gameType: .guessTheCountry)
-                    UserProgress(playedGames: playedGames, gameType: .guessThePopulation)
-                } header: {
-                    Text("Progress")
-                }
-                
-                Section {
-                    ForEach(playedGames) { playedGame in
-                        RecentGame(game: playedGame)
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 30) {
+                    UserProfile(
+                        userController: userController,
+                        storeKitController: storeKitController,
+                        isShowing: $showingEditModalView
+                    )
+                    
+                    VStack(spacing: 20) {
+                        ForEach(playedGames.prefix(8)) { playedGame in
+                            RecentGame(game: playedGame)
+                        }
                     }
-                    .onDelete(perform: deleteGame)
-                } header: {
-                    Text("Recent games")
                 }
+                .padding()
             }
-            .background(.customBackground)
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
+            .background(Color(.systemGroupedBackground))
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -57,34 +49,18 @@ struct ProfileModalView: View {
                         Label("Exit", systemImage: "multiply")
                     }
                 }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Edit") {
-                        showingEditModalView = true
-                    }
-                }
             }
             
             .sheet(isPresented: $showingEditModalView) {
-                ProfileEditModalView(user: user)
+                ProfileEditModalView(user: userController)
             }
         }
-        
-    }
-    
-    private func deleteGame(at offsets: IndexSet) {
-        for offset in offsets {
-            let game = playedGames[offset]
-            moc.delete(game)
-        }
-        
-        try? moc.save()
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileModalView(user: User(), storeKitRC: StoreKitRC())
+        ProfileModalView(userController: UserController(), storeKitController: StoreKitController())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

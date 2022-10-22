@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FlagImage: View {
-    @Environment(\.colorScheme) var colorScheme
-    
     var flagSymbol: String
     var cornerRadius: Double
+    
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Image(flagSymbol)

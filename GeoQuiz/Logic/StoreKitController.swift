@@ -1,5 +1,5 @@
 //
-//  StoreKitRCClass.swift
+//  StoreKitController.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 9/10/22.
@@ -8,7 +8,7 @@
 import Foundation
 import RevenueCat
 
-class StoreKitRC: ObservableObject {
+class StoreKitController: ObservableObject {
     @Published var errorAlertTitle = ""
     @Published var errorAlertMessage = ""
     
@@ -19,11 +19,11 @@ class StoreKitRC: ObservableObject {
     @Published var offerings: Offerings? = nil
     @Published var customerInfo: CustomerInfo? {
         didSet {
-            isActive = customerInfo?.entitlements["Premium"]?.isActive == true
+            premiumIsActive = customerInfo?.entitlements["Premium"]?.isActive == true
         }
     }
     
-    @Published var isActive = false
+    @Published var premiumIsActive = false
     
     init() {
         Purchases.shared.getCustomerInfo { (customerInfo, error) in

@@ -9,22 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var path: [GameType] = []
-    
     @State private var showingBuyPremiumModalView = false
     @State private var showingSettingsModalView = false
     @State private var showingProfileModalView = false
     
-    @StateObject var storeKitRC = StoreKitRC()
-    @StateObject var user = User()
+    @StateObject var storeKitController = StoreKitController()
+    @StateObject var userController = UserController()
+    
+    let premiumGames: [GameType] = [.guessTheCapital, .guessTheCountry, .guessThePopulation]
     
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView(showsIndicators: false) {
-                
-                NavigationLink(value: GameType.guessTheFlag) { EmptyView() }
-                NavigationLink(value: GameType.guessTheCapital) { EmptyView() }
-                NavigationLink(value: GameType.guessTheCountry) { EmptyView() }
-                NavigationLink(value: GameType.guessThePopulation) { EmptyView() }
+                ForEach(GameType.allCases, id: \.rawValue) { gameType in
+                    NavigationLink(value: gameType) { EmptyView() }
+                }
                 
                 VStack(alignment: .leading, spacing: 30) {
                     Text("Select a game 🎮")
@@ -34,122 +33,83 @@ struct ContentView: View {
                     Button {
                         path.append(.guessTheFlag)
                     } label: {
-                        GameButton(
-                            gradient: GuessTheFlagInfo.gradient,
-                            level: GuessTheFlagInfo.level,
-                            symbol: GuessTheFlagInfo.symbol,
-                            name: GuessTheFlagInfo.name
-                        )
+                        GameButton(gameType: .guessTheFlag, isActive: true)
                     }
                     
-                    Button {
-                        if storeKitRC.isActive {
-                            path.append(.guessTheCapital)
-                        } else {
-                            showingBuyPremiumModalView = true
+                    ForEach(premiumGames, id: \.rawValue) { gameType in
+                        Button {
+                            if storeKitController.premiumIsActive {
+                                path.append(gameType)
+                            } else {
+                                showingBuyPremiumModalView = true
+                            }
+                            } label: {
+                                GameButton(gameType: gameType, isActive: storeKitController.premiumIsActive)
+                            }
                         }
-                    } label: {
-                        GameButton(
-                            gradient: GuessTheCapitalInfo.gradient,
-                            level: GuessTheCapitalInfo.level,
-                            symbol: storeKitRC.isActive ? GuessTheCapitalInfo.symbol: "lock.fill",
-                            name: GuessTheCapitalInfo.name
-                        )
                     }
-                    
-                    Button {
-                        if storeKitRC.isActive {
-                            path.append(.guessTheCountry)
-                        } else {
-                            showingBuyPremiumModalView = true
-                        }
-                    } label: {
-                        GameButton(
-                            gradient: GuessTheCountryInfo.gradient,
-                            level: GuessTheCountryInfo.level,
-                            symbol: storeKitRC.isActive ? GuessTheCountryInfo.symbol: "lock.fill",
-                            name: GuessTheCountryInfo.name
-                        )
-                    }
-                    
-                    Button {
-                        if storeKitRC.isActive {
-                            path.append(.guessThePopulation)
-                        } else {
-                            showingBuyPremiumModalView = true
-                        }
-                    } label: {
-                        GameButton(
-                            gradient: GuessThePopulationInfo.gradient,
-                            level: GuessThePopulationInfo.level,
-                            symbol: storeKitRC.isActive ? GuessThePopulationInfo.symbol: "lock.fill",
-                            name: GuessThePopulationInfo.name
-                        )
-                    }
-
+                    .padding()
                 }
-                .padding()
-            }
-            .navigationTitle("GeoQuiz")
-            .navigationBarTitleDisplayMode(.inline)
-            
-            .navigationDestination(for: GameType.self) { gameMode in
-                switch gameMode {
-                case .guessTheFlag:
-                    GuessTheFlagView()
-                case .guessTheCapital:
-                    GuessTheFlagView()
-                case .guessTheCountry:
-                    GuessTheCountryView()
-                case .guessThePopulation:
-                    GuessThePopulationView()
-                }
-            }
-            
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        showingSettingsModalView = true
-                    } label: {
-                        Label("Settings", systemImage: "gear")
+                .navigationTitle("GeoQuiz")
+                .navigationBarTitleDisplayMode(.inline)
+                
+                .navigationDestination(for: GameType.self) { gameMode in
+                    switch gameMode {
+                    case .guessTheFlag:
+                        GuessTheFlagView()
+                    case .guessTheCapital:
+                        GuessTheFlagView()
+                    case .guessTheCountry:
+                        GuessTheCountryView()
+                    case .guessThePopulation:
+                        GuessThePopulationView()
                     }
                 }
                 
-                ToolbarItemGroup {
-                    if !storeKitRC.isActive {
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         Button {
-                            showingBuyPremiumModalView = true
+                            showingSettingsModalView = true
                         } label: {
-                            Label("Buy premium", systemImage: "star")
+                            Label("Settings", systemImage: "gear")
                         }
                     }
                     
-                    Button {
-                        showingProfileModalView = true
-                    } label: {
-                        Label("Profile", systemImage: "person")
+                    ToolbarItemGroup {
+                        if !storeKitController.premiumIsActive {
+                            Button {
+                                showingBuyPremiumModalView = true
+                            } label: {
+                                Label("Buy premium", systemImage: "star")
+                            }
+                        }
+                        
+                        Button {
+                            showingProfileModalView = true
+                        } label: {
+                            Label("Profile", systemImage: "person")
+                        }
                     }
                 }
+                .sheet(isPresented: $showingBuyPremiumModalView) {
+                    BuyPremiumModalView(storeKitController: storeKitController)
+                }
+                
+                .sheet(isPresented: $showingSettingsModalView) {
+                    SettingsModalView(user: userController)
+                }
+                
+                .sheet(isPresented: $showingProfileModalView) {
+                    ProfileModalView(userController: userController, storeKitController: storeKitController)
+                }
             }
-            .sheet(isPresented: $showingBuyPremiumModalView) {
-                BuyPremiumModalView(storeKitRC: storeKitRC)
-            }
-            
-            .sheet(isPresented: $showingSettingsModalView) {
-                SettingsModalView(user: user)
-            }
-            
-            .sheet(isPresented: $showingProfileModalView) {
-                ProfileModalView(user: user, storeKitRC: storeKitRC)
-            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
-}

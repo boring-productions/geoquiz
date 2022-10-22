@@ -1,5 +1,5 @@
 //
-//  UserClass.swift
+//  UserController.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 7/10/22.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-class User: ObservableObject {
-    @Published var data = UserData() {
+class UserController: ObservableObject {
+    @Published var data = UserDataModel() {
         didSet {
             if let userDataEncoded = try? JSONEncoder().encode(data) {
                 UserDefaults.standard.set(userDataEncoded, forKey: "UserData")
@@ -18,7 +18,7 @@ class User: ObservableObject {
 
     init() {
         if let userData = UserDefaults.standard.data(forKey: "UserData") {
-            if let decodedUserData = try? JSONDecoder().decode(UserData.self, from: userData) {
+            if let decodedUserData = try? JSONDecoder().decode(UserDataModel.self, from: userData) {
                 data = decodedUserData
             }
         }

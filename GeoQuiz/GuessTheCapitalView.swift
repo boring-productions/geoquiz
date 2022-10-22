@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GuessTheCapitalView: View {
-    @StateObject var game = CountryGame()
+    @StateObject var game = CountryGameController()
     
     @Environment(\.managedObjectContext) var moc
     
@@ -50,7 +50,7 @@ struct GuessTheCapitalView: View {
                                     }
                                 } label: {
                                     AnswerButton(
-                                        optionName: game.data[countryName]!.capital,
+                                        name: game.data[countryName]!.capital,
                                         color: .chinaPink
                                     )
                                     .frame(height: geo.size.height * 0.08)
