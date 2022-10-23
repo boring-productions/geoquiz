@@ -1,5 +1,5 @@
 //
-//  GameButtonHelper.swift
+//  GameButton.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 5/9/22.

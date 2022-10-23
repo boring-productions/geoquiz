@@ -1,5 +1,5 @@
 //
-//  LinkHelper.swift
+//  FormLink.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 7/10/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LinkComponent: View {
+struct FormLink: View {
     var color: Color
     var symbol: String
     var text: String
@@ -29,9 +29,9 @@ struct LinkComponent: View {
     }
 }
 
-struct LinkComponent_Previews: PreviewProvider {
+struct FormLink_Previews: PreviewProvider {
     static var previews: some View {
-        LinkComponent(
+        FormLink(
             color: .mayaBlue,
             symbol: "info.circle.fill",
             text: "About",

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95030CEA28D1BA4D001AA3A1 /* AnswerButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030CE928D1BA4D001AA3A1 /* AnswerButtonHelper.swift */; };
+		95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */; };
 		9509A8DE28E5A19A00CFCDBA /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 9509A8DD28E5A19A00CFCDBA /* countries.json */; };
 		9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */; };
 		950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */; };
@@ -27,32 +27,34 @@
 		9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539829228C51EDE00B70973 /* GeoQuizApp.swift */; };
 		9539829728C51EDF00B70973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9539829628C51EDF00B70973 /* Assets.xcassets */; };
 		9539829A28C51EDF00B70973 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9539829928C51EDF00B70973 /* Preview Assets.xcassets */; };
+		954AF4682905397A00180065 /* PlayedGamesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954AF4672905397A00180065 /* PlayedGamesList.swift */; };
+		954AF46A29053D4E00180065 /* LatestGamesPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954AF46929053D4E00180065 /* LatestGamesPlaceholder.swift */; };
 		955950BB28F15FF2001BDEE8 /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955950BA28F15FF2001BDEE8 /* FormatterExtension.swift */; };
-		955A658128D703EB00CEEC6D /* GameToolbarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658028D703EB00CEEC6D /* GameToolbarHelper.swift */; };
+		955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658028D703EB00CEEC6D /* GameToolbar.swift */; };
 		955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */; };
 		955A65A928D7815E00CEEC6D /* HapticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A65A828D7815E00CEEC6D /* HapticsController.swift */; };
-		956273EA28CB2E98008DC094 /* FlagImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956273E928CB2E98008DC094 /* FlagImageHelper.swift */; };
+		956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956273E928CB2E98008DC094 /* FlagImage.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
 		95919DB628F076BF00F21F8F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB528F076BF00F21F8F /* UserController.swift */; };
-		95919DBC28F08D0600F21F8F /* LinkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* LinkHelper.swift */; };
+		95919DBC28F08D0600F21F8F /* FormLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* FormLink.swift */; };
 		95A4F42929040E350018DFAC /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42829040E350018DFAC /* CoreDataController.swift */; };
-		95A4F42B29043DC00018DFAC /* UserImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42A29043DC00018DFAC /* UserImageHelper.swift */; };
+		95A4F42B29043DC00018DFAC /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42A29043DC00018DFAC /* UserImage.swift */; };
 		95AE8D5728C8750E0067F219 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE8D5628C8750E0067F219 /* FileController.swift */; };
 		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
-		95BC392D28EC42570049AB49 /* CityMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC392C28EC42570049AB49 /* CityMapHelper.swift */; };
+		95BC392D28EC42570049AB49 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC392C28EC42570049AB49 /* CityMap.swift */; };
 		95C430F928D0A8E500480D23 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C430F828D0A8E500480D23 /* GradientExtension.swift */; };
 		95C4315628C64A8C00212131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315528C64A8C00212131 /* ContentView.swift */; };
-		95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315828C6500000212131 /* GameButtonHelper.swift */; };
+		95C4315928C6500000212131 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4315828C6500000212131 /* GameButton.swift */; };
 		95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456B28FE87E4000CD570 /* UserDataModel.swift */; };
-		95C6456E28FE8C04000CD570 /* UserProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456D28FE8C04000CD570 /* UserProfileHelper.swift */; };
+		95C6456E28FE8C04000CD570 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456D28FE8C04000CD570 /* UserProfile.swift */; };
 		95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */; };
 		95C6457428FFC8E0000CD570 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457328FFC8E0000CD570 /* PersistenceController.swift */; };
 		95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457528FFC934000CD570 /* GeoQuiz.xcdatamodeld */; };
 		95C6459A28FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */; };
 		95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */; };
-		95C6459D290003E1000CD570 /* RecentGameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459C290003E1000CD570 /* RecentGameHelper.swift */; };
+		95C6459D290003E1000CD570 /* RecentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459C290003E1000CD570 /* RecentGame.swift */; };
 		95C645C229014442000CD570 /* GameInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645C129014442000CD570 /* GameInfoProtocol.swift */; };
-		95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */; };
+		95CA295028F6BB4500CE0B7A /* ActivityAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */; };
 		95DB7C01290492FC007D01D8 /* GameInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C00290492FC007D01D8 /* GameInfoController.swift */; };
 		95DB7C032904A968007D01D8 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C022904A968007D01D8 /* MapController.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
@@ -60,7 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		95030CE928D1BA4D001AA3A1 /* AnswerButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonHelper.swift; sourceTree = "<group>"; };
+		95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		9509A8DD28E5A19A00CFCDBA /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessThePopulationView.swift; sourceTree = "<group>"; };
 		950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPremiumModalView.swift; sourceTree = "<group>"; };
@@ -80,32 +82,35 @@
 		9539829228C51EDE00B70973 /* GeoQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizApp.swift; sourceTree = "<group>"; };
 		9539829628C51EDF00B70973 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9539829928C51EDF00B70973 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		954AF4672905397A00180065 /* PlayedGamesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGamesList.swift; sourceTree = "<group>"; };
+		954AF46929053D4E00180065 /* LatestGamesPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestGamesPlaceholder.swift; sourceTree = "<group>"; };
+		954AF46B2905433300180065 /* GeoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoQuiz.entitlements; sourceTree = "<group>"; };
 		955950BA28F15FF2001BDEE8 /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
-		955A658028D703EB00CEEC6D /* GameToolbarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbarHelper.swift; sourceTree = "<group>"; };
+		955A658028D703EB00CEEC6D /* GameToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbar.swift; sourceTree = "<group>"; };
 		955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameProtocol+Extension.swift"; sourceTree = "<group>"; };
 		955A65A828D7815E00CEEC6D /* HapticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsController.swift; sourceTree = "<group>"; };
-		956273E928CB2E98008DC094 /* FlagImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageHelper.swift; sourceTree = "<group>"; };
+		956273E928CB2E98008DC094 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		95919DB528F076BF00F21F8F /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		95919DBB28F08D0600F21F8F /* LinkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHelper.swift; sourceTree = "<group>"; };
+		95919DBB28F08D0600F21F8F /* FormLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLink.swift; sourceTree = "<group>"; };
 		95A4F42829040E350018DFAC /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		95A4F42A29043DC00018DFAC /* UserImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageHelper.swift; sourceTree = "<group>"; };
+		95A4F42A29043DC00018DFAC /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		95AE8D5628C8750E0067F219 /* FileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
 		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
-		95BC392C28EC42570049AB49 /* CityMapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapHelper.swift; sourceTree = "<group>"; };
+		95BC392C28EC42570049AB49 /* CityMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
 		95C430F828D0A8E500480D23 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		95C4315528C64A8C00212131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		95C4315828C6500000212131 /* GameButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonHelper.swift; sourceTree = "<group>"; };
+		95C4315828C6500000212131 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		95C6456B28FE87E4000CD570 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
-		95C6456D28FE8C04000CD570 /* UserProfileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHelper.swift; sourceTree = "<group>"; };
+		95C6456D28FE8C04000CD570 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditModalView.swift; sourceTree = "<group>"; };
 		95C6457328FFC8E0000CD570 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		95C6457628FFC934000CD570 /* GeoQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GeoQuiz.xcdatamodel; sourceTree = "<group>"; };
 		95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		95C6459C290003E1000CD570 /* RecentGameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGameHelper.swift; sourceTree = "<group>"; };
+		95C6459C290003E1000CD570 /* RecentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGame.swift; sourceTree = "<group>"; };
 		95C645C129014442000CD570 /* GameInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoProtocol.swift; sourceTree = "<group>"; };
-		95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlertHelper.swift; sourceTree = "<group>"; };
+		95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlert.swift; sourceTree = "<group>"; };
 		95DB7C00290492FC007D01D8 /* GameInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoController.swift; sourceTree = "<group>"; };
 		95DB7C022904A968007D01D8 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -189,6 +194,7 @@
 		9539829128C51EDE00B70973 /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				954AF46B2905433300180065 /* GeoQuiz.entitlements */,
 				95E6188428DDDB5C003359ED /* Info.plist */,
 				9539829628C51EDF00B70973 /* Assets.xcassets */,
 				95C6457528FFC934000CD570 /* GeoQuiz.xcdatamodeld */,
@@ -221,17 +227,19 @@
 		959D414728C87EA600BAAC14 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				95C4315828C6500000212131 /* GameButtonHelper.swift */,
-				956273E928CB2E98008DC094 /* FlagImageHelper.swift */,
-				95030CE928D1BA4D001AA3A1 /* AnswerButtonHelper.swift */,
-				955A658028D703EB00CEEC6D /* GameToolbarHelper.swift */,
-				95BC392C28EC42570049AB49 /* CityMapHelper.swift */,
-				95919DBB28F08D0600F21F8F /* LinkHelper.swift */,
-				95CA294F28F6BB4500CE0B7A /* ActivityAlertHelper.swift */,
-				95C6456D28FE8C04000CD570 /* UserProfileHelper.swift */,
-				95A4F42A29043DC00018DFAC /* UserImageHelper.swift */,
-				95C6459C290003E1000CD570 /* RecentGameHelper.swift */,
+				95C4315828C6500000212131 /* GameButton.swift */,
+				956273E928CB2E98008DC094 /* FlagImage.swift */,
+				95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */,
+				955A658028D703EB00CEEC6D /* GameToolbar.swift */,
+				95BC392C28EC42570049AB49 /* CityMap.swift */,
+				95919DBB28F08D0600F21F8F /* FormLink.swift */,
+				95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */,
+				95C6456D28FE8C04000CD570 /* UserProfile.swift */,
+				95A4F42A29043DC00018DFAC /* UserImage.swift */,
+				95C6459C290003E1000CD570 /* RecentGame.swift */,
+				954AF4672905397A00180065 /* PlayedGamesList.swift */,
 				952E41E828DC521200198643 /* GameAlertsModifier.swift */,
+				954AF46929053D4E00180065 /* LatestGamesPlaceholder.swift */,
 				95C430F828D0A8E500480D23 /* GradientExtension.swift */,
 				951D197228D485E000671FAD /* ColorExtension.swift */,
 				955950BA28F15FF2001BDEE8 /* FormatterExtension.swift */,
@@ -320,9 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				955A65A928D7815E00CEEC6D /* HapticsController.swift in Sources */,
-				95BC392D28EC42570049AB49 /* CityMapHelper.swift in Sources */,
+				95BC392D28EC42570049AB49 /* CityMap.swift in Sources */,
 				95C6459A28FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift in Sources */,
-				95A4F42B29043DC00018DFAC /* UserImageHelper.swift in Sources */,
+				95A4F42B29043DC00018DFAC /* UserImage.swift in Sources */,
 				952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */,
 				95197EFD28F339AE00FE67E9 /* StoreKitController.swift in Sources */,
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
@@ -330,24 +338,26 @@
 				95A4F42929040E350018DFAC /* CoreDataController.swift in Sources */,
 				95C6457428FFC8E0000CD570 /* PersistenceController.swift in Sources */,
 				95919DB628F076BF00F21F8F /* UserController.swift in Sources */,
-				95C6459D290003E1000CD570 /* RecentGameHelper.swift in Sources */,
-				95C6456E28FE8C04000CD570 /* UserProfileHelper.swift in Sources */,
+				95C6459D290003E1000CD570 /* RecentGame.swift in Sources */,
+				95C6456E28FE8C04000CD570 /* UserProfile.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				95C645C229014442000CD570 /* GameInfoProtocol.swift in Sources */,
-				95C4315928C6500000212131 /* GameButtonHelper.swift in Sources */,
-				956273EA28CB2E98008DC094 /* FlagImageHelper.swift in Sources */,
+				954AF4682905397A00180065 /* PlayedGamesList.swift in Sources */,
+				95C4315928C6500000212131 /* GameButton.swift in Sources */,
+				956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */,
 				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
 				950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */,
+				954AF46A29053D4E00180065 /* LatestGamesPlaceholder.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
 				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
 				95DB7C032904A968007D01D8 /* MapController.swift in Sources */,
-				95919DBC28F08D0600F21F8F /* LinkHelper.swift in Sources */,
+				95919DBC28F08D0600F21F8F /* FormLink.swift in Sources */,
 				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
-				95030CEA28D1BA4D001AA3A1 /* AnswerButtonHelper.swift in Sources */,
+				95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */,
 				95FA409C28D9881100129B60 /* CountryGameController.swift in Sources */,
-				95CA295028F6BB4500CE0B7A /* ActivityAlertHelper.swift in Sources */,
-				955A658128D703EB00CEEC6D /* GameToolbarHelper.swift in Sources */,
+				95CA295028F6BB4500CE0B7A /* ActivityAlert.swift in Sources */,
+				955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */,
 				95AE8D5728C8750E0067F219 /* FileController.swift in Sources */,
 				95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
@@ -486,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GeoQuiz/GeoQuiz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GeoQuiz/Preview Content\"";
@@ -520,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GeoQuiz/GeoQuiz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GeoQuiz/Preview Content\"";

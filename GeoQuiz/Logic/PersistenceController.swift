@@ -7,24 +7,8 @@
 
 import CoreData
 
-class PersistenceController: ObservableObject {
-    let container: NSPersistentContainer
-    
-    init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "GeoQuiz")
-        
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
-        
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error {
-                fatalError("Unresolved error \(error.localizedDescription)")
-            }
-        })
-        
-        container.viewContext.automaticallyMergesChangesFromParent = true
-    }
+class PersistenceController {
+    static let shared = PersistenceController()
     
     // Create mock data for previews
     static var preview: PersistenceController = {
@@ -33,7 +17,6 @@ class PersistenceController: ObservableObject {
         
         for _ in 0..<10 {
             let playedGame = PlayedGame(context: viewContext)
-            playedGame.id = UUID()
             playedGame.type = GameType(rawValue: Int16.random(in: 0...3))!
             playedGame.score = Int32.random(in: 0...50)
             playedGame.date = Date()
@@ -55,4 +38,22 @@ class PersistenceController: ObservableObject {
         
         return result
     }()
+    
+    let container: NSPersistentCloudKitContainer
+
+    init(inMemory: Bool = false) {
+        container = NSPersistentCloudKitContainer(name: "GeoQuiz")
+        
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+        
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        
+        container.viewContext.automaticallyMergesChangesFromParent = true
+    }
 }

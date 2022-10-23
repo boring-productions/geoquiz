@@ -46,14 +46,14 @@ struct GuessTheFlagView: View {
                                     game.selector()
                                 }
                             } label: {
-                                FlagImage(flagSymbol: game.data[countryName]!.flag, cornerRadius: 20)
-                                    .clipShape(Circle())
-                                    .overlay {
-                                        Circle()
-                                            .strokeBorder(.white, lineWidth: 4)
-                                    }
-                                    .shadow(radius: 10)
+                                Circle()
+                                    .stroke(.white, lineWidth: 6)
                                     .frame(height: geo.size.height * 0.15)
+                                    .shadow(radius: 10)
+                                    .overlay(
+                                        FlagImage(flagSymbol: game.data[countryName]!.flag)
+                                            .clipShape(Circle())
+                                    )
                             }
                         }
                     }

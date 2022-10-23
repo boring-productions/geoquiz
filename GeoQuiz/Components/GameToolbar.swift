@@ -1,5 +1,5 @@
 //
-//  GameToolbarHelper.swift
+//  GameToolbar.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 18/9/22.

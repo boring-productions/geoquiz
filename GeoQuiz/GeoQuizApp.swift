@@ -10,7 +10,7 @@ import RevenueCat
 
 @main
 struct GeoQuizApp: App {
-    @StateObject private var persistenceController = PersistenceController()
+    let persistenceController = PersistenceController.shared
     
     init() {
         Purchases.configure(withAPIKey: "appl_BymTxroeoaWiXAraaFjcPlHlqbf")

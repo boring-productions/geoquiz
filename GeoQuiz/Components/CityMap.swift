@@ -1,5 +1,5 @@
 //
-//  CityMapHelper.swift
+//  CityMap.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 4/10/22.

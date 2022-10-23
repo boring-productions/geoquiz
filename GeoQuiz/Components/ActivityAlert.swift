@@ -1,5 +1,5 @@
 //
-//  ActivityAlertHelper.swift
+//  ActivityAlert.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 12/10/22.

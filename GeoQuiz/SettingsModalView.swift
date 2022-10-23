@@ -45,21 +45,21 @@ struct SettingsModalView: View {
                 }
                 
                 Section {
-                    LinkComponent(
+                    FormLink(
                         color: .mayaBlue,
                         symbol: "info.circle.fill",
                         text: "About",
                         url: URL(string: "https://dennistech.io")!
                     )
                     
-                    LinkComponent(
+                    FormLink(
                         color: .atomicTangerine,
                         symbol: "ant.circle.fill",
                         text: "Report bugs",
                         url: URL(string: "mailto:dmartin@dennistech.io")!
                     )
                     
-                    LinkComponent(
+                    FormLink(
                         color: .blueBell,
                         symbol: "message.circle.fill",
                         text: "Twitter",

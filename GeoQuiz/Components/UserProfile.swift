@@ -1,5 +1,5 @@
 //
-//  UserProfileHelper.swift
+//  UserProfile.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 18/10/22.

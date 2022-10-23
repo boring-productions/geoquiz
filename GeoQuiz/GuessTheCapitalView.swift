@@ -23,7 +23,7 @@ struct GuessTheCapitalView: View {
                     
                     Spacer()
                     
-                    FlagImage(flagSymbol: game.correctAnswer.value.flag, cornerRadius: 20)
+                    FlagImage(flagSymbol: game.correctAnswer.value.flag)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .shadow(radius: 10)
                         .frame(height: geo.size.height * 0.15)

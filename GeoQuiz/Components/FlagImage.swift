@@ -1,5 +1,5 @@
 //
-//  FlagImageHelper.swift
+//  FlagImage.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 9/9/22.
@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FlagImage: View {
     var flagSymbol: String
-    var cornerRadius: Double
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -17,13 +16,13 @@ struct FlagImage: View {
         Image(flagSymbol)
             .renderingMode(.original)
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
     }
 }
 
 struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
-        FlagImage(flagSymbol: "es", cornerRadius: 20)
+        FlagImage(flagSymbol: "es")
             .frame(height: 130)
     }
 }

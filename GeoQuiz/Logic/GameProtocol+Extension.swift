@@ -110,7 +110,6 @@ extension Game {
     func save(_ gameType: GameType, with moc: NSManagedObjectContext) {
         let playedGame = PlayedGame(context: moc)
 
-        playedGame.id = UUID()
         playedGame.type = gameType
         playedGame.date = Date()
         playedGame.score = Int32(userScore)

@@ -1,5 +1,5 @@
 //
-//  RecentGameHelper.swift
+//  RecentGame.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 19/10/22.
@@ -37,7 +37,7 @@ struct RecentGame: View {
                 Text(gameInfo.name)
                     .font(.headline)
                 
-                Text("\(game.date, format: .dateTime)")
+                Text("\(game.date ?? Date(), format: .dateTime)")
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
@@ -48,8 +48,5 @@ struct RecentGame: View {
                 .font(.headline)
             
         }
-        .padding()
-        .background(Color(.secondarySystemGroupedBackground))
-        .cornerRadius(20)
     }
 }

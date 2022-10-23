@@ -11,7 +11,7 @@ struct ProfileModalView: View {
     @ObservedObject var userController: UserController
     @ObservedObject var storeKitController: StoreKitController
     
-    @State var showingEditModalView = false
+    @State private var showingEditModalView = false
     
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date, order: .reverse),
@@ -31,13 +31,36 @@ struct ProfileModalView: View {
                     )
                     
                     VStack(spacing: 20) {
-                        ForEach(playedGames.prefix(8)) { playedGame in
-                            RecentGame(game: playedGame)
+                        HStack {
+                            Text("Latest games")
+                                .foregroundColor(.secondary)
+                            
+                            Spacer()
+                            
+                            NavigationLink {
+                                PlayedGamesList(playedGames: playedGames)
+                            } label: {
+                                Text("Show all")
+                            }
+                            .disabled(playedGames.isEmpty)
+                        }
+                        
+                        if playedGames.isEmpty {
+                            Spacer()
+                            LatestGamesPlaceholder()
+                        } else {
+                            ForEach(playedGames.prefix(8)) { playedGame in
+                                RecentGame(game: playedGame)
+                                    .padding()
+                                    .background(Color(.secondarySystemGroupedBackground))
+                                    .cornerRadius(20)
+                            }
                         }
                     }
                 }
                 .padding()
             }
+            .frame(maxWidth: .infinity)
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(.systemGroupedBackground))

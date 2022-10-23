@@ -1,5 +1,5 @@
 //
-//  UserImageHelper.swift
+//  UserImage.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 22/10/22.
@@ -23,8 +23,10 @@ struct UserImage: View {
             Circle()
                 .foregroundColor(.secondary.opacity(0.3))
                 .overlay(
-                    Image(systemName: "person")
-                        .font(.largeTitle)
+                    Image(systemName: "camera.fill")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .shadow(radius: 5)
                 )
         }
     }

@@ -16,10 +16,9 @@ extension PlayedGame {
         return NSFetchRequest<PlayedGame>(entityName: "PlayedGame")
     }
 
-    @NSManaged public var id: UUID
     @NSManaged public var type: GameType
     @NSManaged public var score: Int32
-    @NSManaged public var date: Date
+    @NSManaged public var date: Date?
     @NSManaged public var correctAnswers: [String]?
     @NSManaged public var wrongAnswers: [String]?
 
