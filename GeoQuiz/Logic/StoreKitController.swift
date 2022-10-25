@@ -26,9 +26,13 @@ class StoreKitController: ObservableObject {
     @Published var premiumIsActive = false
     
     init() {
+        #if DEBUG
+        premiumIsActive = true
+        #else
         Purchases.shared.getCustomerInfo { (customerInfo, error) in
             self.customerInfo = customerInfo
         }
+        #endif
     }
     
     func buy(_ package: Package) {

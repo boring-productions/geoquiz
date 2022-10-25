@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PlayedGamesList: View {
-    var playedGames: FetchedResults<PlayedGame>
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date, order: .reverse),
+    ]) var playedGames: FetchedResults<PlayedGame>
     
     @Environment(\.managedObjectContext) var moc
     
@@ -17,7 +19,7 @@ struct PlayedGamesList: View {
             ForEach(playedGames, id: \.id) { game in
                 RecentGame(game: game)
             }
-            .onDelete { indexSet in
+            .onDelete{ indexSet in
                 CoreDataController.deleteGame(at: indexSet, from: playedGames, with: moc)
             }
         }
@@ -25,6 +27,15 @@ struct PlayedGamesList: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             EditButton()
+        }
+    }
+}
+
+struct PlayedGamesList_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            PlayedGamesList()
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

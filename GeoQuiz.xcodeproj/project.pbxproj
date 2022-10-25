@@ -33,7 +33,6 @@
 		955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658028D703EB00CEEC6D /* GameToolbar.swift */; };
 		955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */; };
 		955A65A928D7815E00CEEC6D /* HapticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A65A828D7815E00CEEC6D /* HapticsController.swift */; };
-		956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956273E928CB2E98008DC094 /* FlagImage.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
 		95919DB628F076BF00F21F8F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB528F076BF00F21F8F /* UserController.swift */; };
 		95919DBC28F08D0600F21F8F /* FormLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* FormLink.swift */; };
@@ -89,7 +88,6 @@
 		955A658028D703EB00CEEC6D /* GameToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbar.swift; sourceTree = "<group>"; };
 		955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameProtocol+Extension.swift"; sourceTree = "<group>"; };
 		955A65A828D7815E00CEEC6D /* HapticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsController.swift; sourceTree = "<group>"; };
-		956273E928CB2E98008DC094 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		95919DB528F076BF00F21F8F /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		95919DBB28F08D0600F21F8F /* FormLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLink.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				95C4315828C6500000212131 /* GameButton.swift */,
-				956273E928CB2E98008DC094 /* FlagImage.swift */,
 				95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */,
 				955A658028D703EB00CEEC6D /* GameToolbar.swift */,
 				95BC392C28EC42570049AB49 /* CityMap.swift */,
@@ -344,7 +341,6 @@
 				95C645C229014442000CD570 /* GameInfoProtocol.swift in Sources */,
 				954AF4682905397A00180065 /* PlayedGamesList.swift in Sources */,
 				95C4315928C6500000212131 /* GameButton.swift in Sources */,
-				956273EA28CB2E98008DC094 /* FlagImage.swift in Sources */,
 				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
 				950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */,
 				954AF46A29053D4E00180065 /* LatestGamesPlaceholder.swift in Sources */,

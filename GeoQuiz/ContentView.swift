@@ -58,7 +58,7 @@ struct ContentView: View {
                     case .guessTheFlag:
                         GuessTheFlagView()
                     case .guessTheCapital:
-                        GuessTheFlagView()
+                        GuessTheCapitalView()
                     case .guessTheCountry:
                         GuessTheCountryView()
                     case .guessThePopulation:

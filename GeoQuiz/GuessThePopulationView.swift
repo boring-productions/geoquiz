@@ -23,7 +23,10 @@ struct GuessThePopulationView: View {
                     
                     Spacer()
                     
-                    FlagImage(flagSymbol: game.correctAnswer.value.flag)
+                    Image(game.correctAnswer.value.flag)
+                        .renderingMode(.original)
+                        .resizable()
+                        .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .shadow(radius: 10)
                         .frame(height: geo.size.height * 0.15)

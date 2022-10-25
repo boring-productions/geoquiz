@@ -46,7 +46,6 @@ struct RecentGame: View {
             
             Text("\(game.score, format: .number) ⭐️")
                 .font(.headline)
-            
         }
     }
 }

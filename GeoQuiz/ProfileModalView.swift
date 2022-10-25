@@ -30,25 +30,25 @@ struct ProfileModalView: View {
                         isShowing: $showingEditModalView
                     )
                     
-                    VStack(spacing: 20) {
-                        HStack {
-                            Text("Latest games")
-                                .foregroundColor(.secondary)
-                            
-                            Spacer()
-                            
-                            NavigationLink {
-                                PlayedGamesList(playedGames: playedGames)
-                            } label: {
-                                Text("Show all")
+                    if !playedGames.isEmpty {
+                        VStack(spacing: 20) {
+                            HStack {
+                                Text("Latest games")
+                                    .foregroundColor(.secondary)
+                                
+                                Spacer()
+                                
+                                NavigationLink {
+                                    PlayedGamesList()
+                                } label: {
+                                    HStack {
+                                        Text("Show all")
+                                        Image(systemName: "chevron.right")
+                                    }
+                                }
+                                .disabled(playedGames.isEmpty)
                             }
-                            .disabled(playedGames.isEmpty)
-                        }
-                        
-                        if playedGames.isEmpty {
-                            Spacer()
-                            LatestGamesPlaceholder()
-                        } else {
+                            
                             ForEach(playedGames.prefix(8)) { playedGame in
                                 RecentGame(game: playedGame)
                                     .padding()
@@ -75,8 +75,14 @@ struct ProfileModalView: View {
             }
             
             .sheet(isPresented: $showingEditModalView) {
-                ProfileEditModalView(user: userController)
+                ProfileEditModalView(userController: userController)
             }
+            
+            #if DEBUG
+            .onAppear {
+                
+            }
+            #endif
         }
     }
 }

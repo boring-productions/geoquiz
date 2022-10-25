@@ -16,9 +16,9 @@ struct ProfileEditModalView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    init(user: UserController) {
-        self.userController = user
-        self._newUsername = State(initialValue: user.data.username)
+    init(userController: UserController) {
+        self.userController = userController
+        self._newUsername = State(initialValue: userController.data.username)
     }
     
     var body: some View {
@@ -87,6 +87,6 @@ struct ProfileEditModalView: View {
 
 struct ProfileEditModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileEditModalView(user: UserController())
+        ProfileEditModalView(userController: UserController())
     }
 }

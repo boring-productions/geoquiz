@@ -51,7 +51,10 @@ struct GuessTheFlagView: View {
                                     .frame(height: geo.size.height * 0.15)
                                     .shadow(radius: 10)
                                     .overlay(
-                                        FlagImage(flagSymbol: game.data[countryName]!.flag)
+                                        Image(game.data[countryName]!.flag)
+                                            .renderingMode(.original)
+                                            .resizable()
+                                            .scaledToFill()
                                             .clipShape(Circle())
                                     )
                             }
