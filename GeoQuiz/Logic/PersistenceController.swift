@@ -16,7 +16,10 @@ class PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        
+        #if DEBUG
         createMockData(nil, viewContext)
+        #endif
 
         return result
     }()
@@ -44,7 +47,9 @@ class PersistenceController {
             
             playedGame.type = GameType(rawValue: Int16.random(in: 0...3))!
             playedGame.score = Int32.random(in: 0...50)
-            playedGame.date = Date()
+            
+            let dayComponent = DateComponents(day: Int.random(in: -5...0))
+            playedGame.date = Calendar.current.date(byAdding: dayComponent, to: Date())
             
             if playedGame.type == .guessTheFlag || playedGame.type == .guessTheCapital {
                 playedGame.correctAnswers = ["Bangladesh", "Belgium", "Burkina Faso", "Bermuda", "Jamaica"]

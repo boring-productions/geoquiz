@@ -37,7 +37,7 @@ struct RecentGame: View {
                 Text(gameInfo.name)
                     .font(.headline)
                 
-                Text("\(game.date ?? Date(), format: .dateTime)")
+                Text("\(game.date ?? Date(), format: .dateTime.day().month().year())")
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
