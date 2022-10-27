@@ -20,6 +20,7 @@ struct GuessTheCapitalView: View {
             GeometryReader { geo in
                 VStack {
                     GameToolbar(game: game, color: .atomicTangerine)
+                        .padding(.bottom)
                     
                     Spacer()
                     
@@ -79,6 +80,10 @@ struct GuessTheCapitalView_Previews: PreviewProvider {
         
         GuessTheCapitalView()
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
-            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+            .previewDisplayName("iPad Pro (12.9-inch)")
+        
+        GuessTheCapitalView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
     }
 }

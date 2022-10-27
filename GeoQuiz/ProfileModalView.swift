@@ -80,7 +80,9 @@ struct ProfileModalView: View {
             
             #if DEBUG
             .onAppear {
-                PersistenceController.createMockData(playedGames, moc)
+                if playedGames.isEmpty {
+                    PersistenceController.createMockData(with: moc)
+                }
             }
             #endif
         }

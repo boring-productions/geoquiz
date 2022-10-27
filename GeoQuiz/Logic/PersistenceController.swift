@@ -18,7 +18,7 @@ class PersistenceController {
         let viewContext = result.container.viewContext
         
         #if DEBUG
-        createMockData(nil, viewContext)
+        createMockData(with: viewContext)
         #endif
 
         return result
@@ -41,7 +41,7 @@ class PersistenceController {
     }
     
     #if DEBUG
-    static func createMockData(_ playedGames: FetchedResults<PlayedGame>?, _ moc: NSManagedObjectContext) {
+    static func createMockData(with moc: NSManagedObjectContext) {
         for _ in 0..<10 {
             let playedGame = PlayedGame(context: moc)
             

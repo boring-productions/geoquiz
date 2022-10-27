@@ -79,6 +79,10 @@ struct GuessTheFlagView_Previews: PreviewProvider {
         
         GuessTheFlagView()
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
-            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+            .previewDisplayName("iPad Pro (12.9-inch)")
+        
+        GuessTheFlagView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
     }
 }

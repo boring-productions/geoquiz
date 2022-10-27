@@ -20,11 +20,13 @@ struct GuessTheCountryView: View {
             GeometryReader { geo in
                 VStack {
                     GameToolbar(game: game, color: .pinkLavender)
+                        .padding(.bottom)
                     
                     Spacer()
                     
                     CityMap(game: game)
                         .frame(height: geo.size.height * 0.35)
+                        .padding(.bottom)
                     
                     Spacer()
                     
@@ -74,6 +76,10 @@ struct GuessTheCountryView_Previews: PreviewProvider {
         
         GuessTheCountryView()
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
-            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+            .previewDisplayName("iPad Pro (12.9-inch)")
+        
+        GuessTheCountryView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
     }
 }

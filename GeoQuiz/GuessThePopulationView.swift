@@ -20,6 +20,7 @@ struct GuessThePopulationView: View {
             GeometryReader { geo in
                 VStack {
                     GameToolbar(game: game, color: .maizeCrayola)
+                        .padding(.bottom)
                     
                     Spacer()
                     
@@ -80,6 +81,10 @@ struct GuessThePopulationView_Previews: PreviewProvider {
         
         GuessThePopulationView()
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
-            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+            .previewDisplayName("iPad Pro (12.9-inch)")
+        
+        GuessThePopulationView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
     }
 }
