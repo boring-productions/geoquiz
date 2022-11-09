@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileModalView: View {
     @ObservedObject var userController: UserController
-    @ObservedObject var storeKitController: StoreKitController
+    @ObservedObject var storeController: StoreController
     
     @State private var showingEditModalView = false
     
@@ -26,7 +26,7 @@ struct ProfileModalView: View {
                 VStack(spacing: 30) {
                     UserProfile(
                         userController: userController,
-                        storeKitController: storeKitController,
+                        storeController: storeController,
                         isShowing: $showingEditModalView
                     )
                     
@@ -91,7 +91,7 @@ struct ProfileModalView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileModalView(userController: UserController(), storeKitController: StoreKitController())
+        ProfileModalView(userController: UserController(), storeController: StoreController())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsModalView: View {
-    @ObservedObject var user: UserController
+    @ObservedObject var userController: UserController
     
     @Environment(\.dismiss) var dismiss
 
@@ -25,7 +25,7 @@ struct SettingsModalView: View {
         NavigationStack {
             Form {
                 Section {
-                    Picker("❤️ Lives", selection: $user.data.numberOfLives) {
+                    Picker("❤️ Lives", selection: $userController.data.numberOfLives) {
                         ForEach(lives, id: \.self) { numberOfLives in
                             Text("\(numberOfLives)")
                                 .tag(numberOfLives)
@@ -38,8 +38,8 @@ struct SettingsModalView: View {
                 }
                 
                 Section {
-                    Toggle("Haptics", isOn: $user.data.haptics)
-                    Toggle("Sound effects", isOn: $user.data.sound)
+                    Toggle("Haptics", isOn: $userController.data.haptics)
+                    Toggle("Sound effects", isOn: $userController.data.sound)
                 } header: {
                     Text("Effects")
                 }
@@ -86,6 +86,6 @@ struct SettingsModalView: View {
 
 struct SettingsModalView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsModalView(user: UserController())
+        SettingsModalView(userController: UserController())
     }
 }

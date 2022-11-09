@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GuessTheCapitalView: View {
-    @StateObject var game = CountryGameController()
+    @StateObject var gameController = CountryGameController()
     
     @Environment(\.managedObjectContext) var moc
     
@@ -19,12 +19,25 @@ struct GuessTheCapitalView: View {
             
             GeometryReader { geo in
                 VStack {
-                    GameToolbar(game: game, color: .atomicTangerine)
+                    GameToolbar(gameController: gameController, color: .atomicTangerine)
                         .padding(.bottom)
                     
                     Spacer()
                     
-                    Image(game.correctAnswer.value.flag)
+                    /*
+                     THE PROBLEM:
+                     SwiftUI caches the image when it's shown using the `Image(string)` API.
+                     Once the image is not showed anymore, SwiftUI doesn't release memory,
+                     so it keeps caching new images until the app crashes
+                     UIImage(contentsOfFile: path) doesn't cache the image
+                     
+                     THE SOLUTION:
+                     Using `UIImage(contentsOfFile: path)` images aren't cached.
+                     */
+                    
+                    let flag = gameController.correctAnswer.value.flag
+                    let flagPath = Bundle.main.path(forResource: flag, ofType: "png")!
+                    Image(uiImage: UIImage(contentsOfFile: flagPath)!)
                         .renderingMode(.original)
                         .resizable()
                         .scaledToFit()
@@ -36,25 +49,28 @@ struct GuessTheCapitalView: View {
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Question \(game.questionCounter) of \(game.data.count)")
+                            Text("Question \(gameController.questionCounter) of \(gameController.data.count)")
                                 .font(.title3)
                                 .foregroundColor(.white.opacity(0.7))
                             
-                            Text("What is the capital of \(game.correctAnswer.key)?")
+                            Text("What is the capital of \(gameController.correctAnswer.key)?")
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                         }
                         
                         VStack(spacing: 15) {
-                            ForEach(Array(game.userChoices.keys), id: \.self) { countryName in
+                            ForEach(Array(gameController.userChoices.keys), id: \.self) { countryName in
                                 Button {
-                                    game.answer((key: countryName, value: game.data[countryName]!)) {
-                                        game.selector()
+                                    gameController.answer(
+                                        choice: (key: countryName, value: gameController.data[countryName]!),
+                                        wrongMessage: "That's the capital of \(countryName)"
+                                    ) {
+                                        gameController.selector()
                                     }
                                 } label: {
                                     AnswerButton(
-                                        name: game.data[countryName]!.capital,
+                                        name: gameController.data[countryName]!.capital,
                                         color: .chinaPink
                                     )
                                     .frame(height: geo.size.height * 0.08)
@@ -68,22 +84,12 @@ struct GuessTheCapitalView: View {
             }
         }
         .navigationBarHidden(true)
-        .modifier(GameAlertsModifier(game: game, gameType: .guessTheCapital, moc: moc))
+        .modifier(GameAlertsModifier(gameController: gameController, gameType: .guessTheCapital, moc: moc))
     }
 }
 
 struct GuessTheCapitalView_Previews: PreviewProvider {
     static var previews: some View {
         GuessTheCapitalView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
-            .previewDisplayName("iPhone 14 Pro Max")
-        
-        GuessTheCapitalView()
-            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
-            .previewDisplayName("iPad Pro (12.9-inch)")
-        
-        GuessTheCapitalView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            .previewDisplayName("iPhone 8")
     }
 }

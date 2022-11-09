@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var showingSettingsModalView = false
     @State private var showingProfileModalView = false
     
-    @StateObject var storeKitController = StoreKitController()
+    @StateObject var storeController = StoreController()
     @StateObject var userController = UserController()
     
     let premiumGames: [GameType] = [.guessTheCapital, .guessTheCountry, .guessThePopulation]
@@ -38,13 +38,13 @@ struct ContentView: View {
                     
                     ForEach(premiumGames, id: \.rawValue) { gameType in
                         Button {
-                            if storeKitController.premiumIsActive {
+                            if storeController.premiumIsActive {
                                 path.append(gameType)
                             } else {
                                 showingBuyPremiumModalView = true
                             }
                             } label: {
-                                GameButton(gameType: gameType, isActive: storeKitController.premiumIsActive)
+                                GameButton(gameType: gameType, isActive: storeController.premiumIsActive)
                             }
                         }
                     }
@@ -76,7 +76,7 @@ struct ContentView: View {
                     }
                     
                     ToolbarItemGroup {
-                        if !storeKitController.premiumIsActive {
+                        if !storeController.premiumIsActive {
                             Button {
                                 showingBuyPremiumModalView = true
                             } label: {
@@ -92,15 +92,15 @@ struct ContentView: View {
                     }
                 }
                 .sheet(isPresented: $showingBuyPremiumModalView) {
-                    BuyPremiumModalView(storeKitController: storeKitController)
+                    BuyPremiumModalView(storeController: storeController)
                 }
                 
                 .sheet(isPresented: $showingSettingsModalView) {
-                    SettingsModalView(user: userController)
+                    SettingsModalView(userController: userController)
                 }
                 
                 .sheet(isPresented: $showingProfileModalView) {
-                    ProfileModalView(userController: userController, storeKitController: storeKitController)
+                    ProfileModalView(userController: userController, storeController: storeController)
                 }
             }
             .navigationViewStyle(StackNavigationViewStyle())
