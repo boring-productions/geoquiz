@@ -13,11 +13,9 @@
 		950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */; };
 		950C535628F3172C00179C78 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 950C535528F3172C00179C78 /* RevenueCat */; };
 		950C535928F3178B00179C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950C535828F3178B00179C78 /* StoreKit.framework */; };
-		95197EFD28F339AE00FE67E9 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95197EFC28F339AE00FE67E9 /* StoreController.swift */; };
 		951AFAEA28E5655C00A4A4BD /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 951AFAE828E5655C00A4A4BD /* cities.json */; };
 		951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEC28E5657500A4A4BD /* CityModel.swift */; };
 		951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAEE28E565FE00A4A4BD /* CountryModel.swift */; };
-		951AFAF128E5735400A4A4BD /* CityGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AFAF028E5735400A4A4BD /* CityGameController.swift */; };
 		951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */; };
 		951DCE92291A424900BAE20C /* mc.png in Resources */ = {isa = PBXBuildFile; fileRef = 951DCDBA291A420C00BAE20C /* mc.png */; };
 		951DCE93291A424900BAE20C /* gr.png in Resources */ = {isa = PBXBuildFile; fileRef = 951DCDBB291A420C00BAE20C /* gr.png */; };
@@ -235,6 +233,16 @@
 		951DCF68291A424A00BAE20C /* ve.png in Resources */ = {isa = PBXBuildFile; fileRef = 951DCE90291A424900BAE20C /* ve.png */; };
 		951DCF69291A424A00BAE20C /* zm.png in Resources */ = {isa = PBXBuildFile; fileRef = 951DCE91291A424900BAE20C /* zm.png */; };
 		951DCF6B291A6B3700BAE20C /* np.png in Resources */ = {isa = PBXBuildFile; fileRef = 951DCF6A291A6B3700BAE20C /* np.png */; };
+		951F0C07291CFADF0026D5A2 /* GameProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0BFD291CFADF0026D5A2 /* GameProtocol+Extension.swift */; };
+		951F0C08291CFADF0026D5A2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0BFE291CFADF0026D5A2 /* CoreDataController.swift */; };
+		951F0C09291CFADF0026D5A2 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0BFF291CFADF0026D5A2 /* MapController.swift */; };
+		951F0C0A291CFADF0026D5A2 /* GameViewProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C00291CFADF0026D5A2 /* GameViewProtocol+Extension.swift */; };
+		951F0C0B291CFADF0026D5A2 /* HapticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C01291CFADF0026D5A2 /* HapticsController.swift */; };
+		951F0C0C291CFADF0026D5A2 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C02291CFADF0026D5A2 /* StoreController.swift */; };
+		951F0C0D291CFADF0026D5A2 /* CountryGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C03291CFADF0026D5A2 /* CountryGameController.swift */; };
+		951F0C0E291CFADF0026D5A2 /* CityGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C04291CFADF0026D5A2 /* CityGameController.swift */; };
+		951F0C0F291CFADF0026D5A2 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C05291CFADF0026D5A2 /* PersistenceController.swift */; };
+		951F0C10291CFADF0026D5A2 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C06291CFADF0026D5A2 /* UserController.swift */; };
 		952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41E828DC521200198643 /* GameAlertsModifier.swift */; };
 		952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EC28DC658900198643 /* SettingsModalView.swift */; };
 		952E41F228DC6F6E00198643 /* correctAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 952E41F028DC6F6D00198643 /* correctAnswer.wav */; };
@@ -244,13 +252,9 @@
 		9539829A28C51EDF00B70973 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9539829928C51EDF00B70973 /* Preview Assets.xcassets */; };
 		954AF4682905397A00180065 /* PlayedGamesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954AF4672905397A00180065 /* PlayedGamesList.swift */; };
 		955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658028D703EB00CEEC6D /* GameToolbar.swift */; };
-		955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */; };
-		955A65A928D7815E00CEEC6D /* HapticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A65A828D7815E00CEEC6D /* HapticsController.swift */; };
 		957822482918F445005F2D50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957822472918F445005F2D50 /* Extensions.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
-		95919DB628F076BF00F21F8F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB528F076BF00F21F8F /* UserController.swift */; };
 		95919DBC28F08D0600F21F8F /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* SettingsRow.swift */; };
-		95A4F42929040E350018DFAC /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42829040E350018DFAC /* CoreDataController.swift */; };
 		95A4F42B29043DC00018DFAC /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42A29043DC00018DFAC /* UserImage.swift */; };
 		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
 		95BC392D28EC42570049AB49 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC392C28EC42570049AB49 /* CityMap.swift */; };
@@ -259,20 +263,16 @@
 		95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456B28FE87E4000CD570 /* UserDataModel.swift */; };
 		95C6456E28FE8C04000CD570 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456D28FE8C04000CD570 /* UserProfile.swift */; };
 		95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */; };
-		95C6457428FFC8E0000CD570 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457328FFC8E0000CD570 /* PersistenceController.swift */; };
 		95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95C6457528FFC934000CD570 /* GeoQuiz.xcdatamodeld */; };
 		95C6459A28FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */; };
 		95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */; };
 		95C6459D290003E1000CD570 /* RecentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459C290003E1000CD570 /* RecentGame.swift */; };
 		95CA295028F6BB4500CE0B7A /* ActivityAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */; };
 		95D8BF32291BAF8C006FC606 /* SettingsModalView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8BF31291BAF8C006FC606 /* SettingsModalView-ViewModel.swift */; };
-		95D8BF36291BB1F7006FC606 /* GameViewProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8BF35291BB1F7006FC606 /* GameViewProtocol+Extension.swift */; };
 		95D8BF38291BBB3D006FC606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8BF37291BBB3D006FC606 /* LaunchScreen.storyboard */; };
 		95D8BF3A291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8BF39291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift */; };
 		95DB7C01290492FC007D01D8 /* GameInfoModel+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C00290492FC007D01D8 /* GameInfoModel+Protocol.swift */; };
-		95DB7C032904A968007D01D8 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C022904A968007D01D8 /* MapController.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
-		95FA409C28D9881100129B60 /* CountryGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409B28D9881100129B60 /* CountryGameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -281,11 +281,9 @@
 		9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessThePopulationView.swift; sourceTree = "<group>"; };
 		950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPremiumModalView.swift; sourceTree = "<group>"; };
 		950C535828F3178B00179C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		95197EFC28F339AE00FE67E9 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
 		951AFAE828E5655C00A4A4BD /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		951AFAEC28E5657500A4A4BD /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		951AFAEE28E565FE00A4A4BD /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
-		951AFAF028E5735400A4A4BD /* CityGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGameController.swift; sourceTree = "<group>"; };
 		951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCapitalView.swift; sourceTree = "<group>"; };
 		951DCDBA291A420C00BAE20C /* mc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mc.png; sourceTree = "<group>"; };
 		951DCDBB291A420C00BAE20C /* gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gr.png; sourceTree = "<group>"; };
@@ -503,6 +501,16 @@
 		951DCE90291A424900BAE20C /* ve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ve.png; sourceTree = "<group>"; };
 		951DCE91291A424900BAE20C /* zm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zm.png; sourceTree = "<group>"; };
 		951DCF6A291A6B3700BAE20C /* np.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = np.png; sourceTree = "<group>"; };
+		951F0BFD291CFADF0026D5A2 /* GameProtocol+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameProtocol+Extension.swift"; sourceTree = "<group>"; };
+		951F0BFE291CFADF0026D5A2 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		951F0BFF291CFADF0026D5A2 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		951F0C00291CFADF0026D5A2 /* GameViewProtocol+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewProtocol+Extension.swift"; sourceTree = "<group>"; };
+		951F0C01291CFADF0026D5A2 /* HapticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticsController.swift; sourceTree = "<group>"; };
+		951F0C02291CFADF0026D5A2 /* StoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		951F0C03291CFADF0026D5A2 /* CountryGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryGameController.swift; sourceTree = "<group>"; };
+		951F0C04291CFADF0026D5A2 /* CityGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGameController.swift; sourceTree = "<group>"; };
+		951F0C05291CFADF0026D5A2 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		951F0C06291CFADF0026D5A2 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		952E41E828DC521200198643 /* GameAlertsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlertsModifier.swift; sourceTree = "<group>"; };
 		952E41EC28DC658900198643 /* SettingsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModalView.swift; sourceTree = "<group>"; };
 		952E41F028DC6F6D00198643 /* correctAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAnswer.wav; sourceTree = "<group>"; };
@@ -514,13 +522,9 @@
 		954AF4672905397A00180065 /* PlayedGamesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedGamesList.swift; sourceTree = "<group>"; };
 		954AF46B2905433300180065 /* GeoQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoQuiz.entitlements; sourceTree = "<group>"; };
 		955A658028D703EB00CEEC6D /* GameToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbar.swift; sourceTree = "<group>"; };
-		955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameProtocol+Extension.swift"; sourceTree = "<group>"; };
-		955A65A828D7815E00CEEC6D /* HapticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsController.swift; sourceTree = "<group>"; };
 		957822472918F445005F2D50 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
-		95919DB528F076BF00F21F8F /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		95919DBB28F08D0600F21F8F /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
-		95A4F42829040E350018DFAC /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		95A4F42A29043DC00018DFAC /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
 		95BC392C28EC42570049AB49 /* CityMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
@@ -529,21 +533,17 @@
 		95C6456B28FE87E4000CD570 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		95C6456D28FE8C04000CD570 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditModalView.swift; sourceTree = "<group>"; };
-		95C6457328FFC8E0000CD570 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		95C6457628FFC934000CD570 /* GeoQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GeoQuiz.xcdatamodel; sourceTree = "<group>"; };
 		95C6459828FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95C6459C290003E1000CD570 /* RecentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGame.swift; sourceTree = "<group>"; };
 		95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlert.swift; sourceTree = "<group>"; };
 		95D8BF31291BAF8C006FC606 /* SettingsModalView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsModalView-ViewModel.swift"; sourceTree = "<group>"; };
-		95D8BF35291BB1F7006FC606 /* GameViewProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewProtocol+Extension.swift"; sourceTree = "<group>"; };
 		95D8BF37291BBB3D006FC606 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95D8BF39291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GuessTheFlagView-ViewModel.swift"; sourceTree = "<group>"; };
 		95DB7C00290492FC007D01D8 /* GameInfoModel+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameInfoModel+Protocol.swift"; sourceTree = "<group>"; };
-		95DB7C022904A968007D01D8 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95FA409928D9876B00129B60 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
-		95FA409B28D9881100129B60 /* CountryGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -790,6 +790,23 @@
 			path = Flags;
 			sourceTree = "<group>";
 		};
+		951F0BFC291CFADF0026D5A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				951F0BFD291CFADF0026D5A2 /* GameProtocol+Extension.swift */,
+				951F0BFE291CFADF0026D5A2 /* CoreDataController.swift */,
+				951F0BFF291CFADF0026D5A2 /* MapController.swift */,
+				951F0C00291CFADF0026D5A2 /* GameViewProtocol+Extension.swift */,
+				951F0C01291CFADF0026D5A2 /* HapticsController.swift */,
+				951F0C02291CFADF0026D5A2 /* StoreController.swift */,
+				951F0C03291CFADF0026D5A2 /* CountryGameController.swift */,
+				951F0C04291CFADF0026D5A2 /* CityGameController.swift */,
+				951F0C05291CFADF0026D5A2 /* PersistenceController.swift */,
+				951F0C06291CFADF0026D5A2 /* UserController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		9520ABBA28C86D0300A3D4D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,7 +858,7 @@
 				95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */,
 				957822462918EED3005F2D50 /* Helpers */,
 				957822452918EECA005F2D50 /* Models */,
-				959303AC2918F58F00E3E099 /* Controllers */,
+				951F0BFC291CFADF0026D5A2 /* Controllers */,
 				9520ABBA28C86D0300A3D4D7 /* Resources */,
 				9539829828C51EDF00B70973 /* Preview Content */,
 			);
@@ -886,24 +903,6 @@
 				957822472918F445005F2D50 /* Extensions.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		959303AC2918F58F00E3E099 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				95D8BF35291BB1F7006FC606 /* GameViewProtocol+Extension.swift */,
-				955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */,
-				95FA409B28D9881100129B60 /* CountryGameController.swift */,
-				951AFAF028E5735400A4A4BD /* CityGameController.swift */,
-				955A65A828D7815E00CEEC6D /* HapticsController.swift */,
-				95919DB528F076BF00F21F8F /* UserController.swift */,
-				95197EFC28F339AE00FE67E9 /* StoreController.swift */,
-				95A4F42829040E350018DFAC /* CoreDataController.swift */,
-				95C6457328FFC8E0000CD570 /* PersistenceController.swift */,
-				95DB7C022904A968007D01D8 /* MapController.swift */,
-			);
-			name = Controllers;
-			path = Models/Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1203,47 +1202,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955A65A928D7815E00CEEC6D /* HapticsController.swift in Sources */,
 				95BC392D28EC42570049AB49 /* CityMap.swift in Sources */,
 				95C6459A28FFE5A3000CD570 /* PlayedGame+CoreDataClass.swift in Sources */,
 				95A4F42B29043DC00018DFAC /* UserImage.swift in Sources */,
 				952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */,
-				95197EFD28F339AE00FE67E9 /* StoreController.swift in Sources */,
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
-				955A658328D733E400CEEC6D /* GameProtocol+Extension.swift in Sources */,
-				95A4F42929040E350018DFAC /* CoreDataController.swift in Sources */,
-				95C6457428FFC8E0000CD570 /* PersistenceController.swift in Sources */,
-				95919DB628F076BF00F21F8F /* UserController.swift in Sources */,
 				95C6459D290003E1000CD570 /* RecentGame.swift in Sources */,
 				95C6456E28FE8C04000CD570 /* UserProfile.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				954AF4682905397A00180065 /* PlayedGamesList.swift in Sources */,
 				95C4315928C6500000212131 /* GameButton.swift in Sources */,
 				951AFAED28E5657500A4A4BD /* CityModel.swift in Sources */,
+				951F0C07291CFADF0026D5A2 /* GameProtocol+Extension.swift in Sources */,
+				951F0C0D291CFADF0026D5A2 /* CountryGameController.swift in Sources */,
 				950C535328F2FA3300179C78 /* BuyPremiumModalView.swift in Sources */,
 				951B630228D1A87C004F9877 /* GuessTheCapitalView.swift in Sources */,
+				951F0C10291CFADF0026D5A2 /* UserController.swift in Sources */,
+				951F0C09291CFADF0026D5A2 /* MapController.swift in Sources */,
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
+				951F0C0A291CFADF0026D5A2 /* GameViewProtocol+Extension.swift in Sources */,
 				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
-				95DB7C032904A968007D01D8 /* MapController.swift in Sources */,
+				951F0C0E291CFADF0026D5A2 /* CityGameController.swift in Sources */,
 				95919DBC28F08D0600F21F8F /* SettingsRow.swift in Sources */,
+				951F0C0C291CFADF0026D5A2 /* StoreController.swift in Sources */,
+				951F0C08291CFADF0026D5A2 /* CoreDataController.swift in Sources */,
 				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
 				95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */,
-				95FA409C28D9881100129B60 /* CountryGameController.swift in Sources */,
 				95CA295028F6BB4500CE0B7A /* ActivityAlert.swift in Sources */,
 				95D8BF32291BAF8C006FC606 /* SettingsModalView-ViewModel.swift in Sources */,
 				95D8BF3A291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift in Sources */,
 				955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */,
 				957822482918F445005F2D50 /* Extensions.swift in Sources */,
 				95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */,
-				95D8BF36291BB1F7006FC606 /* GameViewProtocol+Extension.swift in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
 				95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */,
+				951F0C0B291CFADF0026D5A2 /* HapticsController.swift in Sources */,
 				95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */,
 				95C6457228FFC4DC000CD570 /* ProfileEditModalView.swift in Sources */,
 				952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */,
 				95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */,
 				95DB7C01290492FC007D01D8 /* GameInfoModel+Protocol.swift in Sources */,
-				951AFAF128E5735400A4A4BD /* CityGameController.swift in Sources */,
+				951F0C0F291CFADF0026D5A2 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
