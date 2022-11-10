@@ -140,7 +140,7 @@ extension Game {
             }
             
             do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+                try AVAudioSession.sharedInstance().setCategory(.ambient)
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
                 fatalError("Couldn't activate session")

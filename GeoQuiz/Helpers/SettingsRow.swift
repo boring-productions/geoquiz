@@ -1,5 +1,5 @@
 //
-//  FormLink.swift
+//  SettingsRow.swift
 //  GeoQuiz
 //
 //  Created by Dennis Concepción Martín on 7/10/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FormLink: View {
+struct SettingsRow: View {
     var color: Color
     var symbol: String
     var text: String
@@ -18,9 +18,13 @@ struct FormLink: View {
     var body: some View {
         Link(destination: url) {
             HStack(alignment: .center, spacing: 20) {
-                Image(systemName: symbol)
-                    .imageScale(.large)
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(width: 30, height: 30)
                     .foregroundColor(color)
+                    .overlay(
+                        Image(systemName: symbol)
+                            .foregroundColor(.white)
+                    )
                 
                 Text(text)
                     .foregroundColor(.primary)
@@ -29,11 +33,11 @@ struct FormLink: View {
     }
 }
 
-struct FormLink_Previews: PreviewProvider {
+struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
-        FormLink(
+        SettingsRow(
             color: .mayaBlue,
-            symbol: "info.circle.fill",
+            symbol: "info",
             text: "About",
             url: URL(string: "https://dennistech.io")!
         )

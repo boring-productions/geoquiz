@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GuessTheCountryView: View {
+struct GuessTheCountryView: View, GameView {
     @StateObject var gameController = CityGameController()
     
     @Environment(\.managedObjectContext) var moc

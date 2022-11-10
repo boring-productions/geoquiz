@@ -14,6 +14,7 @@ struct UserDataModel: Codable {
     var haptics: Bool = true
     var sound: Bool = true
     var numberOfLives: Int = 25
+    var guessTheFlagShape: GuessTheFlagShape = .respectAspectRatio
     
     // Profile
     var username: String = "Unnamed"
@@ -23,4 +24,12 @@ struct UserDataModel: Codable {
         guard let imageData = imageData else { return nil }
         return UIImage(data: imageData)
     }
+}
+
+enum GuessTheFlagShape: String, Codable, CaseIterable {
+    case respectAspectRatio = "Original"
+    case circular = "Circular"
+    case rectangular = "Rectangular"
+    
+    var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
 }

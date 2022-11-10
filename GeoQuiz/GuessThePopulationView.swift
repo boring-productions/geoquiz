@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GuessThePopulationView: View {
+struct GuessThePopulationView: View, GameView {
     @StateObject var gameController = CountryGameController()
     
     @Environment(\.managedObjectContext) var moc
@@ -35,8 +35,8 @@ struct GuessThePopulationView: View {
                      Using `UIImage(contentsOfFile: path)` images aren't cached.
                      */
                     
-                    let flag = gameController.correctAnswer.value.flag
-                    let flagPath = Bundle.main.path(forResource: flag, ofType: "png")!
+                    let flagPath = getFlagPath(forName: gameController.correctAnswer.value.flag)
+                    
                     Image(uiImage: UIImage(contentsOfFile: flagPath)!)
                         .renderingMode(.original)
                         .resizable()

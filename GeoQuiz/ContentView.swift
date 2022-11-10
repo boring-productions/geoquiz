@@ -56,7 +56,7 @@ struct ContentView: View {
                 .navigationDestination(for: GameType.self) { gameMode in
                     switch gameMode {
                     case .guessTheFlag:
-                        GuessTheFlagView()
+                        GuessTheFlagView(userController: userController)
                     case .guessTheCapital:
                         GuessTheCapitalView()
                     case .guessTheCountry:

@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct GuessTheFlagView: View {
+struct GuessTheFlagView: View, GameView {
+    @ObservedObject var userController: UserController
+    
     @StateObject var gameController = CountryGameController()
     
     @Environment(\.managedObjectContext) var moc
@@ -61,21 +63,9 @@ struct GuessTheFlagView: View {
                                  THE SOLUTION:
                                  Using `UIImage(contentsOfFile: path)` images aren't cached.
                                  */
-                                
-                                let flag = gameController.data[countryName]!.flag
-                                let flagPath = Bundle.main.path(forResource: flag, ofType: "png")!
-                                
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(.white.opacity(0.5))
-                                    .frame(width: geo.size.height * 0.3, height: geo.size.height * 0.15)
-                                    .overlay(
-                                        Image(uiImage: UIImage(contentsOfFile: flagPath)!)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .cornerRadius(20)
-                                            .shadow(radius: 10)
-                                            .padding()
-                                    )
+                             
+                                let flagPath = getFlagPath(forName: gameController.data[countryName]!.flag)
+                                Layout.showFlag(in: flagPath, geo: geo, userController)
                             }
                         }
                     }
@@ -92,6 +82,6 @@ struct GuessTheFlagView: View {
 
 struct GuessTheFlagView_Previews: PreviewProvider {
     static var previews: some View {
-        GuessTheFlagView()
+        GuessTheFlagView(userController: UserController())
     }
 }

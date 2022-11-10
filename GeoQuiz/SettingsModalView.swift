@@ -32,9 +32,20 @@ struct SettingsModalView: View {
                         }
                     }
                 } header: {
-                    Text("Game")
+                    Text("General")
                 } footer: {
                     Text("Number of lives at the beginning of each game.")
+                }
+                
+                Section {
+                    Picker("Flag shape", selection: $userController.data.guessTheFlagShape) {
+                        ForEach(GuessTheFlagShape.allCases, id: \.self) { shape in
+                            Text(shape.localizedName)
+                                .tag(shape)
+                        }
+                    }
+                } header: {
+                    Text("Guess the flag game")
                 }
                 
                 Section {
@@ -45,28 +56,42 @@ struct SettingsModalView: View {
                 }
                 
                 Section {
-                    FormLink(
+                    SettingsRow(
                         color: .mayaBlue,
-                        symbol: "info.circle.fill",
+                        symbol: "person.fill",
                         text: "About",
                         url: URL(string: "https://dennistech.io")!
                     )
                     
-                    FormLink(
+                    SettingsRow(
                         color: .atomicTangerine,
-                        symbol: "ant.circle.fill",
+                        symbol: "ant.fill",
                         text: "Report bugs",
                         url: URL(string: "mailto:dmartin@dennistech.io")!
                     )
                     
-                    FormLink(
+                    SettingsRow(
                         color: .blueBell,
-                        symbol: "message.circle.fill",
+                        symbol: "message.fill",
                         text: "Twitter",
                         url: URL(string: "https://twitter.com/dennistech_")!
                     )
                 } header: {
                     Text("Get in touch")
+                } footer: {
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text("© 2022 Dennis Technologies Ltd.")
+                            Text("Proud to be indie.")
+                            
+                            if let versionNumber = getVersion() {
+                                Text("Version \(versionNumber)")
+                            }
+                        }
+                        Spacer()
+                    }
+                    .padding(.top)
                 }
             }
             .navigationTitle("Settings")

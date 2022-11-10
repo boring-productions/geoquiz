@@ -249,7 +249,7 @@
 		957822482918F445005F2D50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957822472918F445005F2D50 /* Extensions.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
 		95919DB628F076BF00F21F8F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DB528F076BF00F21F8F /* UserController.swift */; };
-		95919DBC28F08D0600F21F8F /* FormLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* FormLink.swift */; };
+		95919DBC28F08D0600F21F8F /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* SettingsRow.swift */; };
 		95A4F42929040E350018DFAC /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42829040E350018DFAC /* CoreDataController.swift */; };
 		95A4F42B29043DC00018DFAC /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42A29043DC00018DFAC /* UserImage.swift */; };
 		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
@@ -265,6 +265,10 @@
 		95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */; };
 		95C6459D290003E1000CD570 /* RecentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6459C290003E1000CD570 /* RecentGame.swift */; };
 		95CA295028F6BB4500CE0B7A /* ActivityAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */; };
+		95D8BF32291BAF8C006FC606 /* SettingsModalView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8BF31291BAF8C006FC606 /* SettingsModalView-ViewModel.swift */; };
+		95D8BF36291BB1F7006FC606 /* GameViewProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8BF35291BB1F7006FC606 /* GameViewProtocol+Extension.swift */; };
+		95D8BF38291BBB3D006FC606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8BF37291BBB3D006FC606 /* LaunchScreen.storyboard */; };
+		95D8BF3A291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8BF39291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift */; };
 		95DB7C01290492FC007D01D8 /* GameInfoModel+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C00290492FC007D01D8 /* GameInfoModel+Protocol.swift */; };
 		95DB7C032904A968007D01D8 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C022904A968007D01D8 /* MapController.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
@@ -515,7 +519,7 @@
 		957822472918F445005F2D50 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		95919DB528F076BF00F21F8F /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		95919DBB28F08D0600F21F8F /* FormLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLink.swift; sourceTree = "<group>"; };
+		95919DBB28F08D0600F21F8F /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		95A4F42829040E350018DFAC /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		95A4F42A29043DC00018DFAC /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
@@ -531,6 +535,10 @@
 		95C6459928FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayedGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95C6459C290003E1000CD570 /* RecentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentGame.swift; sourceTree = "<group>"; };
 		95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAlert.swift; sourceTree = "<group>"; };
+		95D8BF31291BAF8C006FC606 /* SettingsModalView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsModalView-ViewModel.swift"; sourceTree = "<group>"; };
+		95D8BF35291BB1F7006FC606 /* GameViewProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewProtocol+Extension.swift"; sourceTree = "<group>"; };
+		95D8BF37291BBB3D006FC606 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95D8BF39291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GuessTheFlagView-ViewModel.swift"; sourceTree = "<group>"; };
 		95DB7C00290492FC007D01D8 /* GameInfoModel+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameInfoModel+Protocol.swift"; sourceTree = "<group>"; };
 		95DB7C022904A968007D01D8 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		95E6188428DDDB5C003359ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -818,14 +826,17 @@
 				95E6188428DDDB5C003359ED /* Info.plist */,
 				9539829628C51EDF00B70973 /* Assets.xcassets */,
 				95C6457528FFC934000CD570 /* GeoQuiz.xcdatamodeld */,
+				95D8BF37291BBB3D006FC606 /* LaunchScreen.storyboard */,
 				9539829228C51EDE00B70973 /* GeoQuizApp.swift */,
 				95C4315528C64A8C00212131 /* ContentView.swift */,
 				95FA409928D9876B00129B60 /* GuessTheFlagView.swift */,
+				95D8BF39291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift */,
 				951B630128D1A87C004F9877 /* GuessTheCapitalView.swift */,
 				95AF322928DF293900023ACC /* GuessTheCountryView.swift */,
 				9509A8E128E5A3D700CFCDBA /* GuessThePopulationView.swift */,
 				950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */,
 				952E41EC28DC658900198643 /* SettingsModalView.swift */,
+				95D8BF31291BAF8C006FC606 /* SettingsModalView-ViewModel.swift */,
 				9590359428E098FF00B24560 /* ProfileModalView.swift */,
 				95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */,
 				957822462918EED3005F2D50 /* Helpers */,
@@ -865,7 +876,7 @@
 				95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */,
 				955A658028D703EB00CEEC6D /* GameToolbar.swift */,
 				95BC392C28EC42570049AB49 /* CityMap.swift */,
-				95919DBB28F08D0600F21F8F /* FormLink.swift */,
+				95919DBB28F08D0600F21F8F /* SettingsRow.swift */,
 				95CA294F28F6BB4500CE0B7A /* ActivityAlert.swift */,
 				95C6456D28FE8C04000CD570 /* UserProfile.swift */,
 				95A4F42A29043DC00018DFAC /* UserImage.swift */,
@@ -880,6 +891,7 @@
 		959303AC2918F58F00E3E099 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95D8BF35291BB1F7006FC606 /* GameViewProtocol+Extension.swift */,
 				955A658228D733E400CEEC6D /* GameProtocol+Extension.swift */,
 				95FA409B28D9881100129B60 /* CountryGameController.swift */,
 				951AFAF028E5735400A4A4BD /* CityGameController.swift */,
@@ -1020,6 +1032,7 @@
 				951DCE94291A424900BAE20C /* sl.png in Resources */,
 				951DCF46291A424A00BAE20C /* mg.png in Resources */,
 				951DCF62291A424A00BAE20C /* aw.png in Resources */,
+				95D8BF38291BBB3D006FC606 /* LaunchScreen.storyboard in Resources */,
 				951DCEBC291A424A00BAE20C /* do.png in Resources */,
 				951DCF1F291A424A00BAE20C /* cz.png in Resources */,
 				951DCF2C291A424A00BAE20C /* ph.png in Resources */,
@@ -1212,14 +1225,17 @@
 				9539829328C51EDE00B70973 /* GeoQuizApp.swift in Sources */,
 				95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */,
 				95DB7C032904A968007D01D8 /* MapController.swift in Sources */,
-				95919DBC28F08D0600F21F8F /* FormLink.swift in Sources */,
+				95919DBC28F08D0600F21F8F /* SettingsRow.swift in Sources */,
 				951AFAEF28E565FE00A4A4BD /* CountryModel.swift in Sources */,
 				95030CEA28D1BA4D001AA3A1 /* AnswerButton.swift in Sources */,
 				95FA409C28D9881100129B60 /* CountryGameController.swift in Sources */,
 				95CA295028F6BB4500CE0B7A /* ActivityAlert.swift in Sources */,
+				95D8BF32291BAF8C006FC606 /* SettingsModalView-ViewModel.swift in Sources */,
+				95D8BF3A291BC5DA006FC606 /* GuessTheFlagView-ViewModel.swift in Sources */,
 				955A658128D703EB00CEEC6D /* GameToolbar.swift in Sources */,
 				957822482918F445005F2D50 /* Extensions.swift in Sources */,
 				95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */,
+				95D8BF36291BB1F7006FC606 /* GameViewProtocol+Extension.swift in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
 				95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */,
 				95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */,
@@ -1366,6 +1382,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1401,6 +1418,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
