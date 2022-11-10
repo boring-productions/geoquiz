@@ -38,6 +38,11 @@ struct SettingsModalView: View {
                 }
                 
                 Section {
+                    Toggle("Haptics", isOn: $userController.data.haptics)
+                    Toggle("Sound effects", isOn: $userController.data.sound)
+                }
+                
+                Section {
                     Picker("Flag shape", selection: $userController.data.guessTheFlagShape) {
                         ForEach(GuessTheFlagShape.allCases, id: \.self) { shape in
                             Text(shape.localizedName)
@@ -49,35 +54,37 @@ struct SettingsModalView: View {
                 }
                 
                 Section {
-                    Toggle("Haptics", isOn: $userController.data.haptics)
-                    Toggle("Sound effects", isOn: $userController.data.sound)
-                } header: {
-                    Text("Effects")
-                }
-                
-                Section {
-                    SettingsRow(
-                        color: .mayaBlue,
-                        symbol: "person.fill",
-                        text: "About",
-                        url: URL(string: "https://dennistech.io")!
-                    )
+                    Link(destination: URL(string: "https://dennistech.io")!) {
+                        SettingsRow(
+                            color: .mayaBlue,
+                            symbol: "person.fill",
+                            text: "About"
+                        )
+                    }
                     
-                    SettingsRow(
-                        color: .atomicTangerine,
-                        symbol: "ant.fill",
-                        text: "Report bugs",
-                        url: URL(string: "mailto:dmartin@dennistech.io")!
-                    )
+                    NavigationLink(destination: DatasetView()) {
+                        SettingsRow(
+                            color: .atomicTangerine,
+                            symbol: "square.stack.3d.up.fill",
+                            text: "Dataset"
+                        )
+                    }
                     
-                    SettingsRow(
-                        color: .blueBell,
-                        symbol: "message.fill",
-                        text: "Twitter",
-                        url: URL(string: "https://twitter.com/dennistech_")!
-                    )
-                } header: {
-                    Text("Get in touch")
+                    Link(destination: URL(string: "mailto:dmartin@dennistech.io")!) {
+                        SettingsRow(
+                            color: .chinaPink,
+                            symbol: "ant.fill",
+                            text: "Report bugs"
+                        )
+                    }
+                    
+                    Link(destination: URL(string: "https://twitter.com/dennistech_")!) {
+                        SettingsRow(
+                            color: .blueBell,
+                            symbol: "message.fill",
+                            text: "Twitter"
+                        )
+                    }
                 } footer: {
                     HStack {
                         Spacer()

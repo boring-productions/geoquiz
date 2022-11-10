@@ -243,6 +243,8 @@
 		951F0C0E291CFADF0026D5A2 /* CityGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C04291CFADF0026D5A2 /* CityGameController.swift */; };
 		951F0C0F291CFADF0026D5A2 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C05291CFADF0026D5A2 /* PersistenceController.swift */; };
 		951F0C10291CFADF0026D5A2 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C06291CFADF0026D5A2 /* UserController.swift */; };
+		951F0C12291D05AE0026D5A2 /* DatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C11291D05AE0026D5A2 /* DatasetView.swift */; };
+		951F0C14291D06810026D5A2 /* DatasetView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0C13291D06810026D5A2 /* DatasetView-ViewModel.swift */; };
 		952E41E928DC521200198643 /* GameAlertsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41E828DC521200198643 /* GameAlertsModifier.swift */; };
 		952E41ED28DC658900198643 /* SettingsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E41EC28DC658900198643 /* SettingsModalView.swift */; };
 		952E41F228DC6F6E00198643 /* correctAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 952E41F028DC6F6D00198643 /* correctAnswer.wav */; };
@@ -511,6 +513,8 @@
 		951F0C04291CFADF0026D5A2 /* CityGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGameController.swift; sourceTree = "<group>"; };
 		951F0C05291CFADF0026D5A2 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		951F0C06291CFADF0026D5A2 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		951F0C11291D05AE0026D5A2 /* DatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetView.swift; sourceTree = "<group>"; };
+		951F0C13291D06810026D5A2 /* DatasetView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatasetView-ViewModel.swift"; sourceTree = "<group>"; };
 		952E41E828DC521200198643 /* GameAlertsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlertsModifier.swift; sourceTree = "<group>"; };
 		952E41EC28DC658900198643 /* SettingsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModalView.swift; sourceTree = "<group>"; };
 		952E41F028DC6F6D00198643 /* correctAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAnswer.wav; sourceTree = "<group>"; };
@@ -854,6 +858,8 @@
 				950C535228F2FA3300179C78 /* BuyPremiumModalView.swift */,
 				952E41EC28DC658900198643 /* SettingsModalView.swift */,
 				95D8BF31291BAF8C006FC606 /* SettingsModalView-ViewModel.swift */,
+				951F0C11291D05AE0026D5A2 /* DatasetView.swift */,
+				951F0C13291D06810026D5A2 /* DatasetView-ViewModel.swift */,
 				9590359428E098FF00B24560 /* ProfileModalView.swift */,
 				95C6457128FFC4DC000CD570 /* ProfileEditModalView.swift */,
 				957822462918EED3005F2D50 /* Helpers */,
@@ -1209,6 +1215,7 @@
 				9509A8E228E5A3D700CFCDBA /* GuessThePopulationView.swift in Sources */,
 				95C6459D290003E1000CD570 /* RecentGame.swift in Sources */,
 				95C6456E28FE8C04000CD570 /* UserProfile.swift in Sources */,
+				951F0C14291D06810026D5A2 /* DatasetView-ViewModel.swift in Sources */,
 				95C4315628C64A8C00212131 /* ContentView.swift in Sources */,
 				954AF4682905397A00180065 /* PlayedGamesList.swift in Sources */,
 				95C4315928C6500000212131 /* GameButton.swift in Sources */,
@@ -1235,6 +1242,7 @@
 				957822482918F445005F2D50 /* Extensions.swift in Sources */,
 				95C6457728FFC934000CD570 /* GeoQuiz.xcdatamodeld in Sources */,
 				9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */,
+				951F0C12291D05AE0026D5A2 /* DatasetView.swift in Sources */,
 				95C6456C28FE87E4000CD570 /* UserDataModel.swift in Sources */,
 				951F0C0B291CFADF0026D5A2 /* HapticsController.swift in Sources */,
 				95C6459B28FFE5A3000CD570 /* PlayedGame+CoreDataProperties.swift in Sources */,

@@ -45,7 +45,14 @@ class CityGameController: Game, ObservableObject {
     
     init() {
         let data: CityModel = Bundle.main.decode("cities.json")
-        self.data = data.cities
+        let shuffledCities = data.cities.shuffled().prefix(100)
+        
+        var cities = [String: T]()
+        for shuffledCity in shuffledCities {
+            cities[shuffledCity.key] = shuffledCity.value
+        }
+        
+        self.data = cities
         
         let user = UserController()
         userLives = user.data.numberOfLives
@@ -80,18 +87,24 @@ extension CityGameController {
             }
         }
         
-        // Get question asked (correct answer)
+        // Get correct answer
+        let randomCityKeys = data.keys.shuffled()
         let userChoicesCountry = userChoices.map { $0.value.country }
-        let correctAnswer = data.first(where: {
-            !userChoices.keys.contains($0.key) &&           // Avoid duplicated cities
-            !dataAsked.keys.contains($0.key) &&             // Avoid cities already asked
-            !userChoicesCountry.contains($0.value.country)  // Avoid duplicated country names in userChoices
-        })
         
+        let correctCityKey = randomCityKeys.first(where: {
+            !userChoices.keys.contains($0) &&                  // Avoid duplicated cities
+            !dataAsked.keys.contains($0) &&                    // Avoid cities already asked
+            !userChoicesCountry.contains(data[$0]!.country)    // Avoid duplicated country names in userChoices
+        })
+
         // Unwrap optional
-        if let correctAnswer = correctAnswer {
-            userChoices[correctAnswer.key] = correctAnswer.value
-            dataAsked[correctAnswer.key] = correctAnswer.value
+        if let correctCityKey = correctCityKey {
+            let correctCityValue = data[correctCityKey]!
+            
+            userChoices[correctCityKey] = correctCityValue
+            dataAsked[correctCityKey] = correctCityValue
+            
+            let correctAnswer = (key: correctCityKey, value: correctCityValue)
             self.correctAnswer = correctAnswer
         } else {
             fatalError("Couldn't unwrap optional value")

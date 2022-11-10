@@ -45,7 +45,14 @@ class CountryGameController: Game, ObservableObject {
     
     init() {
         let data: CountryModel = Bundle.main.decode("countries.json")
-        self.data = data.countries
+        let shuffledCountries = data.countries.shuffled().prefix(100)
+        
+        var countries = [String: T]()
+        for shuffledCountry in shuffledCountries {
+            countries[shuffledCountry.key] = shuffledCountry.value
+        }
+        
+        self.data = countries
         
         let user = UserController()
         userLives = user.data.numberOfLives
@@ -80,9 +87,8 @@ extension CountryGameController {
         let randomCountryKeys = data.keys.shuffled()
         
         let correctCountryKey = randomCountryKeys.first(where: {
-            !userChoices.keys.contains($0) &&
-            !dataAsked.keys.contains($0)
-            
+            !userChoices.keys.contains($0) &&   // Avoid duplicated countries
+            !dataAsked.keys.contains($0)        // Avoid countries already asked
         })
         
         // Unwrap correct answer
