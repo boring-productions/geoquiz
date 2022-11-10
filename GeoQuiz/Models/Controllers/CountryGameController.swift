@@ -76,16 +76,23 @@ extension CountryGameController {
             }
         }
         
-        // Get question asked (correct answer)
-        let correctAnswer = data.first(where: {
-            !userChoices.keys.contains($0.key) &&  // Avoid duplicated countries
-            !dataAsked.keys.contains($0.key)       // Avoid countries already asked
+        // Get correct answer
+        let randomCountryKeys = data.keys.shuffled()
+        
+        let correctCountryKey = randomCountryKeys.first(where: {
+            !userChoices.keys.contains($0) &&
+            !dataAsked.keys.contains($0)
+            
         })
         
-        // Unwrap optional
-        if let correctAnswer = correctAnswer {
-            userChoices[correctAnswer.key] = correctAnswer.value
-            dataAsked[correctAnswer.key] = correctAnswer.value
+        // Unwrap correct answer
+        if let correctCountryKey = correctCountryKey {
+            let correctCountryValue = data[correctCountryKey]!
+            
+            userChoices[correctCountryKey] = correctCountryValue
+            dataAsked[correctCountryKey] = correctCountryValue
+            
+            let correctAnswer = (key: correctCountryKey, value: correctCountryValue)
             self.correctAnswer = correctAnswer
         } else {
             fatalError("Couldn't unwrap optional value")
