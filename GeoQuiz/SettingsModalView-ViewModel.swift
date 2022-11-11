@@ -8,7 +8,18 @@
 import Foundation
 
 extension SettingsModalView {
-    func getVersion() -> String? {
-        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    class ViewModel {
+        var lives: [Int] {
+            var lives = [Int]()
+            for i in stride(from: 5, to: 55, by: 5) {
+                lives.append(i)
+            }
+            
+            return lives
+        }
+        
+        func getVersion() -> String? {
+            return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+        }
     }
 }

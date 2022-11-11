@@ -12,21 +12,14 @@ struct SettingsModalView: View {
     
     @Environment(\.dismiss) var dismiss
 
-    var lives: [Int] {
-        var lives = [Int]()
-        for i in stride(from: 5, to: 55, by: 5) {
-            lives.append(i)
-        }
-        
-        return lives
-    }
+    let viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
                     Picker("❤️ Lives", selection: $userController.data.numberOfLives) {
-                        ForEach(lives, id: \.self) { numberOfLives in
+                        ForEach(viewModel.lives, id: \.self) { numberOfLives in
                             Text("\(numberOfLives)")
                                 .tag(numberOfLives)
                         }
@@ -43,10 +36,10 @@ struct SettingsModalView: View {
                 }
                 
                 Section {
-                    Picker("Flag shape", selection: $userController.data.guessTheFlagShape) {
-                        ForEach(GuessTheFlagShape.allCases, id: \.self) { shape in
-                            Text(shape.localizedName)
-                                .tag(shape)
+                    Picker("Flag aspect ratio", selection: $userController.data.guessTheFlagAspectRatio) {
+                        ForEach(GuessTheFlagAspectRatio.allCases, id: \.self) { aspectRatio in
+                            Text(aspectRatio.localizedName)
+                                .tag(aspectRatio)
                         }
                     }
                 } header: {
@@ -59,14 +52,6 @@ struct SettingsModalView: View {
                             color: .mayaBlue,
                             symbol: "person.fill",
                             text: "About"
-                        )
-                    }
-                    
-                    NavigationLink(destination: DatasetView()) {
-                        SettingsRow(
-                            color: .atomicTangerine,
-                            symbol: "square.stack.3d.up.fill",
-                            text: "Dataset"
                         )
                     }
                     
@@ -92,7 +77,7 @@ struct SettingsModalView: View {
                             Text("© 2022 Dennis Technologies Ltd.")
                             Text("Proud to be indie.")
                             
-                            if let versionNumber = getVersion() {
+                            if let versionNumber = viewModel.getVersion() {
                                 Text("Version \(versionNumber)")
                             }
                         }

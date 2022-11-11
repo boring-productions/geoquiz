@@ -14,7 +14,7 @@ struct UserDataModel: Codable {
     var haptics: Bool = true
     var sound: Bool = true
     var numberOfLives: Int = 25
-    var guessTheFlagShape: GuessTheFlagShape = .respectAspectRatio
+    var guessTheFlagAspectRatio: GuessTheFlagAspectRatio = .original
     
     // Profile
     var username: String = "Unnamed"
@@ -26,8 +26,8 @@ struct UserDataModel: Codable {
     }
 }
 
-enum GuessTheFlagShape: String, Codable, CaseIterable {
-    case respectAspectRatio = "Original"
+enum GuessTheFlagAspectRatio: String, Codable, CaseIterable {
+    case original = "Original"
     case circular = "Circular"
     case rectangular = "Rectangular"
     

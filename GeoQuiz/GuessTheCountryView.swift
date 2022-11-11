@@ -25,7 +25,7 @@ struct GuessTheCountryView: View, GameView {
                     Spacer()
                     
                     CityMap(game: gameController)
-                        .frame(height: geo.size.height * 0.35)
+                        .frame(height: geo.size.height * 0.30)
                         .padding(.bottom)
                     
                     Spacer()

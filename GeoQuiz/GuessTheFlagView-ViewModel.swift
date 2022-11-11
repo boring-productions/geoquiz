@@ -13,8 +13,8 @@ extension GuessTheFlagView {
     class Layout {
         
         static func showFlag(in flagPath: String, geo: GeometryProxy, _ userController: UserController) -> some View {
-            switch userController.data.guessTheFlagShape {
-            case .respectAspectRatio:
+            switch userController.data.guessTheFlagAspectRatio {
+            case .original:
                 return AnyView(
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundColor(.white.opacity(0.5))
@@ -44,7 +44,7 @@ extension GuessTheFlagView {
                         .renderingMode(.original)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: geo.size.height * 0.3, height: geo.size.height * 0.15)
+                        .frame(width: geo.size.height * 0.25, height: geo.size.height * 0.14)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .shadow(radius: 10)
                 )
