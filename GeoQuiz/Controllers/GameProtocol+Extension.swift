@@ -18,7 +18,7 @@ public enum GameType: Int16, CaseIterable {
     case guessThePopulation
 }
 
-protocol Game: ObservableObject {
+@MainActor protocol Game: ObservableObject {
     
     // Define generic type
     associatedtype T: Equatable
@@ -26,18 +26,19 @@ protocol Game: ObservableObject {
     // Game
     var data: [String: T] { get set}
     var dataAsked: [String: T] { get set }
-    var correctAnswer: (key: String, value: T) { get set }
     
-    // User
     var userChoices: [String: T] { get set }
     var userScore: Int { get set }
     var userLives: Int { get set }
+    
+    var correctAnswer: (key: String, value: T) { get set }
     var correctAnswers: [String: T] { get set }
     var wrongAnswers: [String: T] { get set }
     
     // Alerts
     var alertTitle: String { get set }
     var alertMessage: String { get set }
+    
     var showingEndGameAlert: Bool { get set }
     var showingWrongAnswerAlert: Bool { get set }
     var showingExitGameAlert: Bool { get set }
@@ -48,8 +49,6 @@ protocol Game: ObservableObject {
     
     // Sound effects
     var player: AVAudioPlayer? { get set }
-    
-    func selector()
 }
 
 extension Game {
@@ -57,7 +56,8 @@ extension Game {
        dataAsked.count
     }
     
-    func askQuestion(selector: () -> Void) {
+    // MARK: - Ask new question
+    func ask() {
         guard questionCounter < data.count else {
             alertTitle = "⭐️ Congratulations ⭐️"
             alertMessage = "You completed the game."
@@ -66,10 +66,28 @@ extension Game {
             return
         }
         
-        selector()
+        var userChoices = [String: T]()
+        
+        while userChoices.count < 2 {
+            let choice = data.randomElement()!
+            userChoices[choice.key] = choice.value
+        }
+        
+        let correctKey = data.keys.shuffled().first(where: {
+            !userChoices.keys.contains($0) &&               // Avoid duplicated items
+            !dataAsked.keys.contains($0)                    // Avoid items already asked
+        })!
+        
+        let correctValue = data[correctKey]!
+        
+        userChoices[correctKey] = correctValue
+        dataAsked[correctKey] = correctValue
+        correctAnswer = (key: correctKey, value: correctValue)
+        self.userChoices = userChoices
     }
     
-    func answer(choice: (key: String, value: T), wrongMessage: String, selector: () -> Void) {
+    // MARK: - Answer question
+    func answer(choice: (key: String, value: T), wrongMessage: String) {
         let haptics = HapticsController()
         
         if correctAnswer == choice {
@@ -82,17 +100,15 @@ extension Game {
             }
             
             correctAnswers[correctAnswer.key] = correctAnswer.value
-            askQuestion {
-                selector()
-            }
+            ask()
         } else {
             haptics.error()
             playSound("wrongAnswer")
 
-            withAnimation(.easeIn(duration: 0.5)) {
-                livesScaleAmount += 1
-                userLives -= 1
-            }
+//            withAnimation(.easeIn(duration: 0.5)) {
+//                livesScaleAmount += 1
+//                userLives -= 1
+//            }
             
             wrongAnswers[choice.key] = choice.value
             
@@ -115,6 +131,7 @@ extension Game {
         }
     }
     
+    // MARK: - Save game
     func save(_ gameType: GameType, with moc: NSManagedObjectContext) {
         let playedGame = PlayedGame(context: moc)
 
@@ -131,6 +148,7 @@ extension Game {
         }
     }
     
+    // MARK: - Play sound effect
     private func playSound(_ filename: String) {
         let user = UserController()
         

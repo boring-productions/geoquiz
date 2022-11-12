@@ -16,7 +16,6 @@ class CountryGameController: Game, ObservableObject {
     var data: [String: T]
     var dataAsked = [String: T]()
     
-    // Data
     @Published var correctAnswer = (
         key: String(),
         value: T(flag: String(), currency: String(), population: Int(), capital: String())
@@ -45,14 +44,16 @@ class CountryGameController: Game, ObservableObject {
     
     init() {
         let data: CountryModel = Bundle.main.decode("countries.json")
-        let shuffledCountries = data.countries.shuffled().prefix(100)
-        
+        let shuffledCountries = data.countries.shuffled().prefix(5)
         var countries = [String: T]()
+        
         for shuffledCountry in shuffledCountries {
             countries[shuffledCountry.key] = shuffledCountry.value
         }
         
         self.data = countries
+        
+        print(countries)
         
         let user = UserController()
         userLives = user.data.numberOfLives
@@ -63,47 +64,6 @@ class CountryGameController: Game, ObservableObject {
             }
         }
         
-        askQuestion {
-            selector()
-        }
-    }
-}
-
-extension CountryGameController {
-    func selector() {
-        
-        // Get random choices
-        var userChoices = [String: T]()
-        
-        while userChoices.count < 2 {
-            if let choice = data.randomElement() {
-                userChoices[choice.key] = choice.value
-            } else {
-                fatalError("Couldn't get a random value from data")
-            }
-        }
-        
-        // Get correct answer
-        let randomCountryKeys = data.keys.shuffled()
-        
-        let correctCountryKey = randomCountryKeys.first(where: {
-            !userChoices.keys.contains($0) &&   // Avoid duplicated countries
-            !dataAsked.keys.contains($0)        // Avoid countries already asked
-        })
-        
-        // Unwrap correct answer
-        if let correctCountryKey = correctCountryKey {
-            let correctCountryValue = data[correctCountryKey]!
-            
-            userChoices[correctCountryKey] = correctCountryValue
-            dataAsked[correctCountryKey] = correctCountryValue
-            
-            let correctAnswer = (key: correctCountryKey, value: correctCountryValue)
-            self.correctAnswer = correctAnswer
-        } else {
-            fatalError("Couldn't unwrap optional value")
-        }
-        
-        self.userChoices = userChoices
+        ask()
     }
 }

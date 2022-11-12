@@ -48,9 +48,7 @@ struct GuessTheFlagView: View, GameView {
                                 gameController.answer(
                                     choice: (key: countryName, value: gameController.data[countryName]!),
                                     wrongMessage: "That's the flag of \(countryName)"
-                                ) {
-                                    gameController.selector()
-                                }
+                                )
                             } label: {
                                 
                                 /*

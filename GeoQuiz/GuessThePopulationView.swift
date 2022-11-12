@@ -65,9 +65,7 @@ struct GuessThePopulationView: View, GameView {
                                     gameController.answer(
                                         choice: (key: countryName, value: gameController.data[countryName]!),
                                         wrongMessage: "That's the population of \(countryName)"
-                                    ) {
-                                        gameController.selector()
-                                    }
+                                    )
                                 } label: {
                                     let population = gameController.data[countryName]!.population
                                     AnswerButton(

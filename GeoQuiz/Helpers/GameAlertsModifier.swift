@@ -20,9 +20,7 @@ struct GameAlertsModifier<T: Game>: ViewModifier {
         content
             .alert(gameController.alertTitle, isPresented: $gameController.showingWrongAnswerAlert) {
                 Button("Continue", role: .cancel) {
-                    gameController.askQuestion {
-                        gameController.selector()
-                    }
+                    gameController.ask()
                 }
             } message: {
                 Text(gameController.alertMessage)

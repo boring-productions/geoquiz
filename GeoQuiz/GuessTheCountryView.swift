@@ -48,9 +48,7 @@ struct GuessTheCountryView: View, GameView {
                                     gameController.answer(
                                         choice: (key: cityName, value: gameController.data[cityName]!),
                                         wrongMessage: "\(gameController.correctAnswer.key) is located in \(gameController.correctAnswer.value.country)"
-                                    ) {
-                                        gameController.selector()
-                                    }
+                                    )
                                 } label: {
                                     AnswerButton(
                                         name: gameController.data[cityName]!.country,

@@ -8,30 +8,27 @@
 import Foundation
 import AVFAudio
 
-class CityGameController: Game, ObservableObject {
+@MainActor class CityGameController: Game, ObservableObject {
     
-    // Define type of generics
+    // Define generic type
     typealias T = CityModel.City
     
+    // Game
     var data: [String: T]
     var dataAsked = [String: T]()
     
-    // Data
-    @Published var correctAnswer = (
-        key: String(),
-        value: T(country: String(), lat: Double(), lon: Double())
-    )
-    
-    // User
     @Published var userChoices = [String: T]()
     @Published var userScore = 0
     @Published var userLives = 3
+    
+    @Published var correctAnswer = (key: String(), value: T(country: String(), lat: Double(), lon: Double()))
     @Published var correctAnswers = [String: T]()
     @Published var wrongAnswers = [String: T]()
     
     // Alerts
     @Published var alertTitle = String()
     @Published var alertMessage = String()
+    
     @Published var showingEndGameAlert = false
     @Published var showingWrongAnswerAlert = false
     @Published var showingExitGameAlert = false
@@ -45,11 +42,16 @@ class CityGameController: Game, ObservableObject {
     
     init() {
         let data: CityModel = Bundle.main.decode("cities.json")
-        let shuffledCities = data.cities.shuffled().prefix(100)
-        
+        let shuffledCities = data.cities.shuffled()
         var cities = [String: T]()
-        for shuffledCity in shuffledCities {
-            cities[shuffledCity.key] = shuffledCity.value
+        
+        for _ in 1...10 {
+            let countryNames = cities.map { $0.value.country }
+            let city = shuffledCities.first(where: {
+                !countryNames.contains($0.value.country)
+            })!
+            
+            cities[city.key] = city.value
         }
         
         self.data = cities
@@ -63,54 +65,8 @@ class CityGameController: Game, ObservableObject {
             }
         }
         
-        askQuestion {
-            selector()
-        }
+        ask()
     }
 }
 
-extension CityGameController {
-    func selector() {
-        
-        // Get random choices
-        var userChoices = [String: T]()
-        
-        while userChoices.count < 2 {
-            if let choice = data.randomElement() {
-                let userChoicesCountry = userChoices.map { $0.value.country }
-                
-                if !userChoicesCountry.contains(choice.value.country) {
-                    userChoices[choice.key] = choice.value
-                }
-            } else {
-                fatalError("Couldn't get a random value from data")
-            }
-        }
-        
-        // Get correct answer
-        let randomCityKeys = data.keys.shuffled()
-        let userChoicesCountry = userChoices.map { $0.value.country }
-        
-        let correctCityKey = randomCityKeys.first(where: {
-            !userChoices.keys.contains($0) &&                  // Avoid duplicated cities
-            !dataAsked.keys.contains($0) &&                    // Avoid cities already asked
-            !userChoicesCountry.contains(data[$0]!.country)    // Avoid duplicated country names in userChoices
-        })
-
-        // Unwrap optional
-        if let correctCityKey = correctCityKey {
-            let correctCityValue = data[correctCityKey]!
-            
-            userChoices[correctCityKey] = correctCityValue
-            dataAsked[correctCityKey] = correctCityValue
-            
-            let correctAnswer = (key: correctCityKey, value: correctCityValue)
-            self.correctAnswer = correctAnswer
-        } else {
-            fatalError("Couldn't unwrap optional value")
-        }
-        
-        self.userChoices = userChoices
-    }
-}
 

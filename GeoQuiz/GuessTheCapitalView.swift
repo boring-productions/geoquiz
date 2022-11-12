@@ -65,9 +65,7 @@ struct GuessTheCapitalView: View, GameView {
                                     gameController.answer(
                                         choice: (key: countryName, value: gameController.data[countryName]!),
                                         wrongMessage: "That's the capital of \(countryName)"
-                                    ) {
-                                        gameController.selector()
-                                    }
+                                    )
                                 } label: {
                                     AnswerButton(
                                         name: gameController.data[countryName]!.capital,
