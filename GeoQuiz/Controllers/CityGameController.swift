@@ -21,7 +21,7 @@ import AVFAudio
     @Published var userScore = 0
     @Published var userLives = 3
     
-    @Published var correctAnswer = (key: String(), value: T(country: String(), lat: Double(), lon: Double()))
+    @Published var correctAnswer = (key: "", value: T(country: "", lat: Double(), lon: Double()))
     @Published var correctAnswers = [String: T]()
     @Published var wrongAnswers = [String: T]()
     
@@ -45,7 +45,7 @@ import AVFAudio
         let shuffledCities = data.cities.shuffled()
         var cities = [String: T]()
         
-        for _ in 1...10 {
+        for _ in 1...100 {
             let countryNames = cities.map { $0.value.country }
             let city = shuffledCities.first(where: {
                 !countryNames.contains($0.value.country)

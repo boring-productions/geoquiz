@@ -8,29 +8,28 @@
 import Foundation
 import AVFAudio
 
-class CountryGameController: Game, ObservableObject {
+@MainActor class CountryGameController: Game, ObservableObject {
     
-    // Define type of generics
+    // Define generic type
     typealias T = CountryModel.Country
     
+    // Game
     var data: [String: T]
     var dataAsked = [String: T]()
-    
-    @Published var correctAnswer = (
-        key: String(),
-        value: T(flag: String(), currency: String(), population: Int(), capital: String())
-    )
     
     // User
     @Published var userChoices = [String: T]()
     @Published var userScore = 0
     @Published var userLives = 3
+    
+    @Published var correctAnswer = (key: "", value: T(flag: "", currency: "", population: Int(), capital: ""))
     @Published var correctAnswers = [String: T]()
     @Published var wrongAnswers = [String: T]()
     
     // Alerts
     @Published var alertTitle = String()
     @Published var alertMessage = String()
+    
     @Published var showingEndGameAlert = false
     @Published var showingWrongAnswerAlert = false
     @Published var showingExitGameAlert = false
@@ -44,7 +43,7 @@ class CountryGameController: Game, ObservableObject {
     
     init() {
         let data: CountryModel = Bundle.main.decode("countries.json")
-        let shuffledCountries = data.countries.shuffled().prefix(5)
+        let shuffledCountries = data.countries.shuffled().prefix(100)
         var countries = [String: T]()
         
         for shuffledCountry in shuffledCountries {
@@ -52,8 +51,6 @@ class CountryGameController: Game, ObservableObject {
         }
         
         self.data = countries
-        
-        print(countries)
         
         let user = UserController()
         userLives = user.data.numberOfLives

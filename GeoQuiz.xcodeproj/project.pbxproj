@@ -257,6 +257,7 @@
 		957822482918F445005F2D50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957822472918F445005F2D50 /* Extensions.swift */; };
 		9590359528E098FF00B24560 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590359428E098FF00B24560 /* ProfileModalView.swift */; };
 		95919DBC28F08D0600F21F8F /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95919DBB28F08D0600F21F8F /* SettingsRow.swift */; };
+		959C3DB1291FC193003A3FD1 /* GeoQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C3DB0291FC193003A3FD1 /* GeoQuizTests.swift */; };
 		95A4F42B29043DC00018DFAC /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4F42A29043DC00018DFAC /* UserImage.swift */; };
 		95AF322A28DF293900023ACC /* GuessTheCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF322928DF293900023ACC /* GuessTheCountryView.swift */; };
 		95BC392D28EC42570049AB49 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC392C28EC42570049AB49 /* CityMap.swift */; };
@@ -276,6 +277,16 @@
 		95DB7C01290492FC007D01D8 /* GameInfoModel+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB7C00290492FC007D01D8 /* GameInfoModel+Protocol.swift */; };
 		95FA409A28D9876B00129B60 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA409928D9876B00129B60 /* GuessTheFlagView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		959C3DB2291FC193003A3FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9539828728C51EDE00B70973 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9539828E28C51EDE00B70973;
+			remoteInfo = GeoQuiz;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		95030CE928D1BA4D001AA3A1 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
@@ -529,6 +540,8 @@
 		957822472918F445005F2D50 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9590359428E098FF00B24560 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		95919DBB28F08D0600F21F8F /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		959C3DAE291FC193003A3FD1 /* GeoQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		959C3DB0291FC193003A3FD1 /* GeoQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizTests.swift; sourceTree = "<group>"; };
 		95A4F42A29043DC00018DFAC /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		95AF322928DF293900023ACC /* GuessTheCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCountryView.swift; sourceTree = "<group>"; };
 		95BC392C28EC42570049AB49 /* CityMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
@@ -557,6 +570,13 @@
 			files = (
 				950C535628F3172C00179C78 /* RevenueCat in Frameworks */,
 				950C535928F3178B00179C78 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		959C3DAB291FC193003A3FD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,6 +847,7 @@
 			isa = PBXGroup;
 			children = (
 				9539829128C51EDE00B70973 /* GeoQuiz */,
+				959C3DAF291FC193003A3FD1 /* GeoQuizTests */,
 				9539829028C51EDE00B70973 /* Products */,
 				950C535728F3178B00179C78 /* Frameworks */,
 			);
@@ -836,6 +857,7 @@
 			isa = PBXGroup;
 			children = (
 				9539828F28C51EDE00B70973 /* GeoQuiz.app */,
+				959C3DAE291FC193003A3FD1 /* GeoQuizTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -911,6 +933,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		959C3DAF291FC193003A3FD1 /* GeoQuizTests */ = {
+			isa = PBXGroup;
+			children = (
+				959C3DB0291FC193003A3FD1 /* GeoQuizTests.swift */,
+			);
+			path = GeoQuizTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -934,6 +964,24 @@
 			productReference = 9539828F28C51EDE00B70973 /* GeoQuiz.app */;
 			productType = "com.apple.product-type.application";
 		};
+		959C3DAD291FC193003A3FD1 /* GeoQuizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 959C3DB4291FC193003A3FD1 /* Build configuration list for PBXNativeTarget "GeoQuizTests" */;
+			buildPhases = (
+				959C3DAA291FC193003A3FD1 /* Sources */,
+				959C3DAB291FC193003A3FD1 /* Frameworks */,
+				959C3DAC291FC193003A3FD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				959C3DB3291FC193003A3FD1 /* PBXTargetDependency */,
+			);
+			name = GeoQuizTests;
+			productName = GeoQuizTests;
+			productReference = 959C3DAE291FC193003A3FD1 /* GeoQuizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -941,11 +989,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					9539828E28C51EDE00B70973 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					959C3DAD291FC193003A3FD1 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 9539828E28C51EDE00B70973;
 					};
 				};
 			};
@@ -966,6 +1018,7 @@
 			projectRoot = "";
 			targets = (
 				9539828E28C51EDE00B70973 /* GeoQuiz */,
+				959C3DAD291FC193003A3FD1 /* GeoQuizTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1201,6 +1254,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		959C3DAC291FC193003A3FD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1254,7 +1314,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		959C3DAA291FC193003A3FD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				959C3DB1291FC193003A3FD1 /* GeoQuizTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		959C3DB3291FC193003A3FD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9539828E28C51EDE00B70973 /* GeoQuiz */;
+			targetProxy = 959C3DB2291FC193003A3FD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9539829B28C51EDF00B70973 /* Debug */ = {
@@ -1443,6 +1519,52 @@
 			};
 			name = Release;
 		};
+		959C3DB5291FC193003A3FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MTX83R5H8X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.dennistech.GeoQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoQuiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoQuiz";
+			};
+			name = Debug;
+		};
+		959C3DB6291FC193003A3FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MTX83R5H8X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.dennistech.GeoQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoQuiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoQuiz";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1460,6 +1582,15 @@
 			buildConfigurations = (
 				9539829E28C51EDF00B70973 /* Debug */,
 				9539829F28C51EDF00B70973 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		959C3DB4291FC193003A3FD1 /* Build configuration list for PBXNativeTarget "GeoQuizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				959C3DB5291FC193003A3FD1 /* Debug */,
+				959C3DB6291FC193003A3FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

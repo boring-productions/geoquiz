@@ -68,21 +68,16 @@ extension Game {
         
         var userChoices = [String: T]()
         
-        while userChoices.count < 2 {
+        let correctAnswer = data.shuffled().first(where: { !dataAsked.keys.contains($0.key) })!
+        dataAsked[correctAnswer.key] = correctAnswer.value
+        userChoices[correctAnswer.key] = correctAnswer.value
+        
+        while userChoices.count < 3 {
             let choice = data.randomElement()!
             userChoices[choice.key] = choice.value
         }
         
-        let correctKey = data.keys.shuffled().first(where: {
-            !userChoices.keys.contains($0) &&               // Avoid duplicated items
-            !dataAsked.keys.contains($0)                    // Avoid items already asked
-        })!
-        
-        let correctValue = data[correctKey]!
-        
-        userChoices[correctKey] = correctValue
-        dataAsked[correctKey] = correctValue
-        correctAnswer = (key: correctKey, value: correctValue)
+        self.correctAnswer = correctAnswer
         self.userChoices = userChoices
     }
     
@@ -105,10 +100,10 @@ extension Game {
             haptics.error()
             playSound("wrongAnswer")
 
-//            withAnimation(.easeIn(duration: 0.5)) {
-//                livesScaleAmount += 1
-//                userLives -= 1
-//            }
+            withAnimation(.easeIn(duration: 0.5)) {
+                livesScaleAmount += 1
+                userLives -= 1
+            }
             
             wrongAnswers[choice.key] = choice.value
             
