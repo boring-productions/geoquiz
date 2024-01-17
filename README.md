@@ -1,2 +1,2 @@
 
-# geoquiz-app
+# geoquiz
